@@ -3,7 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LXD - Portfolio</title>
+  <title>Prince Mosqueda — Instructional & Multimedia Designer</title>
+  <meta name="description" content="Portfolio of Prince Jashmar M. Mosqueda — Instructional Designer, Multimedia Designer, and E-Learning Developer creating engaging, interactive learning experiences.">
+  <meta property="og:title" content="Prince Mosqueda — Instructional & Multimedia Designer">
+  <meta property="og:description" content="Instructional Designer, Multimedia Designer, and E-Learning Developer creating engaging, interactive learning experiences.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://raw.githubusercontent.com/Jashmare/Portfolio-Storage/refs/heads/main/Profile%20Cropped%20PNG.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Prince Mosqueda — Instructional & Multimedia Designer">
+  <meta name="twitter:description" content="Instructional Designer, Multimedia Designer, and E-Learning Developer creating engaging, interactive learning experiences.">
+  <meta name="theme-color" content="#FF8C42">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%23FF8C42%22/><text x=%2250%22 y=%2268%22 font-size=%2260%22 font-family=%22Georgia,serif%22 font-weight=%22bold%22 fill=%22white%22 text-anchor=%22middle%22>P</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
@@ -138,10 +148,13 @@
       letter-spacing: -0.5px;
     }
 
-    nav-links {
+    .nav-links {
       display: flex;
       gap: 2.5rem;
       align-items: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
     }
 
     nav a {
@@ -167,7 +180,7 @@
       background: var(--accent);
     }
 
-    .nav-linkedin {
+    .nav-download {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -180,13 +193,13 @@
       flex-shrink: 0;
     }
 
-    .nav-linkedin:hover {
+    .nav-download:hover {
       color: white;
       background: var(--accent);
       border-color: var(--accent);
     }
 
-    .nav-linkedin svg {
+    .nav-download svg {
       width: 16px;
       height: 16px;
     }
@@ -383,6 +396,32 @@
       height: 16px;
     }
 
+    .hero-cta-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: transparent;
+      color: var(--text);
+      border: 2px solid var(--border);
+      padding: calc(0.9rem - 2px) calc(1.75rem - 2px);
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+    }
+
+    .hero-cta-secondary:hover {
+      border-color: var(--text);
+      background: var(--text);
+      color: var(--bg);
+      transform: translateY(-2px);
+    }
+
+    .hero-cta-secondary svg {
+      width: 16px;
+      height: 16px;
+    }
+
     /* Scrolling skills ticker */
     .hero-ticker {
       width: 100%;
@@ -398,6 +437,10 @@
       display: flex;
       width: max-content;
       animation: tickerScroll 28s linear infinite;
+    }
+
+    .hero-ticker:hover .ticker-track {
+      animation-play-state: paused;
     }
 
     .ticker-set {
@@ -468,6 +511,7 @@
     .hero-image-wrap,
     .project-card,
     .about-category-box,
+    .skill-item,
     .contact {
       opacity: 0;
     }
@@ -559,6 +603,11 @@
       cursor: pointer;
     }
 
+    .project-card:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+
     .project-card:hover {
       transform: translateY(-6px) scale(1.02);
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
@@ -633,6 +682,91 @@
       text-transform: uppercase;
       letter-spacing: 0.5px;
       font-weight: 500;
+    }
+
+    /* ===== SKILLS & TOOLS SECTION ===== */
+    .skills {
+      padding: 2rem 2rem 5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .skills-banner {
+      background: #dbe4ea;
+      color: #16202a;
+      padding: 1.1rem 1.75rem;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 2.5rem;
+    }
+
+    [data-theme="dark"] .skills-banner {
+      background: #2a3540;
+      color: #f0f4f7;
+    }
+
+    .skills-icons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.25rem;
+      justify-content: flex-start;
+    }
+
+    .skill-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+      width: 84px;
+    }
+
+    .skill-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.4rem;
+      color: white;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+      flex-shrink: 0;
+    }
+
+    .skill-icon.outline {
+      background: var(--bg-dark);
+      border: 1px solid var(--border);
+      box-shadow: none;
+    }
+
+    .skill-icon.photoshop { background: #001e36; color: #31c5f0; }
+    .skill-icon.illustrator { background: #2b0000; color: #ff7c00; }
+    .skill-icon.storyline { background: #ff4d8d; border-radius: 50%; }
+    .skill-icon.articulate { background: #6bc7f2; border-radius: 50%; color: #0a2e40; font-size: 1.1rem; }
+    .skill-icon.canva { background: linear-gradient(135deg, #00c4cc 0%, #7d2ae8 100%); }
+
+    .skill-icon svg {
+      width: 32px;
+      height: 32px;
+    }
+
+    .skill-label {
+      font-size: 0.8rem;
+      color: var(--text-light);
+      font-weight: 600;
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    @media (max-width: 600px) {
+      .skills-icons {
+        justify-content: center;
+        gap: 1.5rem;
+      }
     }
 
     /* ===== ABOUT SECTION ===== */
@@ -978,6 +1112,28 @@
       position: relative;
     }
 
+    .modal-image-skeleton {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, var(--bg) 25%, var(--border) 50%, var(--bg) 75%);
+      background-size: 200% 100%;
+      animation: skeletonShimmer 1.4s ease-in-out infinite;
+      border-radius: 16px 16px 0 0;
+      z-index: 1;
+      opacity: 1;
+      transition: opacity 0.25s ease;
+      pointer-events: none;
+    }
+
+    .modal-image-skeleton.hidden {
+      opacity: 0;
+    }
+
+    @keyframes skeletonShimmer {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
     .modal-gallery-main img {
       width: 100%;
       height: 100%;
@@ -1052,7 +1208,7 @@
         gap: 1rem;
       }
 
-      nav-links {
+      .nav-links {
         flex-direction: column;
         gap: 1rem;
         text-align: center;
@@ -1186,18 +1342,22 @@
         </button>
         <div class="logo">PRINCE</div>
       </div>
-      <nav-links>
-        <a href="#home" class="nav-link active" onclick="scrollToSection('home')">Home</a>
-        <a href="#work" class="nav-link" onclick="scrollToSection('work')">Work</a>
-        <a href="#about" class="nav-link" onclick="scrollToSection('about')">About</a>
-        <a href="#contact" class="nav-link" onclick="scrollToSection('contact')">Contact</a>
-        <a href="https://www.linkedin.com/in/prince-mosqueda-b89968276/" target="_blank" class="nav-linkedin" title="LinkedIn">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"></path>
-            <circle cx="4" cy="4" r="2"></circle>
-          </svg>
-        </a>
-      </nav-links>
+      <ul class="nav-links">
+        <li><a href="#home" class="nav-link active" onclick="scrollToSection('home')">Home</a></li>
+        <li><a href="#work" class="nav-link" onclick="scrollToSection('work')">Work</a></li>
+        <li><a href="#skills" class="nav-link" onclick="scrollToSection('skills')">Skills</a></li>
+        <li><a href="#about" class="nav-link" onclick="scrollToSection('about')">About</a></li>
+        <li><a href="#contact" class="nav-link" onclick="scrollToSection('contact')">Contact</a></li>
+        <li>
+          <a href="https://raw.githubusercontent.com/Jashmare/My-Curriculum-Vitae/main/Prince%20Mosqueda%20CV.pdf" download="Prince Mosqueda CV.pdf" class="nav-download" title="Download CV">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+          </a>
+        </li>
+      </ul>
     </nav>
   </header>
 
@@ -1225,14 +1385,22 @@
               <polyline points="19 12 12 19 5 12"></polyline>
             </svg>
           </button>
+          <a href="https://raw.githubusercontent.com/Jashmare/My-Curriculum-Vitae/main/Prince%20Mosqueda%20CV.pdf" download="Prince Mosqueda CV.pdf" class="hero-cta-secondary">
+            Download CV
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+          </a>
         </div>
       </div>
       <div class="hero-image-wrap float-up">
         <div class="hero-image-backdrop"></div>
         <img class="hero-photo" src="https://raw.githubusercontent.com/Jashmare/Portfolio-Storage/refs/heads/main/Profile%20Cropped%20PNG.png" alt="Prince Jashmar M. Mosqueda">
         <div class="hero-stat-badge">
-          <div class="hero-stat-number">3+</div>
-          <div class="hero-stat-label">Design disciplines combined</div>
+          <div class="hero-stat-number">100+</div>
+          <div class="hero-stat-label">E-learning modules delivered</div>
         </div>
       </div>
     </div>
@@ -1249,6 +1417,63 @@
     </div>
     <div class="projects-grid" id="projects-grid">
       <!-- Projects will be populated here -->
+    </div>
+  </section>
+
+  <!-- SKILLS & TOOLS SECTION -->
+  <section class="skills" id="skills">
+    <div class="skills-banner">Tools and Software</div>
+    <div class="skills-icons">
+      <div class="skill-item">
+        <div class="skill-icon photoshop">Ps</div>
+        <div class="skill-label">Photoshop</div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-icon illustrator">Ai</div>
+        <div class="skill-label">Illustrator</div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-icon storyline">sl</div>
+        <div class="skill-label">Storyline 360</div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-icon articulate">360</div>
+        <div class="skill-label">Articulate 360</div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-icon canva">C</div>
+        <div class="skill-label">Canva</div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-icon outline">
+          <svg viewBox="0 0 24 24" fill="none" stroke="url(#antigravity-grad)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <defs>
+              <linearGradient id="antigravity-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#3B82F6"/>
+                <stop offset="50%" stop-color="#A855F7"/>
+                <stop offset="100%" stop-color="#FF8C42"/>
+              </linearGradient>
+            </defs>
+            <path d="M3 18c3-1 4-9 6-9s2 6 4 6 2-11 5-11 2 14 3 14"></path>
+          </svg>
+        </div>
+        <div class="skill-label">Anti-Gravity</div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-icon outline">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round">
+            <line x1="12" y1="2" x2="12" y2="8"></line>
+            <line x1="12" y1="16" x2="12" y2="22"></line>
+            <line x1="2" y1="12" x2="8" y2="12"></line>
+            <line x1="16" y1="12" x2="22" y2="12"></line>
+            <line x1="4.9" y1="4.9" x2="9.2" y2="9.2"></line>
+            <line x1="14.8" y1="14.8" x2="19.1" y2="19.1"></line>
+            <line x1="19.1" y1="4.9" x2="14.8" y2="9.2"></line>
+            <line x1="9.2" y1="14.8" x2="4.9" y2="19.1"></line>
+          </svg>
+        </div>
+        <div class="skill-label">Claude Code</div>
+      </div>
     </div>
   </section>
 
@@ -1360,7 +1585,7 @@
         <polyline points="9 18 15 12 9 6"></polyline>
       </svg>
     </button>
-    <div class="project-modal">
+    <div class="project-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
       <button class="modal-close-btn" onclick="closeProjectModal()" title="Close">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <line x1="18" y1="6" x2="6" y2="18"></line>
@@ -1368,6 +1593,7 @@
         </svg>
       </button>
       <div class="modal-gallery-main">
+        <div class="modal-image-skeleton" id="modal-image-skeleton"></div>
         <img id="modal-main-image" src="" alt="">
       </div>
       <div class="modal-gallery-thumbs" id="modal-thumbs"></div>
@@ -1449,8 +1675,8 @@
         images: [
           "https://raw.githubusercontent.com/Jashmare/Portfolio-Storage/main/StaticDesign_01_A.jpg",
           "https://raw.githubusercontent.com/Jashmare/Portfolio-Storage/main/StaticDesign_02.jpg",
-          "https://raw.githubusercontent.com/Jashmare/Portfolio-Storage/main/StaticDesign_03.png",
-          "https://raw.githubusercontent.com/Jashmare/Portfolio-Storage/main/StaticDesign_04.png"
+          "https://raw.githubusercontent.com/Jashmare/Portfolio-Storage/main/StaticDesign_03.jpg",
+          "https://raw.githubusercontent.com/Jashmare/Portfolio-Storage/main/StaticDesign_04.jpg"
         ]
       },
       {
@@ -1503,8 +1729,8 @@
     function renderProjects() {
       const grid = document.getElementById('projects-grid');
       grid.innerHTML = PROJECTS.map(project => `
-        <div class="project-card" onclick="openProjectModal(${project.id})">
-          <div class="project-thumb"><img src="${project.image}" alt="${project.title}" style="width: 100%; height: 100%; object-fit: cover;"></div>
+        <div class="project-card" onclick="openProjectModal(${project.id})" tabindex="0" role="button" aria-label="View project: ${project.title}" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProjectModal(${project.id});}">
+          <div class="project-thumb"><img src="${project.image}" alt="${project.title}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;"></div>
           <div class="project-body">
             <div class="project-meta">${project.category}</div>
             <h3 class="project-title">${project.title}</h3>
@@ -1558,9 +1784,13 @@
     let currentModalIndex = 0;
     let currentProjectId = null;
 
+    let lastFocusedElement = null;
+
     function openProjectModal(id) {
       const project = PROJECTS.find(p => p.id === id);
       if (!project) return;
+
+      lastFocusedElement = document.activeElement;
 
       currentProjectId = id;
       currentModalImages = project.images && project.images.length ? project.images : [project.image];
@@ -1581,6 +1811,7 @@
 
       document.getElementById('project-modal-overlay').classList.add('active');
       document.body.style.overflow = 'hidden';
+      document.querySelector('.modal-close-btn').focus();
 
       if (hasMultipleImages) {
         requestAnimationFrame(positionModalNavButtons);
@@ -1595,7 +1826,7 @@
       }
       thumbsContainer.innerHTML = currentModalImages.map((img, index) => `
         <div class="modal-thumb${index === 0 ? ' active' : ''}" onclick="setModalImage(${index})">
-          <img src="${img}" alt="Thumbnail ${index + 1}">
+          <img src="${img}" alt="${document.getElementById('modal-title').textContent} - image ${index + 1}" loading="lazy">
         </div>
       `).join('');
     }
@@ -1603,8 +1834,12 @@
     function setModalImage(index) {
       currentModalIndex = index;
       const mainImg = document.getElementById('modal-main-image');
+      const skeleton = document.getElementById('modal-image-skeleton');
+      skeleton.classList.remove('hidden');
       mainImg.style.opacity = '0';
       setTimeout(() => {
+        mainImg.onload = () => skeleton.classList.add('hidden');
+        mainImg.onerror = () => skeleton.classList.add('hidden');
         mainImg.src = currentModalImages[index];
         mainImg.style.opacity = '1';
       }, 150);
@@ -1616,6 +1851,10 @@
     function closeProjectModal() {
       document.getElementById('project-modal-overlay').classList.remove('active');
       document.body.style.overflow = '';
+      if (lastFocusedElement) {
+        lastFocusedElement.focus();
+        lastFocusedElement = null;
+      }
     }
 
     function navigateGalleryImage(direction) {
@@ -1655,6 +1894,26 @@
 
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') closeProjectModal();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      const overlay = document.getElementById('project-modal-overlay');
+      if (!overlay.classList.contains('active') || e.key !== 'Tab') return;
+
+      const focusable = overlay.querySelectorAll('button, a[href], [tabindex]:not([tabindex="-1"])');
+      const visibleFocusable = Array.from(focusable).filter(el => el.offsetParent !== null);
+      if (!visibleFocusable.length) return;
+
+      const first = visibleFocusable[0];
+      const last = visibleFocusable[visibleFocusable.length - 1];
+
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
     });
 
     // THEME TOGGLE
@@ -1732,7 +1991,7 @@
         entries.forEach(entry => {
           if (entry.isIntersecting && !entry.target.classList.contains('float-up')) {
             // Get all children that should animate
-            const children = entry.target.querySelectorAll('.project-card, .about-category-box');
+            const children = entry.target.querySelectorAll('.project-card, .about-category-box, .skill-item');
             
             if (children.length > 0) {
               // Animate children sequentially
@@ -1751,7 +2010,7 @@
       }, observerOptions);
 
       // Observe all sections
-      document.querySelectorAll('.section, .about, .contact').forEach(section => {
+      document.querySelectorAll('.section, .skills, .about, .contact').forEach(section => {
         observer.observe(section);
       });
     }
