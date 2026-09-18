@@ -98,6 +98,7 @@
       justify-content: space-between;
       align-items: center;
       gap: 1.5rem;
+      position: relative;
     }
 
     .nav-left {
@@ -202,6 +203,46 @@
     .nav-download svg {
       width: 16px;
       height: 16px;
+    }
+
+    .nav-download-label {
+      display: none;
+    }
+
+    .hamburger-btn {
+      display: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--bg-dark);
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .hamburger-btn span {
+      display: block;
+      width: 18px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .hamburger-btn.open span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .hamburger-btn.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger-btn.open span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
     }
 
 
@@ -1204,14 +1245,73 @@
     /* ===== RESPONSIVE ===== */
     @media (max-width: 768px) {
       nav {
-        flex-direction: column;
-        gap: 1rem;
+        padding: 1rem 1.25rem;
+      }
+
+      .hamburger-btn {
+        display: flex;
       }
 
       .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
         flex-direction: column;
-        gap: 1rem;
-        text-align: center;
+        align-items: stretch;
+        gap: 0;
+        max-height: 0;
+        overflow: hidden;
+        background: var(--bg-dark);
+        border-bottom: 1px solid var(--border);
+        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
+        transition: max-height 0.35s ease;
+      }
+
+      .nav-links.open {
+        max-height: 420px;
+      }
+
+      .nav-links li {
+        width: 100%;
+        border-top: 1px solid var(--border);
+      }
+
+      .nav-links li:first-child {
+        border-top: none;
+      }
+
+      .nav-link {
+        display: block;
+        width: 100%;
+        padding: 1rem 1.5rem;
+      }
+
+      nav a.active::after {
+        display: none;
+      }
+
+      .nav-link.active {
+        color: var(--accent);
+        background: var(--bg);
+        border-left: 3px solid var(--accent);
+        padding-left: calc(1.5rem - 3px);
+      }
+
+      .nav-download {
+        width: 100%;
+        height: auto;
+        border-radius: 0;
+        border: none;
+        justify-content: flex-start;
+        gap: 0.75rem;
+        padding: 1rem 1.5rem;
+      }
+
+      .nav-download-label {
+        display: inline;
+        font-size: 0.95rem;
+        font-weight: 500;
       }
 
       .hero {
@@ -1342,6 +1442,11 @@
         </button>
         <div class="logo">PRINCE</div>
       </div>
+      <button class="hamburger-btn" onclick="toggleMobileMenu()" title="Menu" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       <ul class="nav-links">
         <li><a href="#home" class="nav-link active" onclick="scrollToSection('home')">Home</a></li>
         <li><a href="#work" class="nav-link" onclick="scrollToSection('work')">Work</a></li>
@@ -1349,12 +1454,13 @@
         <li><a href="#about" class="nav-link" onclick="scrollToSection('about')">About</a></li>
         <li><a href="#contact" class="nav-link" onclick="scrollToSection('contact')">Contact</a></li>
         <li>
-          <a href="https://raw.githubusercontent.com/Jashmare/My-Curriculum-Vitae/main/Prince%20Mosqueda%20CV.pdf" download="Prince Mosqueda CV.pdf" class="nav-download" title="Download CV">
+          <a href="https://raw.githubusercontent.com/Jashmare/My-Curriculum-Vitae/main/Prince%20Mosqueda%20CV.pdf" download="Prince Mosqueda CV.pdf" class="nav-download" title="Download CV" onclick="closeMobileMenu()">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
               <polyline points="7 10 12 15 17 10"></polyline>
               <line x1="12" y1="15" x2="12" y2="3"></line>
             </svg>
+            <span class="nav-download-label">Download CV</span>
           </a>
         </li>
       </ul>
@@ -1756,7 +1862,27 @@
         });
       }
       updateActiveNav();
+      closeMobileMenu();
     }
+
+    function toggleMobileMenu() {
+      document.querySelector('.nav-links').classList.toggle('open');
+      document.querySelector('.hamburger-btn').classList.toggle('open');
+    }
+
+    function closeMobileMenu() {
+      document.querySelector('.nav-links').classList.remove('open');
+      document.querySelector('.hamburger-btn').classList.remove('open');
+    }
+
+    document.addEventListener('click', (e) => {
+      const nav = document.querySelector('nav');
+      if (!nav.contains(e.target)) closeMobileMenu();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeMobileMenu();
+    });
 
     // UPDATE ACTIVE NAV LINK
     function updateActiveNav() {
