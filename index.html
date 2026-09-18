@@ -727,33 +727,28 @@
 
     /* ===== SKILLS & TOOLS SECTION ===== */
     .skills {
-      padding: 2rem 2rem 5rem;
+      padding: 1.5rem 2rem 2rem;
       max-width: 1200px;
       margin: 0 auto;
     }
 
-    .skills-banner {
-      background: #dbe4ea;
-      color: #16202a;
-      padding: 1.1rem 1.75rem;
-      border-radius: 12px;
-      font-weight: 700;
-      font-size: 0.9rem;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-bottom: 2.5rem;
+    .skills .section-header {
+      text-align: center;
     }
 
-    [data-theme="dark"] .skills-banner {
-      background: #2a3540;
-      color: #f0f4f7;
+    .skills-card {
+      background: var(--bg-dark);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 3rem 2rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
     }
 
     .skills-icons {
       display: flex;
       flex-wrap: wrap;
-      gap: 2.25rem;
-      justify-content: flex-start;
+      gap: 2.5rem;
+      justify-content: center;
     }
 
     .skill-item {
@@ -807,6 +802,10 @@
       .skills-icons {
         justify-content: center;
         gap: 1.5rem;
+      }
+
+      .skills-card {
+        padding: 2rem 1.25rem;
       }
     }
 
@@ -1528,57 +1527,62 @@
 
   <!-- SKILLS & TOOLS SECTION -->
   <section class="skills" id="skills">
-    <div class="skills-banner">Tools and Software</div>
-    <div class="skills-icons">
-      <div class="skill-item">
-        <div class="skill-icon photoshop">Ps</div>
-        <div class="skill-label">Photoshop</div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-icon illustrator">Ai</div>
-        <div class="skill-label">Illustrator</div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-icon storyline">sl</div>
-        <div class="skill-label">Storyline 360</div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-icon articulate">360</div>
-        <div class="skill-label">Articulate 360</div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-icon canva">C</div>
-        <div class="skill-label">Canva</div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-icon outline">
-          <svg viewBox="0 0 24 24" fill="none" stroke="url(#antigravity-grad)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <defs>
-              <linearGradient id="antigravity-grad" x1="0%" y1="100%" x2="100%" y2="0%">
-                <stop offset="0%" stop-color="#3B82F6"/>
-                <stop offset="50%" stop-color="#A855F7"/>
-                <stop offset="100%" stop-color="#FF8C42"/>
-              </linearGradient>
-            </defs>
-            <path d="M3 18c3-1 4-9 6-9s2 6 4 6 2-11 5-11 2 14 3 14"></path>
-          </svg>
+    <div class="section-header">
+      <div class="section-label">What I Work With</div>
+      <h2 class="section-title">Tools &amp; Software</h2>
+    </div>
+    <div class="skills-card">
+      <div class="skills-icons">
+        <div class="skill-item">
+          <div class="skill-icon photoshop">Ps</div>
+          <div class="skill-label">Photoshop</div>
         </div>
-        <div class="skill-label">Anti-Gravity</div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-icon outline">
-          <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round">
-            <line x1="12" y1="2" x2="12" y2="8"></line>
-            <line x1="12" y1="16" x2="12" y2="22"></line>
-            <line x1="2" y1="12" x2="8" y2="12"></line>
-            <line x1="16" y1="12" x2="22" y2="12"></line>
-            <line x1="4.9" y1="4.9" x2="9.2" y2="9.2"></line>
-            <line x1="14.8" y1="14.8" x2="19.1" y2="19.1"></line>
-            <line x1="19.1" y1="4.9" x2="14.8" y2="9.2"></line>
-            <line x1="9.2" y1="14.8" x2="4.9" y2="19.1"></line>
-          </svg>
+        <div class="skill-item">
+          <div class="skill-icon illustrator">Ai</div>
+          <div class="skill-label">Illustrator</div>
         </div>
-        <div class="skill-label">Claude Code</div>
+        <div class="skill-item">
+          <div class="skill-icon storyline">sl</div>
+          <div class="skill-label">Storyline 360</div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-icon articulate">360</div>
+          <div class="skill-label">Articulate 360</div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-icon canva">C</div>
+          <div class="skill-label">Canva</div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-icon outline">
+            <svg viewBox="0 0 24 24" fill="none" stroke="url(#antigravity-grad)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <defs>
+                <linearGradient id="antigravity-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#3B82F6"/>
+                  <stop offset="50%" stop-color="#A855F7"/>
+                  <stop offset="100%" stop-color="#FF8C42"/>
+                </linearGradient>
+              </defs>
+              <path d="M3 18c3-1 4-9 6-9s2 6 4 6 2-11 5-11 2 14 3 14"></path>
+            </svg>
+          </div>
+          <div class="skill-label">Anti-Gravity</div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-icon outline">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round">
+              <line x1="12" y1="2" x2="12" y2="8"></line>
+              <line x1="12" y1="16" x2="12" y2="22"></line>
+              <line x1="2" y1="12" x2="8" y2="12"></line>
+              <line x1="16" y1="12" x2="22" y2="12"></line>
+              <line x1="4.9" y1="4.9" x2="9.2" y2="9.2"></line>
+              <line x1="14.8" y1="14.8" x2="19.1" y2="19.1"></line>
+              <line x1="19.1" y1="4.9" x2="14.8" y2="9.2"></line>
+              <line x1="9.2" y1="14.8" x2="4.9" y2="19.1"></line>
+            </svg>
+          </div>
+          <div class="skill-label">Claude Code</div>
+        </div>
       </div>
     </div>
   </section>
