@@ -1,0 +1,35 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "broken-image",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-09-19T17:16:17.050Z",
+        "reason": "false positive: modal main image (#modal-main-image) is deliberately empty src until JS populates it in openProjectModal/setModalImage; covered by a skeleton loader the whole time, never renders as broken in normal use"
+      },
+      {
+        "rule": "clipped-overflow-container",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-09-19T17:16:17.100Z",
+        "reason": "false positive: clipped children are purely decorative background shapes (.hero-blob, .hero-arcs), not tooltips/menus/popovers; nothing interactive is cut off"
+      },
+      {
+        "rule": "all-caps-body",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-09-19T17:16:17.151Z",
+        "reason": "false positive: this is a single-line hero badge/pill label, not a paragraph of running body copy; falls under the rule's own short-label exception"
+      }
+    ]
+  }
+}
