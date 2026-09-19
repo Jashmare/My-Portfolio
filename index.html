@@ -1220,6 +1220,127 @@
       object-fit: contain;
       border-radius: 16px 16px 0 0;
       transition: opacity 0.2s ease;
+      cursor: zoom-in;
+    }
+
+    .modal-expand-btn {
+      position: absolute;
+      bottom: 0.75rem;
+      right: 0.75rem;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.55);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      z-index: 2;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .modal-expand-btn:hover,
+    .modal-expand-btn:focus-visible {
+      background: var(--accent-text);
+      transform: scale(1.08);
+    }
+
+    .modal-expand-btn svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    /* ===== FULLSCREEN IMAGE VIEWER ===== */
+    .fullscreen-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.95);
+      z-index: 2500;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem;
+    }
+
+    .fullscreen-overlay.active {
+      display: flex;
+      animation: modalOverlayFade 0.2s ease;
+    }
+
+    .fullscreen-overlay img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .fullscreen-close-btn {
+      position: fixed;
+      top: 1.5rem;
+      right: 1.5rem;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      z-index: 2501;
+      transition: all 0.2s ease;
+    }
+
+    .fullscreen-close-btn:hover {
+      background: var(--accent-text);
+      border-color: var(--accent-text);
+    }
+
+    .fullscreen-close-btn svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .fullscreen-nav-btn {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      z-index: 2501;
+      transition: all 0.2s ease;
+    }
+
+    .fullscreen-nav-btn:hover {
+      background: var(--accent-text);
+      border-color: var(--accent-text);
+    }
+
+    .fullscreen-nav-btn svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .fullscreen-nav-prev { left: 1.5rem; }
+    .fullscreen-nav-next { right: 1.5rem; }
+
+    @media (max-width: 600px) {
+      .fullscreen-overlay {
+        padding: 1.25rem;
+      }
+      .fullscreen-nav-btn {
+        width: 38px;
+        height: 38px;
+      }
+      .fullscreen-nav-prev { left: 0.5rem; }
+      .fullscreen-nav-next { right: 0.5rem; }
     }
 
     .modal-gallery-thumbs {
@@ -1519,7 +1640,7 @@
       <ul class="nav-links">
         <li><a href="#home" class="nav-link active" onclick="scrollToSection('home')">Home</a></li>
         <li><a href="#work" class="nav-link" onclick="scrollToSection('work')">Work</a></li>
-        <li><a href="#skills" class="nav-link" onclick="scrollToSection('skills')">Skills</a></li>
+        <li><a href="#skills" class="nav-link" onclick="scrollToSection('skills')">Toolkit</a></li>
         <li><a href="#about" class="nav-link" onclick="scrollToSection('about')">About</a></li>
         <li><a href="#contact" class="nav-link" onclick="scrollToSection('contact')">Contact</a></li>
         <li>
@@ -1774,7 +1895,15 @@
       </button>
       <div class="modal-gallery-main">
         <div class="modal-image-skeleton" id="modal-image-skeleton"></div>
-        <img id="modal-main-image" src="" alt="">
+        <img id="modal-main-image" src="" alt="" onclick="openFullscreen()">
+        <button class="modal-expand-btn" onclick="openFullscreen()" title="View fullscreen" aria-label="View image fullscreen">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M15 3h6v6"></path>
+            <path d="M9 21H3v-6"></path>
+            <path d="M21 3l-7 7"></path>
+            <path d="M3 21l7-7"></path>
+          </svg>
+        </button>
       </div>
       <div class="modal-gallery-thumbs" id="modal-thumbs"></div>
       <div class="modal-body">
@@ -1783,6 +1912,27 @@
         <p id="modal-desc"></p>
         <div class="project-tags" id="modal-tags"></div>
       </div>
+    </div>
+
+    <!-- FULLSCREEN IMAGE VIEWER -->
+    <div class="fullscreen-overlay" id="fullscreen-image-overlay" onclick="if(event.target === this) closeFullscreen()">
+      <button class="fullscreen-close-btn" id="fullscreen-close-btn" onclick="closeFullscreen()" title="Close fullscreen" aria-label="Close fullscreen view">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <button class="fullscreen-nav-btn fullscreen-nav-prev" onclick="navigateGalleryImage(-1)" title="Previous image" aria-label="Previous image">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+      <button class="fullscreen-nav-btn fullscreen-nav-next" onclick="navigateGalleryImage(1)" title="Next image" aria-label="Next image">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+      <img id="fullscreen-image" src="" alt="">
     </div>
   </div>
 
@@ -2051,6 +2201,39 @@
       document.querySelectorAll('.modal-thumb').forEach((thumb, i) => {
         thumb.classList.toggle('active', i === index);
       });
+
+      const fsOverlay = document.getElementById('fullscreen-image-overlay');
+      if (fsOverlay.classList.contains('active')) {
+        document.getElementById('fullscreen-image').src = currentModalImages[index];
+      }
+    }
+
+    // FULLSCREEN IMAGE VIEWER
+    let lastFocusedBeforeFullscreen = null;
+
+    function openFullscreen() {
+      if (!currentModalImages.length) return;
+      const overlay = document.getElementById('fullscreen-image-overlay');
+      const img = document.getElementById('fullscreen-image');
+      img.src = currentModalImages[currentModalIndex];
+      img.alt = document.getElementById('modal-title').textContent;
+
+      const hasMultipleImages = currentModalImages.length > 1;
+      document.querySelectorAll('.fullscreen-nav-btn').forEach(btn => {
+        btn.style.display = hasMultipleImages ? 'flex' : 'none';
+      });
+
+      lastFocusedBeforeFullscreen = document.activeElement;
+      overlay.classList.add('active');
+      document.getElementById('fullscreen-close-btn').focus();
+    }
+
+    function closeFullscreen() {
+      document.getElementById('fullscreen-image-overlay').classList.remove('active');
+      if (lastFocusedBeforeFullscreen) {
+        lastFocusedBeforeFullscreen.focus();
+        lastFocusedBeforeFullscreen = null;
+      }
     }
 
     function closeProjectModal() {
@@ -2098,14 +2281,22 @@
     });
 
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeProjectModal();
+      if (e.key !== 'Escape') return;
+      const fsOverlay = document.getElementById('fullscreen-image-overlay');
+      if (fsOverlay.classList.contains('active')) {
+        closeFullscreen();
+      } else {
+        closeProjectModal();
+      }
     });
 
     document.addEventListener('keydown', (e) => {
       const overlay = document.getElementById('project-modal-overlay');
       if (!overlay.classList.contains('active') || e.key !== 'Tab') return;
 
-      const focusable = overlay.querySelectorAll('button, a[href], [tabindex]:not([tabindex="-1"])');
+      const fsOverlay = document.getElementById('fullscreen-image-overlay');
+      const scope = fsOverlay.classList.contains('active') ? fsOverlay : overlay;
+      const focusable = scope.querySelectorAll('button, a[href], [tabindex]:not([tabindex="-1"])');
       const visibleFocusable = Array.from(focusable).filter(el => el.offsetParent !== null);
       if (!visibleFocusable.length) return;
 
