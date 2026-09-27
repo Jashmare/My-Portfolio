@@ -16,7 +16,7 @@ The personal portfolio of Prince Jashmar M. Mosqueda. It exists to get Prince sh
 
 ## Positioning
 
-Prince is both the instructional designer and the visual designer. He builds the learning experience (objectives, interactions, course flow in Storyline/Rise) and draws the screens, characters and UI kits himself. Most ID portfolios show one or the other.
+Prince presents first as a graphic and multimedia designer (adverts, characters, interfaces, brand visuals) who also brings instructional design: when the goal is learning, he builds the whole course in Storyline/Rise and draws its screens, characters and UI kits himself. The owner asked that the site not read as limited to instructional design. Hero tagline: "Ideas, Drawn to Be Understood." (title case, with "Understood" highlighted in the lime accent at 60%); the hero description stays in the owner's instructional-design-first wording.
 
 ## Operating Context
 

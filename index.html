@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prince Mosqueda — Instructional & Multimedia Designer</title>
-  <meta name="description" content="Portfolio of Prince Jashmar M. Mosqueda, instructional designer and multimedia designer. E-learning modules, course UI kits, static adverts and character illustration.">
-  <meta property="og:title" content="Prince Mosqueda — Instructional & Multimedia Designer">
-  <meta property="og:description" content="I design the learning, then I draw it. E-learning modules, course UI, adverts and illustration.">
+  <title>Prince Mosqueda — Graphic, Multimedia & Instructional Designer</title>
+  <meta name="description" content="Portfolio of Prince Jashmar M. Mosqueda, graphic, multimedia and instructional designer. Adverts, characters, interface design and e-learning courses.">
+  <meta property="og:title" content="Prince Mosqueda — Graphic, Multimedia & Instructional Designer">
+  <meta property="og:description" content="Ideas, drawn to be understood. Adverts, characters, interfaces and e-learning by Prince Mosqueda.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://raw.githubusercontent.com/Jashmare/Portfolio-Storage/main/BlueDesign_00a.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Prince Mosqueda — Instructional & Multimedia Designer">
-  <meta name="twitter:description" content="I design the learning, then I draw it. E-learning modules, course UI, adverts and illustration.">
+  <meta name="twitter:title" content="Prince Mosqueda — Graphic, Multimedia & Instructional Designer">
+  <meta name="twitter:description" content="Ideas, drawn to be understood. Adverts, characters, interfaces and e-learning by Prince Mosqueda.">
   <meta name="theme-color" content="#F7F7F5">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><rect width=%2264%22 height=%2264%22 rx=%2214%22 fill=%22%23111111%22/><circle cx=%2248%22 cy=%2216%22 r=%225%22 fill=%22%23B5D334%22/><text x=%2230%22 y=%2245%22 font-size=%2234%22 font-family=%22Arial,sans-serif%22 font-weight=%22700%22 fill=%22white%22 text-anchor=%22middle%22>P</text></svg>">
   <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
@@ -262,6 +262,15 @@
     }
 
     .hero h1 { margin-bottom: 1.5rem; max-width: 11ch; }
+    /* Marker highlight in the lime accent at 60% */
+    .mark {
+      background: linear-gradient(transparent 14%, color-mix(in srgb, var(--accent) 60%, transparent) 14%, color-mix(in srgb, var(--accent) 60%, transparent) 94%, transparent 94%);
+      padding: 0 0.08em;
+      margin: 0 -0.04em;
+      border-radius: 0.12em;
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+    }
     .hero .lede { margin-bottom: 2.25rem; }
 
     .hero-ctas { display: flex; flex-wrap: wrap; gap: 0.75rem; }
@@ -344,8 +353,6 @@
       display: block; width: 100%;
       aspect-ratio: 16 / 11;
       border-radius: calc(var(--radius) + 6px);
-      background: var(--ground);
-      border: 1px solid var(--s2);
       cursor: zoom-in;
       isolation: isolate;
       text-align: left;
@@ -354,8 +361,8 @@
 
     .proof .sheet {
       position: absolute;
-      left: 9%; top: 13%;
-      width: 82%;
+      left: 3%; top: 14%;
+      width: 88%;
       aspect-ratio: 1920 / 1120;
       border-radius: var(--radius-sm);
       overflow: hidden;
@@ -630,6 +637,24 @@
     .viewer-next { right: 1rem; top: 50%; margin-top: -24px; }
     .viewer-counter { position: fixed; bottom: 1.25rem; left: 50%; transform: translateX(-50%); color: #BDBDB6; font-size: 0.9375rem; font-variant-numeric: tabular-nums; }
 
+    /* ===== BACK TO TOP ===== */
+    .to-top {
+      position: fixed; right: clamp(1rem, 3vw, 2rem); bottom: clamp(1rem, 3vw, 2rem); z-index: 900;
+      width: 48px; height: 48px; border-radius: 14px;
+      display: grid; place-items: center;
+      background: var(--ink); color: var(--on-ink);
+      box-shadow: var(--shadow);
+      opacity: 0; visibility: hidden; transform: translateY(16px) scale(0.9);
+      transition: opacity 0.35s ease, transform 0.5s var(--ease-out), visibility 0s linear 0.35s;
+    }
+    .to-top.is-visible { opacity: 1; visibility: visible; transform: none; transition: opacity 0.35s ease, transform 0.5s var(--ease-out), visibility 0s; }
+    .to-top:hover { transform: translateY(-3px); box-shadow: var(--shadow-lift); }
+    .to-top:hover .icon { transform: translateY(-2px); }
+    .to-top:active { transform: scale(0.94); }
+    .to-top .icon { transition: transform 0.4s var(--ease-out); }
+    /* On the dark contact block, flip so the button stays visible */
+    .to-top.on-dark { background: #F2F2EE; color: #111111; }
+
     /* ===== TOAST ===== */
     .toast {
       position: fixed; left: 50%; bottom: 1.5rem; z-index: 4000;
@@ -733,6 +758,7 @@
   <!-- Icon sprite: one stroke weight, one library -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
     <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
     <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></symbol>
     <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></symbol>
     <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
@@ -751,8 +777,9 @@
 
   <header class="site-header" id="top">
     <nav class="wrap nav" aria-label="Main">
-      <a href="#home" class="wordmark">Prince Mosqueda</a>
+      <a href="#home" class="wordmark" data-home>Prince Mosqueda</a>
       <ul class="nav-links" id="nav-links">
+        <li><a href="#home" data-home>Home</a></li>
         <li><a href="#work">Work</a></li>
         <li><a href="#toolkit">Toolkit</a></li>
         <li><a href="#about">About</a></li>
@@ -785,7 +812,7 @@
               <img class="hero-avatar" data-asset="Profile Cropped PNG.png" alt="" width="40" height="40">
               Prince Jashmar M. Mosqueda
             </p>
-            <h1 id="hero-title">I design the learning, then I draw it.</h1>
+            <h1 id="hero-title">Ideas, Drawn to Be <span class="mark">Understood</span>.</h1>
             <p class="lede">Instructional and multimedia designer. I plan e-learning courses, build them in Articulate Storyline and Rise, and design the screens, characters and interfaces myself.</p>
             <div class="hero-ctas">
               <a class="btn btn-primary" href="#work">
@@ -808,11 +835,11 @@
         </div>
 
         <ul class="disciplines" aria-label="Disciplines">
-          <li>Instructional design<span>Objectives and course flow</span></li>
-          <li>E-learning development<span>Storyline and Rise</span></li>
-          <li>Course UI<span>Players, templates, kits</span></li>
-          <li>Static adverts<span>Concept to final comp</span></li>
+          <li>Graphic design<span>Adverts and brand visuals</span></li>
           <li>Illustration<span>Characters and mascots</span></li>
+          <li>UI design<span>Interfaces, templates, kits</span></li>
+          <li>E-learning development<span>Storyline and Rise</span></li>
+          <li>Instructional design<span>Objectives and course flow</span></li>
         </ul>
       </div>
     </section>
@@ -900,7 +927,7 @@
       </div>
       <div class="site-footer">
         <p>&copy; <span id="year">2026</span> Prince Jashmar M. Mosqueda</p>
-        <a href="#home">Back to top</a>
+        <a href="#home" data-home>Back to top</a>
       </div>
     </div>
   </footer>
@@ -941,6 +968,10 @@
     <button class="viewer-btn viewer-next" type="button" data-step="1" aria-label="Next screen"><svg class="icon" aria-hidden="true"><use href="#i-right"/></svg></button>
     <span class="viewer-counter" id="viewer-counter"></span>
   </dialog>
+
+  <a class="to-top" href="#home" data-home aria-label="Back to the top of the page">
+    <svg class="icon" aria-hidden="true"><use href="#i-arrow-up"/></svg>
+  </a>
 
   <div class="toast" id="toast" role="status" aria-live="polite"><span class="dot" aria-hidden="true"></span><span id="toast-text"></span></div>
 
@@ -1171,7 +1202,23 @@
 
     // ===== HEADER + ACTIVE NAV =====
     const header = $('.site-header');
-    window.addEventListener('scroll', () => header.classList.toggle('is-scrolled', window.scrollY > 8), { passive: true });
+    const toTop = $('.to-top');
+    const contactEl = $('#contact');
+    function onScroll() {
+      header.classList.toggle('is-scrolled', window.scrollY > 8);
+      toTop.classList.toggle('is-visible', window.scrollY > window.innerHeight * 0.8);
+      toTop.classList.toggle('on-dark', contactEl.getBoundingClientRect().top < window.innerHeight - 60);
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // Home links go to the very top and clear any #hash from the address bar
+    $$('[data-home]').forEach((a) => a.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: reducedMotion.matches ? 'auto' : 'smooth' });
+      history.replaceState(null, '', location.pathname + location.search);
+      setMenu(false);
+    }));
 
     function initActiveNav() {
       if (!('IntersectionObserver' in window)) return;

@@ -150,7 +150,7 @@ components:
 
 A monochrome product-marketing world in which every statement is followed by the screen that proves it. The chrome is quiet: one warm-neutral scale from near-white to near-black, set in Satoshi, sentence case, tightly tracked. The work itself (real e-learning screens, adverts, illustration) carries all the colour on the page; the site contributes only ink, paper, hairlines and a single lime signal.
 
-Density is calm and generous. A 5/7 column split (claim left, proof right) repeats from the hero down through the work pairs, section heads, About and Contact, so the page reads as one steady argument. Proof sits on soft radial neutral grounds inside rounded frames with one soft shadow, and it moves: frames rise into place as they enter, and hovering a proof fans its next two screens out from behind the first.
+Density is calm and generous. A 5/7 column split (claim left, proof right) repeats from the hero down through the work pairs, section heads, About and Contact, so the page reads as one steady argument. Proof sits directly on the page, unframed, as screens with one soft shadow, and it moves: frames rise into place as they enter, and hovering a proof fans its next two screens out from behind the first.
 
 Grouped information is tabular, never card-tiled: disciplines, spec lists, toolkit groups, values and contact channels are all hairline rows. The page closes on an inverse ink panel that holds the contact details.
 
@@ -159,7 +159,7 @@ Grouped information is tabular, never card-tiled: disciplines, spec lists, toolk
 - Satoshi only, three weights with fixed jobs (700 display, 500 UI and labels, 400 running copy).
 - Recurring 5/7 claim/proof grid.
 - Hairline rows for any grouped list.
-- Screens in 14px frames on soft radial grounds with a single soft shadow; lift and fan on hover.
+- Screens with 14px corners and a single soft shadow, placed straight on the page ground (no containing box); lift and fan on hover.
 - Exponential ease-out on every movement; content visible without JS.
 
 ## Colors
@@ -177,7 +177,7 @@ A warm, slightly yellowed neutral ramp with one acid-lime signal that is ratione
 - **Secondary Text** (`text-secondary`): supporting copy, labels in spec lists, nav links at rest, captions (about 6:1 on the page).
 - **Ink** (`ink`): headings, body, primary buttons, toast.
 - **Paper** (`paper`): gallery dialog, count chips, gallery arrow buttons; the white inside of a frame.
-- **Ground** (`paper` to `ground-light`): the radial gradient `radial-gradient(120% 90% at 30% 20%, paper 0%, ground-light 70%)` behind every proof.
+- **Ground** (`paper` to `ground-light`): the radial gradient `radial-gradient(120% 90% at 30% 20%, paper 0%, ground-light 70%)`, kept as a token; work proofs no longer sit on it (the owner asked for the boxes around projects to be removed).
 
 ### Dark theme
 Dark mode swaps the same roles in place: `dark-page`, `dark-surface-quiet`, `dark-hairline`, `dark-hairline-strong`, `dark-text-secondary`, `dark-ink` (text), `dark-paper` (frames and dialog), and `on-ink` becomes near-black. The lime signal is unchanged in both themes.
@@ -189,7 +189,7 @@ The closing Contact panel is ink in light mode and `dark-paper` in dark mode, wi
 - **Error Red** (`status-error`): only the toast dot when a copy fails.
 
 ### Named Rules
-**The One Signal Rule.** Lime marks state and liveliness: dots, active marks, focus, selection. If lime is covering an area or colouring words, it is wrong.
+**The One Signal Rule.** Lime marks state and liveliness: dots, active marks, focus, selection. If lime is covering an area or colouring words, it is wrong. One owner-approved exception: the hero headline's key word ("Understood") carries a lime marker highlight at 60% behind it, and the hero headline is set in title case.
 
 **The Work Owns Colour Rule.** Chrome is neutral so the course screens are the only saturated thing on the page. Tool marks in the toolkit keep their real brand colours at 22px for recognition; that is the one sanctioned exception.
 
@@ -239,7 +239,7 @@ Hybrid: surfaces are flat and separated by hairlines; only images of the work an
 
 ## Shapes
 
-Softly rounded, never pill-shaped except for small chips and dots. Screens use 14px corners inside a 20px frame (frame radius is the screen radius plus 6px); dialogs match at 20px. Controls step down: 12px buttons, 10px small buttons, icon buttons and copy buttons, 8px nav links and thumbnails. Count chips are full pills. Circles are reserved for dots, the avatar and gallery arrow buttons. The closing Contact panel rounds only its top corners (28px), reading as a sheet pulled up over the page.
+Softly rounded, never pill-shaped except for small chips and dots. Screens use 14px corners (10px inside work proofs); dialogs use 20px. Controls step down: 12px buttons, 10px small buttons, icon buttons and copy buttons, 8px nav links and thumbnails. Count chips are full pills. Circles are reserved for dots, the avatar and gallery arrow buttons. The closing Contact panel rounds only its top corners (28px), reading as a sheet pulled up over the page.
 
 Borders are 1px hairlines throughout. Icons are one custom stroke set: 24px grid, 1.75 stroke, round caps and joins, drawn at 18px.
 
@@ -255,11 +255,11 @@ Solid and quiet, with one lively detail.
 - **Text link:** medium weight with a 1px strong-hairline underline at 0.3em offset that darkens on hover while the trailing icon's gap opens.
 
 ### Chips
-- **Count chip:** paper pill with hairline border, caption size, an images icon plus the count, pinned bottom-right of each proof frame; rises 2px with the proof hover.
+- **Count chip:** paper pill with hairline border, caption size, an images icon plus the count, pinned bottom-right of each proof; rises 2px with the proof hover.
 
 ### Cards / Containers
 There are no content cards. Two containers exist:
-- **Proof frame:** 20px radius, hairline border, radial ground, holding up to three sheets (screens at 14px or 10px radius, soft shadow). Layout variants: screens (stacked back-right), posters (portrait adverts fanned side by side), art (illustration on a paper sheet).
+- **Proof:** an unframed, borderless button (no background) holding up to three sheets (screens at 14px or 10px radius, soft shadow). Layout variants: screens (stacked back-right), posters (portrait adverts fanned side by side), art (illustration on a paper sheet).
 - **Dialog:** paper, 20px radius, header bar with hairline bottom, 16:9 stage on quiet surface, thumbnail strip, description plus spec list.
 
 ### Navigation
@@ -279,7 +279,7 @@ Ink pill-rectangle (12px) sliding up from the bottom centre with a lime dot (red
 ### Do:
 - **Do** follow every claim with its proof in the 5/7 split, alternating sides down the page.
 - **Do** keep lime to dots, active marks, focus and selection.
-- **Do** put every screen in a rounded frame on the radial ground with the soft shadow, and give the frontmost one the lift.
+- **Do** place screens straight on the page with the soft shadow and give the frontmost one the lift; do not wrap work in a bordered box.
 - **Do** use hairline rows for any grouped list, including tools, specs and contact channels.
 - **Do** use the single exponential ease-out (`cubic-bezier(0.16, 1, 0.3, 1)`) for movement, and keep content visible when motion is reduced or JS is absent.
 - **Do** use weights 700, 500 and 400 only, for display, UI and reading respectively.

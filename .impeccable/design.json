@@ -131,17 +131,17 @@
   ],
   "narrative": {
     "northStar": "Claim and Proof",
-    "overview": "A monochrome product-marketing world in which every statement is followed by the screen that proves it. The chrome is quiet: one warm-neutral scale from near-white to near-black, set in Satoshi, sentence case, tightly tracked. The work itself (real e-learning screens, adverts, illustration) carries all the colour on the page; the site contributes only ink, paper, hairlines and a single lime signal.\n\nDensity is calm and generous. A 5/7 column split (claim left, proof right) repeats from the hero down through the work pairs, section heads, About and Contact, so the page reads as one steady argument. Proof sits on soft radial neutral grounds inside rounded frames with one soft shadow, and it moves: frames rise into place as they enter, and hovering a proof fans its next two screens out from behind the first.\n\nGrouped information is tabular, never card-tiled: disciplines, spec lists, toolkit groups, values and contact channels are all hairline rows. The page closes on an inverse ink panel that holds the contact details.",
+    "overview": "A monochrome product-marketing world in which every statement is followed by the screen that proves it. The chrome is quiet: one warm-neutral scale from near-white to near-black, set in Satoshi, sentence case, tightly tracked. The work itself (real e-learning screens, adverts, illustration) carries all the colour on the page; the site contributes only ink, paper, hairlines and a single lime signal.\n\nDensity is calm and generous. A 5/7 column split (claim left, proof right) repeats from the hero down through the work pairs, section heads, About and Contact, so the page reads as one steady argument. Proof sits directly on the page, unframed, as screens with one soft shadow, and it moves: frames rise into place as they enter, and hovering a proof fans its next two screens out from behind the first.\n\nGrouped information is tabular, never card-tiled: disciplines, spec lists, toolkit groups, values and contact channels are all hairline rows. The page closes on an inverse ink panel that holds the contact details.",
     "keyCharacteristics": [
       "One neutral scale plus one lime accent; the work supplies every other colour.",
       "Satoshi only, three weights with fixed jobs (700 display, 500 UI and labels, 400 running copy).",
       "Recurring 5/7 claim/proof grid.",
       "Hairline rows for any grouped list.",
-      "Screens in 14px frames on soft radial grounds with a single soft shadow; lift and fan on hover.",
+      "Screens with 14px corners and a single soft shadow, placed straight on the page ground (no containing box); lift and fan on hover.",
       "Exponential ease-out on every movement; content visible without JS."
     ],
     "rules": [
-      { "name": "The One Signal Rule", "body": "Lime marks state and liveliness: dots, active marks, focus, selection. If lime is covering an area or colouring words, it is wrong.", "section": "colors" },
+      { "name": "The One Signal Rule", "body": "Lime marks state and liveliness: dots, active marks, focus, selection. If lime is covering an area or colouring words, it is wrong. One owner-approved exception: the hero headline's key word (\"Understood\") carries a lime marker highlight at 60% behind it, and the hero headline is set in title case.", "section": "colors" },
       { "name": "The Work Owns Colour Rule", "body": "Chrome is neutral so the course screens are the only saturated thing on the page. Tool marks in the toolkit keep their real brand colours at 22px for recognition; that is the one sanctioned exception.", "section": "colors" },
       { "name": "The Weight Has A Job Rule", "body": "700 for headings, 500 for anything you click or scan, 400 for anything you read. No other weights.", "section": "typography" },
       { "name": "The Sentence Case Rule", "body": "Everything is sentence case with negative tracking on headings. No uppercase labels, no letterspaced small caps.", "section": "typography" },
@@ -150,7 +150,7 @@
     "dos": [
       "Do follow every claim with its proof in the 5/7 split, alternating sides down the page.",
       "Do keep lime to dots, active marks, focus and selection.",
-      "Do put every screen in a rounded frame on the radial ground with the soft shadow, and give the frontmost one the lift.",
+      "Do place screens straight on the page with the soft shadow and give the frontmost one the lift; do not wrap work in a bordered box.",
       "Do use hairline rows for any grouped list, including tools, specs and contact channels.",
       "Do use the single exponential ease-out (`cubic-bezier(0.16, 1, 0.3, 1)`) for movement, and keep content visible when motion is reduced or JS is absent.",
       "Do use weights 700, 500 and 400 only, for display, UI and reading respectively."
