@@ -1,0 +1,167 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-28T00:00:00Z",
+  "title": "Design System: Prince Mosqueda Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "lime-signal": { "role": "primary", "displayName": "Lime Signal", "canonical": "#B5D334", "tonalRamp": ["#2A3208", "#3F4B0C", "#5A6B12", "#7A9118", "#9BB825", "#B5D334", "#D2E77F", "#EEF6C9"] },
+      "page": { "role": "neutral", "displayName": "Warm Page", "canonical": "#F7F7F5", "tonalRamp": ["#111111", "#5E5E59", "#8C8C86", "#CFCFCA", "#E4E4E0", "#EFEFEC", "#F7F7F5", "#FFFFFF"] },
+      "surface-quiet": { "role": "neutral", "displayName": "Quiet Surface", "canonical": "#EFEFEC", "tonalRamp": ["#111111", "#5E5E59", "#8C8C86", "#CFCFCA", "#E4E4E0", "#EFEFEC", "#F7F7F5", "#FFFFFF"] },
+      "hairline": { "role": "neutral", "displayName": "Hairline", "canonical": "#E4E4E0", "tonalRamp": ["#111111", "#5E5E59", "#8C8C86", "#CFCFCA", "#E4E4E0", "#EFEFEC", "#F7F7F5", "#FFFFFF"] },
+      "hairline-strong": { "role": "neutral", "displayName": "Strong Hairline", "canonical": "#CFCFCA", "tonalRamp": ["#111111", "#5E5E59", "#8C8C86", "#CFCFCA", "#E4E4E0", "#EFEFEC", "#F7F7F5", "#FFFFFF"] },
+      "text-secondary": { "role": "neutral", "displayName": "Secondary Text", "canonical": "#5E5E59", "tonalRamp": ["#111111", "#5E5E59", "#8C8C86", "#CFCFCA", "#E4E4E0", "#EFEFEC", "#F7F7F5", "#FFFFFF"] },
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#111111", "tonalRamp": ["#111111", "#5E5E59", "#8C8C86", "#CFCFCA", "#E4E4E0", "#EFEFEC", "#F7F7F5", "#FFFFFF"] },
+      "paper": { "role": "neutral", "displayName": "Paper", "canonical": "#FFFFFF" },
+      "on-ink": { "role": "neutral", "displayName": "On Ink", "canonical": "#F7F7F5" },
+      "ground-light": { "role": "neutral", "displayName": "Ground Edge", "canonical": "#EDEDEA" },
+      "dark-page": { "role": "neutral", "displayName": "Dark Page", "canonical": "#0F0F0E", "tonalRamp": ["#0F0F0E", "#171716", "#1B1B19", "#262624", "#3A3A36", "#6E6E68", "#A8A8A1", "#F2F2EE"] },
+      "dark-surface-quiet": { "role": "neutral", "displayName": "Dark Quiet Surface", "canonical": "#171716" },
+      "dark-hairline": { "role": "neutral", "displayName": "Dark Hairline", "canonical": "#262624" },
+      "dark-hairline-strong": { "role": "neutral", "displayName": "Dark Strong Hairline", "canonical": "#3A3A36" },
+      "dark-text-secondary": { "role": "neutral", "displayName": "Dark Secondary Text", "canonical": "#A8A8A1" },
+      "dark-ink": { "role": "neutral", "displayName": "Dark Ink", "canonical": "#F2F2EE" },
+      "dark-paper": { "role": "neutral", "displayName": "Dark Paper", "canonical": "#1B1B19" },
+      "inverse-hairline": { "role": "neutral", "displayName": "Inverse Hairline", "canonical": "#2E2E2B" },
+      "inverse-text-secondary": { "role": "neutral", "displayName": "Inverse Secondary Text", "canonical": "#9E9E97" },
+      "inverse-lede": { "role": "neutral", "displayName": "Inverse Lede", "canonical": "#B4B4AD" },
+      "status-error": { "role": "tertiary", "displayName": "Error Red", "canonical": "#E5484D" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "The hero statement only." },
+      "headline": { "displayName": "Headline", "purpose": "Section titles." },
+      "title": { "displayName": "Title", "purpose": "Project titles; group and value titles step down to 1.25rem and 1.125rem." },
+      "lede": { "displayName": "Lede", "purpose": "One supporting sentence under a headline, secondary text, 34 to 40ch." },
+      "body": { "displayName": "Body", "purpose": "Running copy, 44 to 60ch." },
+      "label": { "displayName": "Label", "purpose": "Buttons, nav, spec values, tool names, disciplines." },
+      "caption": { "displayName": "Caption", "purpose": "Proof captions, table headers, count chips; tabular numerals in counters." }
+    },
+    "shadows": [
+      { "name": "soft", "value": "0 18px 40px -18px rgba(17, 17, 17, 0.28), 0 2px 6px rgba(17, 17, 17, 0.06)", "purpose": "Every screen at rest, primary button hover, gallery arrow buttons." },
+      { "name": "lift", "value": "0 30px 60px -22px rgba(17, 17, 17, 0.34), 0 4px 10px rgba(17, 17, 17, 0.08)", "purpose": "Front screen of a stack, hovered proof sheet, toast." },
+      { "name": "soft-dark", "value": "0 18px 40px -18px rgba(0, 0, 0, 0.7), 0 2px 6px rgba(0, 0, 0, 0.4)", "purpose": "Soft shadow in dark theme." },
+      { "name": "lift-dark", "value": "0 30px 60px -22px rgba(0, 0, 0, 0.8), 0 4px 10px rgba(0, 0, 0, 0.5)", "purpose": "Lift shadow in dark theme." }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Every movement: button lift, dot fill, proof fan, reveals, nav sheet, toast." },
+      { "name": "state-color", "value": "0.25s ease", "purpose": "Colour, border and background state changes." },
+      { "name": "button-lift", "value": "transform 0.35s ease-out; translateY(-2px) hover, scale(0.97) press", "purpose": "Buttons." },
+      { "name": "proof-fan", "value": "transform 0.8s ease-out", "purpose": "Proof sheets fanning on hover and focus." },
+      { "name": "reveal", "value": "translateY(48px) scale(0.97) to none over 1.2s ease-out", "purpose": "Proof frames rising into place; visible by default, disabled under reduced motion." },
+      { "name": "dialog-in", "value": "translateY(18px) scale(0.98), opacity 0 to 1 over 0.45s ease-out", "purpose": "Gallery opening." }
+    ],
+    "breakpoints": [
+      { "name": "stack", "value": "980px" },
+      { "name": "mobile", "value": "760px" },
+      { "name": "narrow", "value": "480px" }
+    ],
+    "ground": {
+      "light": "radial-gradient(120% 90% at 30% 20%, #FFFFFF 0%, #EDEDEA 70%)",
+      "dark": "radial-gradient(120% 90% at 30% 20%, #242422 0%, #151514 70%)"
+    },
+    "focus": {
+      "value": "outline: 2px solid var(--ink); outline-offset: 3px; box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 55%, transparent); border-radius: 6px",
+      "note": "Ink ring carries the 3:1 contrast in both themes (#F2F2EE ring on the contact panel and fullscreen viewer); the lime halo is the signal. Replaces the earlier lime-only outline, which measured about 1.6:1 on light grounds."
+    }
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Ink button with the lime live dot; the one primary action per view.",
+      "html": "<a class=\"ds-btn ds-btn-primary\" href=\"#\"><span class=\"ds-btn-dot\" aria-hidden=\"true\"></span>See the work<svg class=\"ds-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 5v14M6 13l6 6 6-6\"/></svg></a>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; gap: 0.7rem; height: 52px; padding: 0 1.4rem; border-radius: 12px; font-family: 'Satoshi', ui-sans-serif, system-ui, sans-serif; font-weight: 500; font-size: 1rem; letter-spacing: -0.005em; text-decoration: none; white-space: nowrap; transition: transform 0.35s cubic-bezier(0.16,1,0.3,1), box-shadow 0.35s cubic-bezier(0.16,1,0.3,1), border-color 0.25s ease; } .ds-btn:active { transform: scale(0.97); } .ds-btn:focus-visible { outline: 2px solid var(--accent, #B5D334); outline-offset: 3px; } .ds-btn-primary { background: var(--ink, #111111); color: var(--on-ink, #F7F7F5); } .ds-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 18px 40px -18px rgba(17,17,17,0.28), 0 2px 6px rgba(17,17,17,0.06); } .ds-btn-dot { width: 16px; height: 16px; border-radius: 50%; border: 2px solid var(--accent, #B5D334); position: relative; } .ds-btn-dot::after { content: ''; position: absolute; inset: 2px; border-radius: 50%; background: var(--accent, #B5D334); transform: scale(0); transition: transform 0.4s cubic-bezier(0.16,1,0.3,1); } .ds-btn:hover .ds-btn-dot::after, .ds-btn:focus-visible .ds-btn-dot::after { transform: scale(1); } .ds-icon { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; transition: transform 0.4s cubic-bezier(0.16,1,0.3,1); } .ds-btn:hover .ds-icon { transform: translateY(3px); }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Hairline secondary action; no dot.",
+      "html": "<a class=\"ds-btn-ghost\" href=\"#\">Download CV<svg class=\"ds-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 4v11M7 10l5 5 5-5M5 20h14\"/></svg></a>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; gap: 0.7rem; height: 52px; padding: 0 1.4rem; border-radius: 12px; border: 1px solid var(--s3, #CFCFCA); background: transparent; color: var(--ink, #111111); font-family: 'Satoshi', ui-sans-serif, system-ui, sans-serif; font-weight: 500; font-size: 1rem; text-decoration: none; transition: transform 0.35s cubic-bezier(0.16,1,0.3,1), border-color 0.25s ease; } .ds-btn-ghost:hover { border-color: var(--ink, #111111); transform: translateY(-2px); } .ds-btn-ghost:active { transform: scale(0.97); } .ds-btn-ghost:focus-visible { outline: 2px solid var(--accent, #B5D334); outline-offset: 3px; } .ds-icon { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; transition: transform 0.4s cubic-bezier(0.16,1,0.3,1); } .ds-btn-ghost:hover .ds-icon { transform: translateY(3px); }"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Wordmark, medium-weight links, lime dot under the current section.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-wordmark\" href=\"#\">Prince Mosqueda</a><ul class=\"ds-nav-links\"><li><a href=\"#\" aria-current=\"true\">Work</a></li><li><a href=\"#\">Toolkit</a></li><li><a href=\"#\">About</a></li><li><a href=\"#\">Contact</a></li></ul></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; gap: 2rem; height: 68px; padding: 0 1.5rem; background: var(--s0, #F7F7F5); font-family: 'Satoshi', ui-sans-serif, system-ui, sans-serif; } .ds-wordmark { font-weight: 700; font-size: 1.125rem; letter-spacing: -0.02em; margin-right: auto; color: var(--ink, #111111); text-decoration: none; } .ds-nav-links { display: flex; gap: 0.25rem; list-style: none; margin: 0; padding: 0; } .ds-nav-links a { position: relative; display: block; padding: 0.5rem 0.8rem; font-weight: 500; font-size: 0.9688rem; color: var(--s5, #5E5E59); border-radius: 8px; text-decoration: none; transition: color 0.2s ease, background-color 0.2s ease; } .ds-nav-links a:hover { color: var(--ink, #111111); background: var(--s1, #EFEFEC); } .ds-nav-links a:focus-visible { outline: 2px solid var(--accent, #B5D334); outline-offset: 3px; } .ds-nav-links a[aria-current='true'] { color: var(--ink, #111111); } .ds-nav-links a[aria-current='true']::after { content: ''; position: absolute; left: 50%; bottom: 0; width: 5px; height: 5px; margin-left: -2.5px; border-radius: 50%; background: var(--accent, #B5D334); }"
+    },
+    {
+      "name": "Count Chip",
+      "kind": "chip",
+      "refersTo": "count-chip",
+      "description": "Paper pill pinned to a proof frame showing the image count.",
+      "html": "<span class=\"ds-chip\"><svg class=\"ds-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"3\" y=\"5\" width=\"14\" height=\"12\" rx=\"2\"/><path d=\"M7 20h12a2 2 0 0 0 2-2V9\"/></svg>4 images</span>",
+      "css": ".ds-chip { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.45rem 0.75rem; border-radius: 999px; background: var(--paper, #FFFFFF); border: 1px solid var(--s2, #E4E4E0); color: var(--ink, #111111); font-family: 'Satoshi', ui-sans-serif, system-ui, sans-serif; font-size: 0.875rem; font-weight: 500; font-variant-numeric: tabular-nums; transition: transform 0.4s cubic-bezier(0.16,1,0.3,1); } .ds-chip:hover { transform: translateY(-2px); } .ds-icon { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }"
+    },
+    {
+      "name": "Proof Frame",
+      "kind": "custom",
+      "refersTo": "proof-frame",
+      "description": "Signature: screens stacked on a radial ground; hover lifts the front sheet and fans the two behind it.",
+      "html": "<button class=\"ds-proof\" type=\"button\" aria-label=\"Open gallery\"><span class=\"ds-sheet ds-s3\"></span><span class=\"ds-sheet ds-s2\"></span><span class=\"ds-sheet ds-s1\"></span></button>",
+      "css": ".ds-proof { position: relative; display: block; width: 420px; max-width: 100%; aspect-ratio: 16 / 11; border-radius: 20px; background: var(--ground, radial-gradient(120% 90% at 30% 20%, #FFFFFF 0%, #EDEDEA 70%)); border: 1px solid var(--s2, #E4E4E0); cursor: zoom-in; isolation: isolate; padding: 0; } .ds-proof:focus-visible { outline: 2px solid var(--accent, #B5D334); outline-offset: 5px; } .ds-sheet { position: absolute; left: 9%; top: 13%; width: 82%; aspect-ratio: 1920 / 1120; border-radius: 10px; background: linear-gradient(135deg, #CFE3EA, #8FB6C6); box-shadow: 0 18px 40px -18px rgba(17,17,17,0.28), 0 2px 6px rgba(17,17,17,0.06); transition: transform 0.8s cubic-bezier(0.16,1,0.3,1), box-shadow 0.8s cubic-bezier(0.16,1,0.3,1), opacity 0.6s ease; } .ds-s1 { z-index: 3; } .ds-s2 { z-index: 2; transform: translate(3%, -5%) scale(0.94); opacity: 0.85; } .ds-s3 { z-index: 1; transform: translate(6%, -10%) scale(0.88); opacity: 0.6; } .ds-proof:hover .ds-s1, .ds-proof:focus-visible .ds-s1 { transform: translate(-3%, 4%) rotate(-1.2deg); box-shadow: 0 30px 60px -22px rgba(17,17,17,0.34), 0 4px 10px rgba(17,17,17,0.08); } .ds-proof:hover .ds-s2, .ds-proof:focus-visible .ds-s2 { transform: translate(6%, -9%) rotate(1.5deg) scale(0.95); opacity: 1; } .ds-proof:hover .ds-s3, .ds-proof:focus-visible .ds-s3 { transform: translate(14%, -17%) rotate(3.5deg) scale(0.9); opacity: 1; }"
+    },
+    {
+      "name": "Hairline Table",
+      "kind": "custom",
+      "refersTo": "hairline-rows",
+      "description": "The world's idiom for grouped information (toolkit, specs, channels).",
+      "html": "<table class=\"ds-table\"><thead><tr><th>Tool</th><th>Used for</th></tr></thead><tbody><tr><td>Photoshop</td><td>Image editing and compositing</td></tr><tr><td>Illustrator</td><td>Vector art and characters</td></tr></tbody></table>",
+      "css": ".ds-table { width: 100%; max-width: 560px; border-collapse: collapse; font-family: 'Satoshi', ui-sans-serif, system-ui, sans-serif; font-size: 0.9688rem; color: var(--ink, #111111); } .ds-table th { text-align: left; font-weight: 500; font-size: 0.875rem; color: var(--s5, #5E5E59); padding: 0 0 0.6rem; border-bottom: 1px solid var(--s3, #CFCFCA); } .ds-table td { padding: 0.8rem 0; border-bottom: 1px solid var(--s2, #E4E4E0); } .ds-table td:first-child { width: 48%; padding-right: 1.5rem; font-weight: 500; } .ds-table td:last-child { color: var(--s5, #5E5E59); } .ds-table tr:last-child td { border-bottom: 0; } .ds-table tbody tr { transition: background-color 0.25s ease; } .ds-table tbody tr:hover { background: linear-gradient(90deg, transparent, var(--s1, #EFEFEC) 12%, var(--s1, #EFEFEC) 88%, transparent); }"
+    },
+    {
+      "name": "Copy Button",
+      "kind": "button",
+      "refersTo": "copy-button",
+      "description": "Hairline button on the inverse contact panel; the check turns lime on success.",
+      "html": "<div class=\"ds-inverse\"><button class=\"ds-copy\" type=\"button\"><svg class=\"ds-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"8\" y=\"8\" width=\"12\" height=\"12\" rx=\"2.5\"/><path d=\"M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8\"/></svg>Copy</button></div>",
+      "css": ".ds-inverse { background: #111111; padding: 1.5rem; border-radius: 28px 28px 0 0; } .ds-copy { display: inline-flex; align-items: center; gap: 0.45rem; height: 38px; padding: 0 0.85rem; border-radius: 10px; border: 1px solid #3A3A36; background: transparent; color: #F2F2EE; font-family: 'Satoshi', ui-sans-serif, system-ui, sans-serif; font-size: 0.9063rem; font-weight: 500; cursor: pointer; transition: border-color 0.25s ease, transform 0.35s cubic-bezier(0.16,1,0.3,1); } .ds-copy:hover { border-color: #F2F2EE; } .ds-copy:active { transform: scale(0.95); } .ds-copy:focus-visible { outline: 2px solid #B5D334; outline-offset: 3px; } .ds-icon { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }"
+    },
+    {
+      "name": "Toast",
+      "kind": "custom",
+      "refersTo": "toast",
+      "description": "Ink confirmation with a lime status dot.",
+      "html": "<div class=\"ds-toast\" role=\"status\"><span class=\"ds-dot\" aria-hidden=\"true\"></span>Email copied</div>",
+      "css": ".ds-toast { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.8rem 1.1rem; border-radius: 12px; background: var(--ink, #111111); color: var(--on-ink, #F7F7F5); font-family: 'Satoshi', ui-sans-serif, system-ui, sans-serif; font-weight: 500; font-size: 0.9688rem; box-shadow: 0 30px 60px -22px rgba(17,17,17,0.34), 0 4px 10px rgba(17,17,17,0.08); } .ds-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent, #B5D334); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Claim and Proof",
+    "overview": "A monochrome product-marketing world in which every statement is followed by the screen that proves it. The chrome is quiet: one warm-neutral scale from near-white to near-black, set in Satoshi, sentence case, tightly tracked. The work itself (real e-learning screens, adverts, illustration) carries all the colour on the page; the site contributes only ink, paper, hairlines and a single lime signal.\n\nDensity is calm and generous. A 5/7 column split (claim left, proof right) repeats from the hero down through the work pairs, section heads, About and Contact, so the page reads as one steady argument. Proof sits on soft radial neutral grounds inside rounded frames with one soft shadow, and it moves: frames rise into place as they enter, and hovering a proof fans its next two screens out from behind the first.\n\nGrouped information is tabular, never card-tiled: disciplines, spec lists, toolkit groups, values and contact channels are all hairline rows. The page closes on an inverse ink panel that holds the contact details.",
+    "keyCharacteristics": [
+      "One neutral scale plus one lime accent; the work supplies every other colour.",
+      "Satoshi only, three weights with fixed jobs (700 display, 500 UI and labels, 400 running copy).",
+      "Recurring 5/7 claim/proof grid.",
+      "Hairline rows for any grouped list.",
+      "Screens in 14px frames on soft radial grounds with a single soft shadow; lift and fan on hover.",
+      "Exponential ease-out on every movement; content visible without JS."
+    ],
+    "rules": [
+      { "name": "The One Signal Rule", "body": "Lime marks state and liveliness: dots, active marks, focus, selection. If lime is covering an area or colouring words, it is wrong.", "section": "colors" },
+      { "name": "The Work Owns Colour Rule", "body": "Chrome is neutral so the course screens are the only saturated thing on the page. Tool marks in the toolkit keep their real brand colours at 22px for recognition; that is the one sanctioned exception.", "section": "colors" },
+      { "name": "The Weight Has A Job Rule", "body": "700 for headings, 500 for anything you click or scan, 400 for anything you read. No other weights.", "section": "typography" },
+      { "name": "The Sentence Case Rule", "body": "Everything is sentence case with negative tracking on headings. No uppercase labels, no letterspaced small caps.", "section": "typography" },
+      { "name": "The One Soft Shadow Rule", "body": "A screen gets the soft shadow; the one in front gets the lift. Text blocks, rows and panels get none.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do follow every claim with its proof in the 5/7 split, alternating sides down the page.",
+      "Do keep lime to dots, active marks, focus and selection.",
+      "Do put every screen in a rounded frame on the radial ground with the soft shadow, and give the frontmost one the lift.",
+      "Do use hairline rows for any grouped list, including tools, specs and contact channels.",
+      "Do use the single exponential ease-out (`cubic-bezier(0.16, 1, 0.3, 1)`) for movement, and keep content visible when motion is reduced or JS is absent.",
+      "Do use weights 700, 500 and 400 only, for display, UI and reading respectively."
+    ],
+    "donts": [
+      "Don't use lime as a fill, a text colour or a background.",
+      "Don't tile content into identical icon cards; group it as a hairline table instead.",
+      "Don't introduce a second accent colour in the chrome; colour comes from the work.",
+      "Don't shadow text panels, rows or buttons at rest.",
+      "Don't set UI text in uppercase or add letterspaced labels above headings.",
+      "Don't use decorative blobs, arcs, tilted stat badges or marquees; the only overlap and rotation belong to stacked screens."
+    ]
+  }
+}

@@ -4,2515 +4,1399 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Prince Mosqueda — Instructional & Multimedia Designer</title>
-  <meta name="description" content="Portfolio of Prince Jashmar M. Mosqueda — Instructional Designer, Multimedia Designer, and E-Learning Developer creating engaging, interactive learning experiences.">
+  <meta name="description" content="Portfolio of Prince Jashmar M. Mosqueda, instructional designer and multimedia designer. E-learning modules, course UI kits, static adverts and character illustration.">
   <meta property="og:title" content="Prince Mosqueda — Instructional & Multimedia Designer">
-  <meta property="og:description" content="Instructional Designer, Multimedia Designer, and E-Learning Developer creating engaging, interactive learning experiences.">
+  <meta property="og:description" content="I design the learning, then I draw it. E-learning modules, course UI, adverts and illustration.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://raw.githubusercontent.com/Jashmare/Portfolio-Storage/refs/heads/main/Profile%20Cropped%20PNG.png">
+  <meta property="og:image" content="https://raw.githubusercontent.com/Jashmare/Portfolio-Storage/main/BlueDesign_00a.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Prince Mosqueda — Instructional & Multimedia Designer">
-  <meta name="twitter:description" content="Instructional Designer, Multimedia Designer, and E-Learning Developer creating engaging, interactive learning experiences.">
-  <meta name="theme-color" content="#FF8C42">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%23FF8C42%22/><text x=%2250%22 y=%2268%22 font-size=%2260%22 font-family=%22Georgia,serif%22 font-weight=%22bold%22 fill=%22white%22 text-anchor=%22middle%22>P</text></svg>">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <meta name="twitter:description" content="I design the learning, then I draw it. E-learning modules, course UI, adverts and illustration.">
+  <meta name="theme-color" content="#F7F7F5">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><rect width=%2264%22 height=%2264%22 rx=%2214%22 fill=%22%23111111%22/><circle cx=%2248%22 cy=%2216%22 r=%225%22 fill=%22%23B5D334%22/><text x=%2230%22 y=%2245%22 font-size=%2234%22 font-family=%22Arial,sans-serif%22 font-weight=%22700%22 fill=%22white%22 text-anchor=%22middle%22>P</text></svg>">
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+  <link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin>
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+  <script>
+    // Set theme before first paint so there is no light flash in dark mode.
+    (function () {
+      var root = document.documentElement;
+      root.classList.add('js');
+      var saved = null;
+      try { saved = localStorage.getItem('theme'); } catch (e) {}
+      var dark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (dark) root.setAttribute('data-theme', 'dark');
+    })();
+  </script>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    /* ===== TOKENS ===== */
     :root {
-      --bg: #fffcfa;
-      --bg-dark: #ffffff;
-      --text: #1a1a1a;
-      --text-light: #666666;
-      --text-lighter: #6b6b6b;
-      --border: #f0e8e3;
-      --accent: #FF8C42;
-      --accent-text: #A6511A;
-      --contact-bg: #1a1a1a;
-      --header-bg: rgba(250, 250, 250, 0.95);
+      --s0: #F7F7F5;      /* page */
+      --s1: #EFEFEC;      /* quiet surface */
+      --s2: #E4E4E0;      /* hairlines */
+      --s3: #CFCFCA;      /* strong hairline */
+      --s4: #8C8C86;      /* decorative only */
+      --s5: #5E5E59;      /* secondary text, 6:1 on --s0 */
+      --ink: #111111;
+      --paper: #FFFFFF;   /* frames and panels */
+      --ground: radial-gradient(120% 90% at 30% 20%, #FFFFFF 0%, #EDEDEA 70%);
+      --accent: #B5D334;  /* lime: dots, active marks, focus only */
+      --on-ink: #F7F7F5;
+      --shadow: 0 18px 40px -18px rgba(17, 17, 17, 0.28), 0 2px 6px rgba(17, 17, 17, 0.06);
+      --shadow-lift: 0 30px 60px -22px rgba(17, 17, 17, 0.34), 0 4px 10px rgba(17, 17, 17, 0.08);
+      --radius: 14px;
+      --radius-sm: 10px;
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+      --wrap: 1240px;
+      --gutter: clamp(1rem, 4vw, 2.5rem);
+      --header-h: 68px;
+      color-scheme: light;
     }
 
     [data-theme="dark"] {
-      --bg: #14110d;
-      --bg-dark: #1e1a15;
-      --text: #f5f0ea;
-      --text-light: #b8afa4;
-      --text-lighter: #8a8078;
-      --border: #33291f;
-      --accent: #FF8C42;
-      --accent-text: #ffb37a;
-      --contact-bg: #0d0b09;
-      --header-bg: rgba(38, 38, 38, 0.95);
+      --s0: #0F0F0E;
+      --s1: #171716;
+      --s2: #262624;
+      --s3: #3A3A36;
+      --s4: #6E6E68;
+      --s5: #A8A8A1;
+      --ink: #F2F2EE;
+      --paper: #1B1B19;
+      --ground: radial-gradient(120% 90% at 30% 20%, #242422 0%, #151514 70%);
+      --on-ink: #111111;
+      --shadow: 0 18px 40px -18px rgba(0, 0, 0, 0.7), 0 2px 6px rgba(0, 0, 0, 0.4);
+      --shadow-lift: 0 30px 60px -22px rgba(0, 0, 0, 0.8), 0 4px 10px rgba(0, 0, 0, 0.5);
+      color-scheme: dark;
     }
 
-    body {
-      transition: background 0.3s ease, color 0.3s ease;
-    }
+    /* ===== BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; }
+    * { margin: 0; padding: 0; }
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: calc(var(--header-h) + 1rem);
+      -webkit-text-size-adjust: 100%;
     }
 
     body {
-      font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      color: var(--text);
+      font-family: 'Satoshi', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+      font-weight: 400;
+      font-size: 1.0625rem;
       line-height: 1.6;
-      overflow-x: hidden;
+      color: var(--ink);
+      background: var(--s0);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      transition: background-color 0.35s ease, color 0.35s ease;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
+    body.is-locked { overflow: hidden; }
+
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+    ul, ol { list-style: none; }
+
+    ::selection { background: var(--accent); color: #111111; }
+    /* Ink ring for contrast (lime alone is ~1.6:1 on the light page), lime halo as the signal */
+    :focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 55%, transparent); border-radius: 6px; }
+    .contact :focus-visible, .viewer :focus-visible { outline-color: #F2F2EE; }
+    input, textarea { caret-color: var(--accent); }
+
+    html { scrollbar-color: var(--s3) var(--s0); }
+    ::-webkit-scrollbar { width: 12px; height: 12px; }
+    ::-webkit-scrollbar-track { background: var(--s0); }
+    ::-webkit-scrollbar-thumb { background: var(--s3); border-radius: 12px; border: 3px solid var(--s0); }
+
+    .icon { width: 18px; height: 18px; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
+
+    .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter); }
+
+    .skip-link {
+      position: absolute; left: 1rem; top: -4rem; z-index: 3000;
+      background: var(--ink); color: var(--on-ink);
+      padding: 0.6rem 1rem; border-radius: 8px; font-weight: 500;
+      transition: top 0.2s var(--ease-out);
+    }
+    .skip-link:focus { top: 1rem; }
+
+    .visually-hidden {
+      position: absolute !important; width: 1px; height: 1px; overflow: hidden;
+      clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap;
     }
 
-    button {
-      cursor: pointer;
-      border: none;
-      background: none;
-      font-family: inherit;
-      font-size: inherit;
-    }
+    /* ===== TYPE ===== */
+    h1, h2, h3 { font-weight: 700; letter-spacing: -0.028em; line-height: 1.05; text-wrap: balance; }
+    h1 { font-size: clamp(2.6rem, 5.6vw, 4.6rem); }
+    h2 { font-size: clamp(2rem, 4vw, 3.1rem); }
+    h3 { font-size: clamp(1.5rem, 2.4vw, 2rem); letter-spacing: -0.022em; line-height: 1.12; }
+    .lede { font-size: clamp(1.1rem, 1.5vw, 1.25rem); color: var(--s5); line-height: 1.55; max-width: 34ch; text-wrap: pretty; }
+    p { text-wrap: pretty; }
 
-    /* ===== HEADER / NAV ===== */
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      background: var(--header-bg);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border);
-      transition: background 0.3s ease;
+    /* ===== BUTTONS ===== */
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.7rem;
+      height: 52px; padding: 0 1.4rem;
+      border-radius: 12px;
+      font-weight: 500; font-size: 1rem; letter-spacing: -0.005em;
+      white-space: nowrap;
+      transition: transform 0.35s var(--ease-out), background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease, box-shadow 0.35s var(--ease-out);
     }
+    .btn:active { transform: scale(0.97); }
 
-    nav {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1.5rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1.5rem;
+    .btn-primary { background: var(--ink); color: var(--on-ink); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+
+    /* The live dot: a lime ring that fills on hover */
+    .btn-dot {
+      width: 16px; height: 16px; border-radius: 50%;
+      border: 2px solid var(--accent);
       position: relative;
+      transition: transform 0.4s var(--ease-out);
     }
-
-    .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
+    .btn-dot::after {
+      content: ''; position: absolute; inset: 2px; border-radius: 50%;
+      background: var(--accent);
+      transform: scale(0);
+      transition: transform 0.4s var(--ease-out);
     }
+    .btn:hover .btn-dot::after, .btn:focus-visible .btn-dot::after { transform: scale(1); }
 
-    .theme-toggle {
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      border: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text);
-      transition: all 0.3s ease;
-      flex-shrink: 0;
+    .btn-ghost { border: 1px solid var(--s3); color: var(--ink); background: transparent; }
+    .btn-ghost:hover { border-color: var(--ink); transform: translateY(-2px); }
+
+    .btn .icon { transition: transform 0.4s var(--ease-out); }
+    .btn:hover .icon-arrow-right { transform: translateX(4px); }
+    .btn:hover .icon-arrow-down, .btn:hover .icon-download { transform: translateY(3px); }
+
+    .btn-sm { height: 40px; padding: 0 0.95rem; font-size: 0.9375rem; border-radius: 10px; gap: 0.55rem; }
+    .btn-sm .btn-dot { width: 13px; height: 13px; }
+
+    .icon-btn {
+      width: 40px; height: 40px; border-radius: 10px;
+      display: inline-flex; align-items: center; justify-content: center;
+      border: 1px solid var(--s2); color: var(--ink);
+      transition: border-color 0.25s ease, background-color 0.25s ease, transform 0.35s var(--ease-out);
     }
+    .icon-btn:hover { border-color: var(--ink); }
+    .icon-btn:active { transform: scale(0.94); }
 
-    .theme-toggle:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-    }
-
-    .theme-toggle svg {
-      width: 18px;
-      height: 18px;
-    }
-
-    .theme-toggle .icon-moon {
-      display: none;
-    }
-
-    [data-theme="dark"] .theme-toggle .icon-sun {
-      display: none;
-    }
-
-    [data-theme="dark"] .theme-toggle .icon-moon {
-      display: block;
-    }
-
-    .logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2.5rem;
-      align-items: center;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    nav a {
-      font-size: 0.9rem;
+    .text-link {
+      display: inline-flex; align-items: center; gap: 0.45rem;
       font-weight: 500;
-      color: var(--text-light);
-      transition: color 0.3s ease;
+      text-decoration: underline; text-decoration-color: var(--s3);
+      text-underline-offset: 0.3em; text-decoration-thickness: 1px;
+      transition: text-decoration-color 0.25s ease, gap 0.35s var(--ease-out);
+    }
+    .text-link:hover { text-decoration-color: currentColor; gap: 0.7rem; }
+
+    /* ===== HEADER ===== */
+    .site-header {
+      position: sticky; top: 0; z-index: 1000;
+      background: color-mix(in srgb, var(--s0) 86%, transparent);
+      backdrop-filter: saturate(1.4) blur(14px);
+      -webkit-backdrop-filter: saturate(1.4) blur(14px);
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s ease, background-color 0.35s ease;
+    }
+    .site-header.is-scrolled { border-bottom-color: var(--s2); }
+
+    .nav {
+      height: var(--header-h);
+      display: flex; align-items: center; gap: 2rem;
+    }
+
+    .wordmark { font-weight: 700; font-size: 1.125rem; letter-spacing: -0.02em; margin-right: auto; }
+
+    .nav-links { display: flex; gap: 0.25rem; }
+    .nav-links a {
       position: relative;
+      display: block; padding: 0.5rem 0.8rem;
+      font-weight: 500; font-size: 0.9688rem; color: var(--s5);
+      border-radius: 8px;
+      transition: color 0.2s ease, background-color 0.2s ease;
     }
-
-    nav a:hover,
-    nav a.active {
-      color: var(--text);
-    }
-
-    nav a.active::after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      right: 0;
-      height: 2px;
+    .nav-links a:hover { color: var(--ink); background: var(--s1); }
+    .nav-links a[aria-current="true"] { color: var(--ink); }
+    .nav-links a[aria-current="true"]::after {
+      content: ''; position: absolute; left: 50%; bottom: 0;
+      width: 5px; height: 5px; margin-left: -2.5px; border-radius: 50%;
       background: var(--accent);
     }
 
-    .nav-download {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      color: var(--text-light);
-      border: 1px solid var(--border);
-      transition: all 0.3s ease;
-      flex-shrink: 0;
-    }
+    .nav-actions { display: flex; align-items: center; gap: 0.5rem; }
 
-    .nav-download:hover {
-      color: white;
-      background: var(--accent-text);
-      border-color: var(--accent-text);
-    }
+    .theme-toggle .icon-moon { display: none; }
+    [data-theme="dark"] .theme-toggle .icon-sun { display: none; }
+    [data-theme="dark"] .theme-toggle .icon-moon { display: block; }
+    .theme-toggle:hover .icon { transform: rotate(-20deg); }
+    .theme-toggle .icon { transition: transform 0.5s var(--ease-out); }
 
-    .nav-download svg {
-      width: 16px;
-      height: 16px;
-    }
-
-    .nav-download-label {
-      display: none;
-    }
-
-    .hamburger-btn {
-      display: none;
-      width: 40px;
-      height: 40px;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      background: var(--bg-dark);
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      flex-shrink: 0;
-    }
-
-    .hamburger-btn span {
-      display: block;
-      width: 18px;
-      height: 2px;
-      background: var(--text);
-      border-radius: 2px;
-      transition: transform 0.3s ease, opacity 0.3s ease;
-    }
-
-    .hamburger-btn.open span:nth-child(1) {
-      transform: translateY(7px) rotate(45deg);
-    }
-
-    .hamburger-btn.open span:nth-child(2) {
-      opacity: 0;
-    }
-
-    .hamburger-btn.open span:nth-child(3) {
-      transform: translateY(-7px) rotate(-45deg);
-    }
-
-
+    .menu-btn { display: none; }
+    .menu-btn .bar { display: block; width: 16px; height: 1.75px; background: currentColor; border-radius: 2px; transition: transform 0.35s var(--ease-out), opacity 0.2s ease; }
+    .menu-btn .bars { display: grid; gap: 4px; }
+    .menu-btn[aria-expanded="true"] .bar:nth-child(1) { transform: translateY(5.75px) rotate(45deg); }
+    .menu-btn[aria-expanded="true"] .bar:nth-child(2) { opacity: 0; }
+    .menu-btn[aria-expanded="true"] .bar:nth-child(3) { transform: translateY(-5.75px) rotate(-45deg); }
 
     /* ===== HERO ===== */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      position: relative;
-      overflow: hidden;
-      padding-top: 88px;
-    }
+    .hero { padding: clamp(2.5rem, 6vw, 5rem) 0 0; overflow: clip; }
 
-    .hero-inner {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      max-width: 1400px;
-      margin: 0 auto;
-      width: 100%;
-      padding: 2.5rem 2rem 4rem;
-      position: relative;
-      z-index: 2;
-    }
-
-    /* Decorative orange blob, top-right */
-    .hero-blob {
-      position: absolute;
-      top: -16%;
-      right: -8%;
-      width: 460px;
-      height: 460px;
-      background: var(--accent);
-      border-radius: 50%;
-      z-index: 1;
-      pointer-events: none;
-    }
-
-    /* Decorative concentric arcs, bottom-left */
-    .hero-arcs {
-      position: absolute;
-      left: -160px;
-      bottom: 40px;
-      z-index: 1;
-      pointer-events: none;
-    }
-
-    .hero-arc {
-      position: absolute;
-      bottom: 0;
-      border-radius: 50%;
-      border: 1px solid var(--border);
-    }
-
-    .hero-arc-1 { width: 420px; height: 420px; left: 0; }
-    .hero-arc-2 { width: 300px; height: 300px; left: 60px; }
-    .hero-arc-3 { width: 180px; height: 180px; left: 120px; }
-
-    .hero-content {
-      max-width: 600px;
-      position: relative;
-      z-index: 1;
-      flex: 1;
-    }
-
-    .hero-image-wrap {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: flex-end;
-      position: relative;
-      z-index: 1;
-      margin-left: 3rem;
-    }
-
-    .hero-image-backdrop {
-      position: absolute;
-      width: 420px;
-      height: 500px;
-      background: var(--border);
-      border-radius: 210px 210px 24px 24px;
-      bottom: 0;
-      z-index: 0;
-    }
-
-    .hero-photo {
-      position: relative;
-      width: 470px;
-      height: 470px;
-      object-fit: contain;
-      z-index: 1;
-      filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
-    }
-
-    .hero-stat-badge {
-      position: absolute;
-      bottom: 24px;
-      left: -16px;
-      background: #D4FF4F;
-      color: #14110d;
-      padding: 1rem 1.25rem;
-      border-radius: 16px;
-      transform: rotate(-4deg);
-      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.18);
-      z-index: 3;
-      max-width: 170px;
-    }
-
-    .hero-stat-number {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.7rem;
-      font-weight: 700;
-      line-height: 1;
-      margin-bottom: 0.35rem;
-    }
-
-    .hero-stat-label {
-      font-size: 0.78rem;
-      font-weight: 600;
-      line-height: 1.3;
-    }
-
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      padding: 0.55rem 1.1rem;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      background: var(--bg-dark);
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      color: var(--text);
-      margin-bottom: 1.5rem;
-    }
-
-    .hero-badge-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--accent);
-      flex-shrink: 0;
-    }
-
-    .hero-title {
-      font-family: 'Inter', sans-serif;
-      font-size: clamp(2.5rem, 6vw, 4.5rem);
-      font-weight: 600;
-      line-height: 1.1;
-      margin-bottom: 1.5rem;
-      letter-spacing: -0.02em;
-    }
-
-    .hero-desc {
-      font-size: 1.05rem;
-      color: var(--text-light);
-      line-height: 1.8;
-      margin-bottom: 2rem;
-      max-width: 550px;
-    }
-
-    .hero-ctas {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .hero-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      background: var(--text);
-      color: var(--bg);
-      padding: 0.9rem 1.75rem;
-      border-radius: 999px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      transition: all 0.3s ease;
-    }
-
-    .hero-cta:hover {
-      background: var(--accent-text);
-      color: white;
-      transform: translateY(-2px);
-    }
-
-    .hero-cta svg {
-      width: 16px;
-      height: 16px;
-    }
-
-    .hero-cta-secondary {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      background: transparent;
-      color: var(--text);
-      border: 2px solid var(--border);
-      padding: calc(0.9rem - 2px) calc(1.75rem - 2px);
-      border-radius: 999px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      transition: all 0.3s ease;
-    }
-
-    .hero-cta-secondary:hover {
-      border-color: var(--text);
-      background: var(--text);
-      color: var(--bg);
-      transform: translateY(-2px);
-    }
-
-    .hero-cta-secondary svg {
-      width: 16px;
-      height: 16px;
-    }
-
-    /* Scrolling skills ticker */
-    .hero-ticker {
-      width: 100%;
-      background: var(--text);
-      color: var(--bg);
-      overflow: hidden;
-      padding: 0.9rem 0;
-      position: relative;
-      z-index: 2;
-    }
-
-    .ticker-track {
-      display: flex;
-      width: max-content;
-      animation: tickerScroll 28s linear infinite;
-    }
-
-    .hero-ticker:hover .ticker-track {
-      animation-play-state: paused;
-    }
-
-    .ticker-set {
-      display: flex;
-      align-items: center;
-      gap: 2.5rem;
-      padding-right: 2.5rem;
-    }
-
-    .ticker-item {
-      font-size: 0.8rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      white-space: nowrap;
-    }
-
-    .ticker-star {
-      color: var(--accent);
-      font-size: 1rem;
-    }
-
-    @keyframes tickerScroll {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
-    }
-
-    .btn {
-      padding: 0.75rem 1.75rem;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      transition: all 0.3s ease;
-      letter-spacing: 0.5px;
-    }
-
-    .btn-primary {
-      background: transparent;
-      color: var(--accent-text);
-      border: 2px solid var(--accent);
-    }
-
-    .btn-primary:hover {
-      background: var(--text);
-      color: white;
-      border-color: var(--text);
-      transform: translateY(-2px);
-    }
-
-    .btn-secondary {
-      border: 2px solid var(--text);
-      color: var(--text);
-      background: transparent;
-    }
-
-    .btn-secondary:hover {
-      background: var(--text);
-      color: white;
-      border-color: var(--text);
-      transform: translateY(-2px);
-    }
-
-    /* ===== ANIMATIONS ===== */
-    /* Elements are invisible by default and only revealed once their
-       float-up animation actually plays - prevents the "already visible,
-       then animates" flash on load/scroll. */
-    .hero-content,
-    .hero-image-wrap,
-    .project-card,
-    .about-category-box,
-    .tool-card,
-    .contact {
-      opacity: 0;
-    }
-
-    @keyframes floatUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .float-up {
-      animation: floatUp 0.8s ease-out forwards;
-    }
-
-    .float-up:nth-child(1) { animation-delay: 0.1s; }
-    .float-up:nth-child(2) { animation-delay: 0.2s; }
-    .float-up:nth-child(3) { animation-delay: 0.3s; }
-    .float-up:nth-child(4) { animation-delay: 0.4s; }
-    .float-up:nth-child(5) { animation-delay: 0.5s; }
-    .float-up:nth-child(6) { animation-delay: 0.6s; }
-
-    /* ===== TOAST ANIMATIONS ===== */
-    @keyframes slideIn {
-      from {
-        transform: translateX(400px);
-        opacity: 0;
-      }
-      to {
-        transform: translateX(0);
-        opacity: 1;
-      }
-    }
-
-    @keyframes slideOut {
-      from {
-        transform: translateX(0);
-        opacity: 1;
-      }
-      to {
-        transform: translateX(400px);
-        opacity: 0;
-      }
-    }
-
-    /* ===== PROJECTS SECTION ===== */
-    .section {
-      padding: 5rem 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .section-header {
-      margin-bottom: 3.5rem;
-    }
-
-    .section-label {
-      font-size: 0.85rem;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: var(--text-lighter);
-      margin-bottom: 0.5rem;
-      font-weight: 600;
-    }
-
-    .section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.8rem, 4vw, 2.5rem);
-      font-weight: 700;
-      letter-spacing: -0.5px;
-    }
-
-    .projects-grid {
+    .hero-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 2rem;
-    }
-
-    .project-card {
-      background: var(--bg-dark);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      overflow: hidden;
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      cursor: pointer;
-    }
-
-    .project-card:focus-visible {
-      outline: 2px solid var(--accent);
-      outline-offset: 3px;
-    }
-
-    .project-card:hover {
-      transform: translateY(-6px) scale(1.02);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-    }
-
-    .project-thumb {
-      width: 100%;
-      height: 280px;
-      background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
-      display: flex;
+      grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+      gap: clamp(2rem, 4vw, 4rem);
       align-items: center;
-      justify-content: center;
-      font-size: 3rem;
-      overflow: hidden;
+    }
+
+    .hero-name {
+      display: flex; align-items: center; gap: 0.75rem;
+      margin-bottom: 1.75rem;
+      font-weight: 500; color: var(--s5); font-size: 1rem;
+    }
+    .hero-avatar {
+      width: 40px; height: 40px; border-radius: 50%;
+      object-fit: cover; object-position: 50% 12%;
+      background: var(--s2);
+    }
+
+    .hero h1 { margin-bottom: 1.5rem; max-width: 11ch; }
+    .hero .lede { margin-bottom: 2.25rem; }
+
+    .hero-ctas { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+
+    /* Proof stack: three real course screens, overlapping */
+    .proof-stack {
       position: relative;
+      aspect-ratio: 16 / 11.5;
+      margin-right: calc(var(--gutter) * -1 - max(0px, (100vw - var(--wrap)) / 2));
     }
-
-    .project-thumb img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.4s ease;
-    }
-
-    .project-card:hover .project-thumb img {
-      transform: scale(1.05);
-    }
-
-    .project-thumb--broken img {
-      display: none;
-    }
-
-    .project-thumb--broken::after {
-      content: 'Image unavailable';
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--text-lighter);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .project-card--placeholder {
-      opacity: 0.6;
-      filter: grayscale(0.5);
-    }
-
-    .project-card--placeholder:hover {
-      opacity: 0.85;
-    }
-
-    .project-placeholder-ribbon {
+    .proof-stack .frame {
       position: absolute;
-      top: 0.75rem;
-      left: 0.75rem;
-      background: var(--text);
-      color: var(--bg);
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      padding: 0.35rem 0.75rem;
-      border-radius: 6px;
-      z-index: 1;
+      width: 78%;
+      aspect-ratio: 1920 / 1120;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--s1);
+      box-shadow: var(--shadow);
+      transition: transform 0.9s var(--ease-out);
+    }
+    .proof-stack .frame img { width: 100%; height: 100%; object-fit: cover; }
+    /* Crop the template header bar (placeholder branding) off these two screens */
+    .proof-stack .frame.crop-top { aspect-ratio: 1920 / 980; }
+    .proof-stack .frame.crop-top img { object-position: 50% 100%; }
+    .proof-stack .f3 { top: 0; right: -6%; transform: rotate(0deg); opacity: 0.9; }
+    .proof-stack .f2 { top: 14%; right: 6%; }
+    .proof-stack .f1 { bottom: 0; left: 0; box-shadow: var(--shadow-lift); }
+    .proof-stack:hover .f1 { transform: translate(-1%, 2%); }
+    .proof-stack:hover .f2 { transform: translate(1%, -2%); }
+    .proof-stack:hover .f3 { transform: translate(2%, -3%); }
+
+    .proof-caption {
+      position: absolute; left: 0; bottom: -2.2rem;
+      font-size: 0.875rem; color: var(--s5);
     }
 
-    .project-body {
-      padding: 1.75rem;
-    }
-
-    .project-meta {
-      font-size: 0.8rem;
-      color: var(--text-lighter);
-      margin-bottom: 0.5rem;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .project-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.3rem;
-      font-weight: 700;
-      margin-bottom: 0.75rem;
-      transition: color 0.3s ease;
-    }
-
-    .project-card:hover .project-title {
-      color: var(--accent-text);
-    }
-
-    .project-desc {
-      font-size: 0.9rem;
-      color: var(--text-light);
-      line-height: 1.7;
-      margin-bottom: 1rem;
-    }
-
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-
-    .tag {
-      font-size: 0.75rem;
-      padding: 0.35rem 0.75rem;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      color: var(--text-light);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      font-weight: 500;
-    }
-
-    /* ===== SKILLS & TOOLS SECTION ===== */
-    .skills {
-      padding: 1.5rem 2rem 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .skills .section-header {
-      text-align: center;
-    }
-
-    .toolkit-grid {
+    .disciplines {
+      margin-top: clamp(4rem, 8vw, 6.5rem);
+      border-top: 1px solid var(--s2);
+      border-bottom: 1px solid var(--s2);
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-      gap: 1.25rem;
+      grid-template-columns: repeat(5, 1fr);
     }
+    .disciplines li {
+      padding: 1.4rem 1.25rem;
+      font-weight: 500; font-size: 1rem;
+      border-left: 1px solid var(--s2);
+    }
+    .disciplines li:first-child { border-left: 0; padding-left: 0; }
+    .disciplines span { display: block; font-size: 0.875rem; font-weight: 400; color: var(--s5); margin-top: 0.15rem; }
 
-    .tool-card {
+    /* ===== SECTIONS ===== */
+    .section { padding: clamp(5rem, 10vw, 8.5rem) 0; }
+    .section-head { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 2rem; align-items: end; margin-bottom: clamp(3rem, 6vw, 5rem); }
+    .section-head p { color: var(--s5); max-width: 44ch; font-size: 1.125rem; }
+
+    /* ===== WORK: claim / proof pairs ===== */
+    .work-list { display: grid; gap: clamp(5rem, 10vw, 8rem); }
+
+    .pair {
+      display: grid;
+      grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: center;
+    }
+    .pair:nth-child(even) .pair-claim { order: 2; }
+
+    .pair-claim h3 { margin-bottom: 1rem; }
+    .pair-claim .claim { font-size: 1.1875rem; line-height: 1.5; color: var(--ink); margin-bottom: 1rem; max-width: 38ch; }
+    .pair-claim .desc { color: var(--s5); max-width: 44ch; margin-bottom: 1.75rem; }
+
+    .spec { border-top: 1px solid var(--s2); margin-bottom: 1.75rem; max-width: 44ch; }
+    .spec div { display: grid; grid-template-columns: 7.5rem 1fr; gap: 1rem; padding: 0.7rem 0; border-bottom: 1px solid var(--s2); font-size: 0.9688rem; }
+    .spec dt { color: var(--s5); }
+    .spec dd { font-weight: 500; }
+
+    /* Proof frame + fanned screens (signature interaction) */
+    .proof {
       position: relative;
-      aspect-ratio: 1;
-      cursor: pointer;
-      perspective: 1200px;
-    }
-
-    .tool-card-inner {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      transition: transform 0.5s cubic-bezier(0.65, 0, 0.35, 1), scale 0.25s ease;
-      transform-style: preserve-3d;
-    }
-
-    .tool-card:hover .tool-card-inner {
-      scale: 1.06;
-    }
-
-    .tool-card.flipped .tool-card-inner {
-      transform: rotateY(180deg);
-    }
-
-    .tool-card:focus {
-      outline: none;
-    }
-
-    .tool-card:focus-visible {
-      outline: 2px solid var(--accent);
-      outline-offset: 4px;
-    }
-
-    .tool-face {
-      position: absolute;
-      inset: 0;
-      backface-visibility: hidden;
-      -webkit-backface-visibility: hidden;
-      border-radius: 20px;
-      border: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
-      transition: box-shadow 0.25s ease;
-    }
-
-    .tool-card:hover .tool-face {
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
-    }
-
-    .tool-face-front {
-      background: var(--bg-dark);
-      padding: 1.25rem;
-    }
-
-    .tool-face-back {
-      background: #16130f;
-      border-color: #16130f;
-      color: white;
-      transform: rotateY(180deg);
-      flex-direction: column;
-      gap: 0.5rem;
-      text-align: center;
-      padding: 1rem;
-    }
-
-    .tool-icon {
-      max-width: 56px;
-      max-height: 56px;
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.12));
-    }
-
-    .tool-card--broken .tool-icon {
-      display: none;
-    }
-
-    .tool-icon-mono {
-      width: 46px;
-      height: 46px;
-      background-color: var(--icon-color, var(--text));
-      -webkit-mask-image: var(--icon-url);
-      mask-image: var(--icon-url);
-      -webkit-mask-size: contain;
-      mask-size: contain;
-      -webkit-mask-repeat: no-repeat;
-      mask-repeat: no-repeat;
-      -webkit-mask-position: center;
-      mask-position: center;
-      filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.12));
-    }
-
-    .tool-name {
-      font-weight: 700;
-      font-size: 0.9rem;
-      letter-spacing: -0.2px;
-      line-height: 1.3;
-    }
-
-    .tool-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      justify-content: center;
-    }
-
-    .tool-tag {
-      font-size: 0.65rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      padding: 0.25rem 0.55rem;
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      border-radius: 999px;
-      color: rgba(255, 255, 255, 0.85);
-    }
-
-    @media (max-width: 600px) {
-      .toolkit-grid {
-        grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
-        gap: 0.85rem;
-      }
-
-      .tool-face {
-        border-radius: 16px;
-      }
-
-      .tool-face-front {
-        padding: 1rem;
-      }
-
-      .tool-name {
-        font-size: 0.8rem;
-      }
-
-      .tool-tag {
-        font-size: 0.6rem;
-        padding: 0.2rem 0.45rem;
-      }
-    }
-
-    /* ===== ABOUT SECTION ===== */
-    .about {
-      padding: 6rem 2rem;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .about .section-header {
-      text-align: center;
-    }
-
-    .about-intro {
-      max-width: 680px;
-      margin: 0 auto 3.5rem;
-      text-align: center;
-    }
-
-    .about-intro h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.75rem;
-      font-weight: 700;
-      margin-bottom: 1.25rem;
-      letter-spacing: -0.5px;
-    }
-
-    .about-intro p {
-      font-size: 1.05rem;
-      color: var(--text-light);
-      line-height: 1.8;
-      margin-bottom: 1rem;
-    }
-
-    .about-intro p:last-child {
-      margin-bottom: 0;
-    }
-
-    .about-categories {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-    }
-
-    .about-category-box {
-      padding: 2rem;
-      background: var(--bg-dark);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      transition: all 0.3s ease;
-    }
-
-    .about-category-box:hover {
-      transform: translateY(-4px);
-      border-color: var(--accent);
-      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.06);
-    }
-
-    .about-category-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 10px;
-      background: rgba(255, 140, 66, 0.1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--accent);
-      margin-bottom: 1.25rem;
-    }
-
-    .about-category-icon svg {
-      width: 20px;
-      height: 20px;
-    }
-
-    .about-category-title {
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-size: 0.85rem;
-      margin-bottom: 0.75rem;
-      color: var(--text);
-    }
-
-    .about-category-text {
-      color: var(--text-light);
-      font-size: 0.95rem;
-      line-height: 1.7;
-    }
-
-    .about-highlight {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    .highlight-item {
-      padding: 1.5rem;
-      background: var(--bg-dark);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-    }
-
-    .highlight-number {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--accent-text);
-      margin-bottom: 0.25rem;
-    }
-
-    .highlight-label {
-      font-size: 0.85rem;
-      color: var(--text-light);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      font-weight: 600;
-    }
-
-    /* ===== CONTACT SECTION ===== */
-    .contact {
-      padding: 6rem 2rem;
-      background: var(--contact-bg);
-      color: white;
-      text-align: center;
-      transition: background 0.3s ease;
-    }
-
-    .contact-inner {
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    .contact .section-label {
-      color: #999;
-    }
-
-    .contact .section-title {
-      color: white;
-      margin-bottom: 2rem;
-    }
-
-    .contact-desc {
-      font-size: 1.05rem;
-      color: #ccc;
-      line-height: 1.8;
-      margin-bottom: 2.5rem;
-    }
-
-    .contact-links {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-
-    .contact-link-box {
-      padding: 1.5rem 2rem;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      color: white;
-      transition: all 0.3s ease;
-      font-weight: 600;
-      font-size: 0.9rem;
-      letter-spacing: 0.5px;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 12px;
-      flex: 1;
-      min-width: 250px;
-      max-width: 300px;
-      cursor: pointer;
-    }
-
-    .contact-icon {
-      font-size: 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-width: 50px;
-      color: white;
-    }
-
-    .contact-icon svg {
-      width: 28px;
-      height: 28px;
-      color: white;
-      stroke: currentColor;
-    }
-
-    .contact-text {
+      display: block; width: 100%;
+      aspect-ratio: 16 / 11;
+      border-radius: calc(var(--radius) + 6px);
+      background: var(--ground);
+      border: 1px solid var(--s2);
+      cursor: zoom-in;
+      isolation: isolate;
       text-align: left;
     }
+    .proof:focus-visible { outline-offset: 5px; border-radius: calc(var(--radius) + 6px); }
 
-    .contact-label {
-      font-size: 0.75rem;
-      color: rgba(255, 255, 255, 0.7);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 0.3rem;
-    }
-
-    .contact-value {
-      font-size: 0.95rem;
-      color: white;
-      word-break: break-word;
-    }
-
-    .contact-link-box:hover {
-      background: rgba(255, 140, 66, 0.2);
-      border-color: var(--accent);
-      transform: translateY(-4px);
-    }
-
-    /* ===== FOOTER ===== */
-    footer {
-      padding: 2rem;
-      border-top: 1px solid var(--border);
-      text-align: center;
-      font-size: 0.85rem;
-      color: var(--text-lighter);
-      background: var(--bg);
-    }
-
-    /* ===== PROJECT MODAL ===== */
-    .project-modal-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.75);
-      z-index: 2000;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
-    }
-
-    .project-modal-overlay.active {
-      display: flex;
-      animation: modalOverlayFade 0.25s ease;
-    }
-
-    @keyframes modalOverlayFade {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    @keyframes modalPopIn {
-      from {
-        opacity: 0;
-        transform: scale(0.92) translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1) translateY(0);
-      }
-    }
-
-    .project-modal {
-      background: var(--bg-dark);
-      border-radius: 16px;
-      max-width: 900px;
-      width: 100%;
-      max-height: 90vh;
-      overflow-y: auto;
-      position: relative;
-      animation: modalPopIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .modal-close-btn {
+    .proof .sheet {
       position: absolute;
-      top: 1rem;
-      right: 1rem;
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text);
-      z-index: 10;
-      transition: all 0.3s ease;
+      left: 9%; top: 13%;
+      width: 82%;
+      aspect-ratio: 1920 / 1120;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      background: var(--s1);
+      box-shadow: var(--shadow);
+      transition: transform 0.8s var(--ease-out), box-shadow 0.8s var(--ease-out), opacity 0.6s ease;
+    }
+    .proof .sheet img { width: 100%; height: 100%; object-fit: cover; }
+    .proof .sheet-1 { z-index: 3; }
+    .proof .sheet-2 { z-index: 2; transform: translate(3%, -5%) scale(0.94); opacity: 0.85; }
+    .proof .sheet-3 { z-index: 1; transform: translate(6%, -10%) scale(0.88); opacity: 0.6; }
+
+    .proof:hover .sheet-1, .proof:focus-visible .sheet-1 { transform: translate(-3%, 4%) rotate(-1.2deg); box-shadow: var(--shadow-lift); }
+    .proof:hover .sheet-2, .proof:focus-visible .sheet-2 { transform: translate(6%, -9%) rotate(1.5deg) scale(0.95); opacity: 1; }
+    .proof:hover .sheet-3, .proof:focus-visible .sheet-3 { transform: translate(14%, -17%) rotate(3.5deg) scale(0.9); opacity: 1; }
+
+    /* Poster layout: portrait adverts side by side */
+    .proof--posters .sheet { aspect-ratio: auto; height: 74%; width: auto; top: 13%; background: transparent; }
+    .proof--posters .sheet img { height: 100%; width: auto; object-fit: contain; border-radius: var(--radius-sm); }
+    .proof--posters .sheet-1 { left: 32%; }
+    .proof--posters .sheet-2 { left: 8%; transform: rotate(-4deg) scale(0.92); opacity: 1; }
+    .proof--posters .sheet-3 { left: 56%; transform: rotate(4deg) scale(0.92); opacity: 1; }
+    .proof--posters .sheet { box-shadow: none; overflow: visible; }
+    .proof--posters .sheet img { box-shadow: var(--shadow); }
+    .proof--posters:hover .sheet-1, .proof--posters:focus-visible .sheet-1 { transform: translateY(-3%) scale(1.03); box-shadow: none; }
+    .proof--posters:hover .sheet-2, .proof--posters:focus-visible .sheet-2 { transform: translateX(-6%) rotate(-8deg) scale(0.92); }
+    .proof--posters:hover .sheet-3, .proof--posters:focus-visible .sheet-3 { transform: translateX(6%) rotate(8deg) scale(0.92); }
+
+    /* Artwork layout: illustration sits on the ground without a frame */
+    .proof--art .sheet { box-shadow: none; background: transparent; }
+    .proof--art .sheet img { object-fit: contain; }
+    .proof--art .sheet-1 { background: var(--paper); box-shadow: var(--shadow); }
+
+    .proof-count {
+      position: absolute; right: 1rem; bottom: 1rem; z-index: 5;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.45rem 0.75rem;
+      border-radius: 999px;
+      background: var(--paper);
+      border: 1px solid var(--s2);
+      font-size: 0.875rem; font-weight: 500;
+      font-variant-numeric: tabular-nums;
+      transition: transform 0.4s var(--ease-out);
+    }
+    .proof:hover .proof-count { transform: translateY(-2px); }
+
+    .img-broken img { visibility: hidden; }
+    .img-broken::after {
+      content: 'Image unavailable';
+      position: absolute; inset: 0;
+      display: grid; place-items: center;
+      font-size: 0.875rem; color: var(--s5);
     }
 
-    .modal-close-btn:hover {
-      background: var(--accent-text);
-      border-color: var(--accent-text);
-      color: white;
+    /* ===== TOOLKIT ===== */
+    .toolkit { border-top: 1px solid var(--s2); }
+    .tool-group {
+      display: grid;
+      grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+      gap: 2rem;
+      padding: 2rem 0;
+      border-bottom: 1px solid var(--s2);
     }
+    .tool-group h3 { font-size: 1.25rem; letter-spacing: -0.015em; margin-bottom: 0.35rem; }
+    .tool-group > div > p { color: var(--s5); font-size: 0.9688rem; max-width: 30ch; }
 
-    .modal-close-btn svg {
-      width: 18px;
-      height: 18px;
+    /* Each group is a hairline table: tool | used for */
+    .tool-table { width: 100%; border-collapse: collapse; font-size: 0.9688rem; }
+    .tool-table th { text-align: left; font-weight: 500; font-size: 0.875rem; color: var(--s5); padding: 0 0 0.6rem; border-bottom: 1px solid var(--s3); }
+    .tool-table td { padding: 0.8rem 0; border-bottom: 1px solid var(--s2); vertical-align: middle; }
+    .tool-table tr:last-child td { border-bottom: 0; }
+    .tool-table th:first-child, .tool-table td:first-child { width: 48%; padding-right: 1.5rem; }
+    .tool-table td:last-child { color: var(--s5); }
+    .tool-table tbody tr { transition: background-color 0.25s ease; }
+    .tool-table tbody tr:hover { background: linear-gradient(90deg, transparent, var(--s1) 12%, var(--s1) 88%, transparent); }
+    .tool-cell { display: flex; align-items: center; gap: 0.85rem; font-weight: 500; }
+    .tool-icon { width: 24px; height: 24px; flex-shrink: 0; display: grid; place-items: center; }
+    .tool-icon img { width: 22px; height: 22px; object-fit: contain; transition: transform 0.5s var(--ease-out); }
+    .tool-table tbody tr:hover .tool-icon img { transform: scale(1.12); }
+    [data-theme="dark"] .tool-icon img.invert-dark { filter: invert(1); }
+    .tool-icon.is-broken img { display: none; }
+    .tool-icon.is-broken::after { content: attr(data-initial); font-weight: 700; font-size: 0.8125rem; color: var(--s5); }
+
+    /* ===== ABOUT ===== */
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+      gap: clamp(2rem, 6vw, 6rem);
+      align-items: start;
     }
-
-    .modal-nav-btn {
-      position: fixed;
-      top: 0;
-      left: 0;
-      transform: translate(-50%, -50%);
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: var(--bg-dark);
-      border: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text);
-      z-index: 2001;
-      transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease, transform 0.15s ease;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-    }
-
-    .modal-nav-btn:hover {
-      background: var(--accent-text);
-      border-color: var(--accent-text);
-      color: white;
-      transform: translate(-50%, -50%) scale(1.1);
-    }
-
-    .modal-nav-btn svg {
-      width: 20px;
-      height: 20px;
-    }
-
-    @media (max-width: 900px) {
-      .modal-nav-btn {
-        width: 38px;
-        height: 38px;
-      }
-      .modal-nav-btn svg { width: 16px; height: 16px; }
-    }
-
-    .modal-gallery-main {
-      width: 100%;
-      height: 420px;
-      background: var(--bg);
-      border-radius: 16px 16px 0 0;
+    .portrait {
       position: relative;
+      aspect-ratio: 4 / 5;
+      border-radius: calc(var(--radius) + 6px);
+      background: radial-gradient(110% 80% at 50% 10%, #F1F1EE 0%, #DCDCD7 75%);
+      overflow: hidden;
+      border: 1px solid var(--s2);
     }
+    .portrait img { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 92%; height: auto; }
 
-    .modal-image-skeleton {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(90deg, var(--bg) 25%, var(--border) 50%, var(--bg) 75%);
+    .about-copy h2 { margin-bottom: 1.25rem; max-width: 14ch; }
+    .about-copy .lede { max-width: 40ch; margin-bottom: 2.5rem; color: var(--ink); font-weight: 500; }
+    .values { border-top: 1px solid var(--s2); margin-bottom: 2rem; }
+    .values li { display: grid; grid-template-columns: 11rem 1fr; gap: 1.5rem; padding: 1.25rem 0; border-bottom: 1px solid var(--s2); }
+    .values h3 { font-size: 1.125rem; letter-spacing: -0.01em; line-height: 1.4; }
+    .values p { color: var(--s5); max-width: 46ch; }
+    .about-note { color: var(--s5); }
+
+    /* ===== CONTACT ===== */
+    .contact { background: #111111; color: #F2F2EE; border-radius: 28px 28px 0 0; }
+    [data-theme="dark"] .contact { background: #1B1B19; }
+    .contact .wrap { padding-top: clamp(4.5rem, 9vw, 7.5rem); padding-bottom: clamp(3rem, 6vw, 4.5rem); }
+    .contact-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(2rem, 6vw, 6rem); }
+    .contact h2 { margin-bottom: 1.25rem; }
+    .contact .lede { color: #B4B4AD; margin-bottom: 2rem; }
+    .contact .btn-primary { background: #F2F2EE; color: #111111; }
+
+    .channels { border-top: 1px solid #2E2E2B; }
+    .channel {
+      display: grid; grid-template-columns: 7rem 1fr auto; gap: 1rem; align-items: center;
+      padding: 1.1rem 0; border-bottom: 1px solid #2E2E2B;
+    }
+    .channel dt { color: #9E9E97; font-size: 0.9688rem; }
+    .channel dd { font-size: clamp(1.05rem, 1.8vw, 1.35rem); font-weight: 500; letter-spacing: -0.01em; min-width: 0; overflow-wrap: anywhere; }
+    .channel a { text-decoration: underline; text-decoration-color: #4A4A45; text-underline-offset: 0.25em; text-decoration-thickness: 1px; transition: text-decoration-color 0.25s ease; }
+    .channel a:hover { text-decoration-color: #F2F2EE; }
+    .copy-btn {
+      display: inline-flex; align-items: center; gap: 0.45rem;
+      height: 38px; padding: 0 0.85rem;
+      border-radius: 10px; border: 1px solid #3A3A36;
+      color: #F2F2EE; font-size: 0.9063rem; font-weight: 500;
+      transition: border-color 0.25s ease, background-color 0.25s ease, transform 0.35s var(--ease-out);
+    }
+    .copy-btn:hover { border-color: #F2F2EE; }
+    .copy-btn:active { transform: scale(0.95); }
+    .copy-btn .icon-check { display: none; color: var(--accent); }
+    .copy-btn.is-copied .icon-copy { display: none; }
+    .copy-btn.is-copied .icon-check { display: block; animation: pop 0.45s var(--ease-out); }
+    @keyframes pop { from { transform: scale(0.4); } to { transform: scale(1); } }
+
+    .site-footer {
+      display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+      margin-top: clamp(4rem, 8vw, 6rem); padding-top: 1.5rem;
+      border-top: 1px solid #2E2E2B;
+      color: #9E9E97; font-size: 0.9063rem;
+    }
+    .site-footer a:hover { color: #F2F2EE; }
+
+    /* ===== GALLERY DIALOG ===== */
+    dialog { color: var(--ink); }
+    dialog::backdrop { background: rgba(10, 10, 10, 0.72); backdrop-filter: blur(4px); }
+
+    .gallery {
+      width: min(1120px, calc(100vw - 2rem));
+      max-height: calc(100dvh - 2rem);
+      margin: auto;
+      border: 0; border-radius: 20px;
+      background: var(--paper);
+      overflow: hidden;
+      padding: 0;
+    }
+    .gallery[open] { display: flex; flex-direction: column; animation: dialogIn 0.45s var(--ease-out); }
+    .gallery[open]::backdrop { animation: fadeIn 0.3s ease; }
+    @keyframes dialogIn { from { opacity: 0; transform: translateY(18px) scale(0.98); } to { opacity: 1; transform: none; } }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    .gallery-bar {
+      display: flex; align-items: center; gap: 0.75rem;
+      padding: 0.85rem 0.85rem 0.85rem 1.25rem;
+      border-bottom: 1px solid var(--s2);
+    }
+    .gallery-bar h2 { font-size: 1.0625rem; letter-spacing: -0.01em; margin-right: auto; line-height: 1.3; }
+    .gallery-counter { font-size: 0.9375rem; color: var(--s5); font-variant-numeric: tabular-nums; }
+
+    .gallery-scroll { overflow-y: auto; overscroll-behavior: contain; }
+
+    .stage {
+      position: relative;
+      background: var(--s1);
+      aspect-ratio: 16 / 9;
+      max-height: 62dvh;
+      width: 100%;
+      touch-action: pan-y;
+    }
+    .stage img {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: contain;
+      cursor: zoom-in;
+      transition: opacity 0.3s ease;
+    }
+    .stage img.is-loading { opacity: 0; }
+    .stage-skeleton {
+      position: absolute; inset: 0;
+      background: linear-gradient(90deg, var(--s1) 25%, var(--s2) 50%, var(--s1) 75%);
       background-size: 200% 100%;
-      animation: skeletonShimmer 1.4s ease-in-out infinite;
-      border-radius: 16px 16px 0 0;
-      z-index: 1;
-      opacity: 1;
-      transition: opacity 0.25s ease;
+      animation: shimmer 1.4s ease-in-out infinite;
+      transition: opacity 0.3s ease;
+    }
+    .stage-skeleton.is-hidden { opacity: 0; }
+    @keyframes shimmer { from { background-position: 200% 0; } to { background-position: -200% 0; } }
+
+    .stage-nav {
+      position: absolute; top: 50%; z-index: 2;
+      width: 44px; height: 44px; margin-top: -22px;
+      border-radius: 50%;
+      display: grid; place-items: center;
+      background: var(--paper); color: var(--ink);
+      box-shadow: var(--shadow);
+      transition: transform 0.35s var(--ease-out), opacity 0.25s ease;
+    }
+    .stage-nav:hover { transform: scale(1.08); }
+    .stage-nav:active { transform: scale(0.94); }
+    .stage-prev { left: 1rem; }
+    .stage-next { right: 1rem; }
+    .stage-expand {
+      position: absolute; right: 1rem; bottom: 1rem; z-index: 2;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      height: 38px; padding: 0 0.85rem; border-radius: 10px;
+      background: rgba(17, 17, 17, 0.72); color: #F2F2EE;
+      font-size: 0.875rem; font-weight: 500;
+      transition: background-color 0.25s ease, transform 0.35s var(--ease-out);
+    }
+    .stage-expand:hover { background: #111111; transform: translateY(-2px); }
+
+    .thumbs {
+      display: flex; gap: 0.5rem;
+      padding: 0.85rem 1.25rem;
+      overflow-x: auto;
+      scrollbar-width: thin;
+      border-bottom: 1px solid var(--s2);
+    }
+    .thumb {
+      flex: 0 0 auto;
+      width: 96px; aspect-ratio: 16 / 10;
+      border-radius: 8px; overflow: hidden;
+      background: var(--s1);
+      outline: 2px solid transparent; outline-offset: 2px;
+      opacity: 0.6;
+      transition: opacity 0.25s ease, outline-color 0.25s ease, transform 0.35s var(--ease-out);
+    }
+    .thumb img { width: 100%; height: 100%; object-fit: cover; }
+    .thumb:hover { opacity: 1; transform: translateY(-2px); }
+    .thumb[aria-current="true"] { opacity: 1; outline-color: var(--ink); }
+
+    .gallery-body {
+      display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 2rem;
+      padding: 1.5rem 1.25rem 1.75rem;
+    }
+    .gallery-body p { color: var(--s5); max-width: 60ch; }
+    .gallery-body .spec { margin-bottom: 0; }
+
+    /* ===== FULLSCREEN VIEWER ===== */
+    .viewer {
+      width: 100vw; height: 100dvh; max-width: none; max-height: none;
+      margin: 0; border: 0; padding: 0;
+      background: #0A0A0A;
+    }
+    .viewer[open] { display: grid; place-items: center; animation: fadeIn 0.25s ease; }
+    .viewer::backdrop { background: #0A0A0A; }
+    .viewer img { max-width: calc(100vw - 2rem); max-height: calc(100dvh - 6rem); object-fit: contain; }
+    .viewer .viewer-btn {
+      position: fixed;
+      width: 48px; height: 48px; border-radius: 50%;
+      display: grid; place-items: center;
+      background: rgba(255, 255, 255, 0.1); color: #FFFFFF;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      transition: background-color 0.25s ease, transform 0.35s var(--ease-out);
+    }
+    .viewer .viewer-btn:hover { background: rgba(255, 255, 255, 0.2); transform: scale(1.06); }
+    .viewer-close { top: 1rem; right: 1rem; }
+    .viewer-prev { left: 1rem; top: 50%; margin-top: -24px; }
+    .viewer-next { right: 1rem; top: 50%; margin-top: -24px; }
+    .viewer-counter { position: fixed; bottom: 1.25rem; left: 50%; transform: translateX(-50%); color: #BDBDB6; font-size: 0.9375rem; font-variant-numeric: tabular-nums; }
+
+    /* ===== TOAST ===== */
+    .toast {
+      position: fixed; left: 50%; bottom: 1.5rem; z-index: 4000;
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      padding: 0.8rem 1.1rem;
+      border-radius: 12px;
+      background: var(--ink); color: var(--on-ink);
+      font-weight: 500; font-size: 0.9688rem;
+      box-shadow: var(--shadow-lift);
+      transform: translate(-50%, calc(100% + 3rem));
+      visibility: hidden;
+      transition: transform 0.5s var(--ease-out), visibility 0s linear 0.5s;
       pointer-events: none;
     }
+    .toast.is-visible { transform: translate(-50%, 0); visibility: visible; transition: transform 0.5s var(--ease-out), visibility 0s; }
+    .toast .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+    .toast.is-error .dot { background: #E5484D; }
 
-    .modal-image-skeleton.hidden {
-      opacity: 0;
-    }
-
-    @keyframes skeletonShimmer {
-      0% { background-position: 200% 0; }
-      100% { background-position: -200% 0; }
-    }
-
-    .modal-gallery-main img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      border-radius: 16px 16px 0 0;
-      transition: opacity 0.2s ease;
-      cursor: zoom-in;
-    }
-
-    .modal-expand-btn {
-      position: absolute;
-      bottom: 0.75rem;
-      right: 0.75rem;
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      background: rgba(0, 0, 0, 0.55);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      z-index: 2;
-      transition: background 0.2s ease, transform 0.2s ease;
-    }
-
-    .modal-expand-btn:hover,
-    .modal-expand-btn:focus-visible {
-      background: var(--accent-text);
-      transform: scale(1.08);
-    }
-
-    .modal-expand-btn svg {
-      width: 18px;
-      height: 18px;
-    }
-
-    /* ===== FULLSCREEN IMAGE VIEWER ===== */
-    .fullscreen-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.95);
-      z-index: 2500;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 3rem;
-    }
-
-    .fullscreen-overlay.active {
-      display: flex;
-      animation: modalOverlayFade 0.2s ease;
-    }
-
-    .fullscreen-overlay img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
-    }
-
-    .fullscreen-close-btn {
-      position: fixed;
-      top: 1.5rem;
-      right: 1.5rem;
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      z-index: 2501;
-      transition: all 0.2s ease;
-    }
-
-    .fullscreen-close-btn:hover {
-      background: var(--accent-text);
-      border-color: var(--accent-text);
-    }
-
-    .fullscreen-close-btn svg {
-      width: 22px;
-      height: 22px;
-    }
-
-    .fullscreen-nav-btn {
-      position: fixed;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      z-index: 2501;
-      transition: all 0.2s ease;
-    }
-
-    .fullscreen-nav-btn:hover {
-      background: var(--accent-text);
-      border-color: var(--accent-text);
-    }
-
-    .fullscreen-nav-btn svg {
-      width: 22px;
-      height: 22px;
-    }
-
-    .fullscreen-nav-prev { left: 1.5rem; }
-    .fullscreen-nav-next { right: 1.5rem; }
-
-    @media (max-width: 600px) {
-      .fullscreen-overlay {
-        padding: 1.25rem;
-      }
-      .fullscreen-nav-btn {
-        width: 38px;
-        height: 38px;
-      }
-      .fullscreen-nav-prev { left: 0.5rem; }
-      .fullscreen-nav-next { right: 0.5rem; }
-    }
-
-    .modal-gallery-thumbs {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap: 0.75rem;
-      padding: 1rem 2rem 0;
-    }
-
-    .modal-thumb {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      border-radius: 8px;
-      overflow: hidden;
-      cursor: pointer;
-      border: 2px solid transparent;
-      transition: transform 0.25s ease, border-color 0.25s ease;
-    }
-
-    .modal-thumb:hover {
-      transform: scale(1.12);
-      z-index: 2;
-    }
-
-    .modal-thumb.active {
-      border-color: var(--accent);
-    }
-
-    .modal-thumb img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    @media (max-width: 600px) {
-      .modal-gallery-thumbs {
-        grid-template-columns: repeat(4, 1fr);
-      }
-    }
-
-    .modal-body {
-      padding: 2rem;
-    }
-
-    .modal-body .project-meta {
-      margin-bottom: 0.5rem;
-    }
-
-    .modal-body h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.6rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-    }
-
-    .modal-body p {
-      color: var(--text-light);
-      line-height: 1.7;
-      margin-bottom: 1.25rem;
-    }
+    /* ===== REVEAL (JS only, content visible without it) ===== */
+    /* One authored moment: project proof frames rise into place. Always visible. */
+    .js .reveal { transform: translateY(48px) scale(0.97); transition: transform 1.2s var(--ease-out); }
+    .js .reveal.is-in { transform: none; }
 
     /* ===== RESPONSIVE ===== */
-    @media (max-width: 768px) {
-      nav {
-        padding: 1rem 1.25rem;
-      }
+    @media (max-width: 980px) {
+      .hero-grid, .section-head, .pair, .about-grid, .contact-grid, .gallery-body { grid-template-columns: 1fr; }
+      .pair:nth-child(even) .pair-claim { order: 0; }
+      .pair-claim { order: 2; }
+      .proof-stack { margin-right: 0; max-width: 680px; }
+      .disciplines { grid-template-columns: repeat(3, 1fr); }
+      .disciplines li:nth-child(4) { border-left: 0; padding-left: 0; }
+      .disciplines li:nth-child(n+4) { border-top: 1px solid var(--s2); }
+      .tool-group { grid-template-columns: 1fr; gap: 1rem; }
+      .portrait { max-width: 420px; }
+    }
 
-      .hamburger-btn {
-        display: flex;
-      }
-
+    @media (max-width: 760px) {
+      :root { --header-h: 60px; }
+      .menu-btn { display: inline-flex; }
       .nav-links {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-        max-height: 0;
-        overflow: hidden;
-        background: var(--bg-dark);
-        border-bottom: 1px solid var(--border);
-        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
-        transition: max-height 0.35s ease;
+        position: fixed; left: 0; right: 0; top: var(--header-h);
+        flex-direction: column; gap: 0;
+        padding: 0.5rem var(--gutter) 1.25rem;
+        background: var(--s0);
+        border-bottom: 1px solid var(--s2);
+        clip-path: inset(0 0 100% 0);
+        visibility: hidden;
+        transition: clip-path 0.45s var(--ease-out), visibility 0s linear 0.45s;
       }
-
-      .nav-links.open {
-        max-height: 420px;
-      }
-
-      .nav-links li {
-        width: 100%;
-        border-top: 1px solid var(--border);
-      }
-
-      .nav-links li:first-child {
-        border-top: none;
-      }
-
-      .nav-link {
-        display: block;
-        width: 100%;
-        padding: 1rem 1.5rem;
-      }
-
-      nav a.active::after {
-        display: none;
-      }
-
-      .nav-link.active {
-        color: var(--accent-text);
-        background: var(--bg);
-        border-left: 3px solid var(--accent);
-        padding-left: calc(1.5rem - 3px);
-      }
-
-      .nav-download {
-        width: 100%;
-        height: auto;
-        border-radius: 0;
-        border: none;
-        justify-content: flex-start;
-        gap: 0.75rem;
-        padding: 1rem 1.5rem;
-      }
-
-      .nav-download-label {
-        display: inline;
-        font-size: 0.95rem;
-        font-weight: 500;
-      }
-
-      .hero {
-        padding-top: 80px;
-      }
-
-      .hero-inner {
-        flex-direction: column;
-        padding: 1.5rem 1.5rem 3rem;
-        text-align: center;
-      }
-
-      .hero-blob {
-        width: 260px;
-        height: 260px;
-        top: -8%;
-        right: -15%;
-      }
-
-      .hero-arcs {
-        left: -220px;
-        opacity: 0.6;
-      }
-
-      .hero-badge {
-        text-align: left;
-      }
-
-      .hero-ctas {
-        justify-content: center;
-      }
-
-      .hero-image-wrap {
-        margin-left: 0;
-        margin-top: 2.5rem;
-        justify-content: center;
-      }
-
-      .hero-image-backdrop {
-        width: 280px;
-        height: 340px;
-      }
-
-      .hero-photo {
-        width: 300px;
-        height: 300px;
-      }
-
-      .hero-stat-badge {
-        left: 0;
-        bottom: 10px;
-      }
-
-      .about-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-
-      .about-categories {
-        grid-template-columns: 1fr;
-      }
-
-      nav {
-        padding: 1rem 1.5rem;
-      }
-
-      .projects-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-ctas {
-        flex-direction: column;
-      }
-
-      .btn {
-        width: 100%;
-        text-align: center;
-      }
-
-      nav a {
-        font-size: 0.85rem;
-      }
-
-      .contact-link-box {
-        flex-direction: column;
-        text-align: center;
-        min-width: auto;
-        max-width: 100%;
-      }
-
-      .contact-text {
-        text-align: center;
-      }
-
-      .contact-links {
-        gap: 1rem;
-      }
+      .nav-links.is-open { clip-path: inset(0 0 0 0); visibility: visible; transition: clip-path 0.45s var(--ease-out), visibility 0s; }
+      .nav-links a { padding: 0.9rem 0; font-size: 1.125rem; border-radius: 0; border-bottom: 1px solid var(--s2); }
+      .nav-links a:hover { background: transparent; }
+      .nav-links a[aria-current="true"]::after { left: auto; right: 0; top: 50%; bottom: auto; margin: -2.5px 0 0; }
+      .nav-cv-label { display: none; }
+      .nav-cv { padding: 0 0.7rem; }
+      .hero h1 { max-width: none; }
+      .hero-ctas .btn { flex: 1 1 auto; justify-content: center; }
+      .proof-stack { aspect-ratio: 16 / 12.5; }
+      .proof-stack { margin-bottom: 2.5rem; }
+      .proof-caption { bottom: -2.25rem; }
+      .disciplines { grid-template-columns: 1fr 1fr; }
+      .disciplines li:nth-child(n) { border-left: 0; padding-left: 0; border-top: 1px solid var(--s2); }
+      .disciplines li:nth-child(even) { padding-left: 1rem; border-left: 1px solid var(--s2); }
+      .disciplines li:nth-child(-n+2) { border-top: 0; }
+      .spec div { grid-template-columns: 6rem 1fr; }
+      .tool-table th:first-child, .tool-table td:first-child { width: 52%; padding-right: 1rem; }
+      .values li { grid-template-columns: 1fr; gap: 0.35rem; }
+      .channel { grid-template-columns: 1fr auto; }
+      .channel dt { grid-column: 1 / -1; }
+      .proof { aspect-ratio: 16 / 12; }
+      .stage-nav { width: 38px; height: 38px; margin-top: -19px; }
+      .stage-prev { left: 0.5rem; }
+      .stage-next { right: 0.5rem; }
+      .gallery { width: 100vw; max-height: 100dvh; height: 100dvh; border-radius: 0; }
+      .stage { max-height: 45dvh; }
+      .viewer-prev, .viewer-next { top: auto; bottom: 0.75rem; margin-top: 0; }
+      .viewer-prev { left: 0.75rem; }
+      .viewer-next { right: 0.75rem; }
+      .viewer-counter { bottom: 1.6rem; }
     }
 
-    /* ===== REDUCED MOTION ===== */
+    @media (max-width: 480px) {
+      .disciplines { grid-template-columns: 1fr; }
+      .disciplines li:nth-child(n) { border-left: 0; padding: 1rem 0; border-top: 1px solid var(--s2); display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; }
+      .disciplines li:first-child { border-top: 0; }
+      .disciplines span { margin-top: 0; text-align: right; }
+    }
+
     @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      .ticker-track {
-        animation: none;
-      }
-
-      .hero-content,
-      .hero-image-wrap,
-      .project-card,
-      .about-category-box,
-      .tool-card,
-      .contact {
-        opacity: 1;
-        animation: none !important;
-      }
-
-      .modal-image-skeleton {
-        animation: none;
-      }
-
-      * {
-        transition-duration: 0.01ms !important;
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
         animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
       }
-    }
-
-    /* ===== UTILITIES ===== */
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
+      .js .reveal { transform: none; }
     }
   </style>
 </head>
 <body>
-  <!-- HEADER -->
-  <header>
-    <nav>
-      <div class="nav-left">
-        <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode" aria-label="Toggle dark mode">
-          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="5"></circle>
-            <line x1="12" y1="1" x2="12" y2="3"></line>
-            <line x1="12" y1="21" x2="12" y2="23"></line>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-            <line x1="1" y1="12" x2="3" y2="12"></line>
-            <line x1="21" y1="12" x2="23" y2="12"></line>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-          </svg>
-          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-          </svg>
-        </button>
-        <div class="logo">PRINCE</div>
-      </div>
-      <button class="hamburger-btn" onclick="toggleMobileMenu()" title="Menu" aria-label="Toggle navigation menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <ul class="nav-links">
-        <li><a href="#home" class="nav-link active" onclick="scrollToSection('home')">Home</a></li>
-        <li><a href="#work" class="nav-link" onclick="scrollToSection('work')">Work</a></li>
-        <li><a href="#skills" class="nav-link" onclick="scrollToSection('skills')">Toolkit</a></li>
-        <li><a href="#about" class="nav-link" onclick="scrollToSection('about')">About</a></li>
-        <li><a href="#contact" class="nav-link" onclick="scrollToSection('contact')">Contact</a></li>
-        <li>
-          <a href="https://raw.githubusercontent.com/Jashmare/My-Curriculum-Vitae/main/Prince%20Mosqueda%20CV.pdf" download="Prince Mosqueda CV.pdf" class="nav-download" title="Download CV" aria-label="Download CV" onclick="closeMobileMenu()">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-              <polyline points="7 10 12 15 17 10"></polyline>
-              <line x1="12" y1="15" x2="12" y2="3"></line>
-            </svg>
-            <span class="nav-download-label">Download CV</span>
-          </a>
-        </li>
+  <!-- Icon sprite: one stroke weight, one library -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+    <symbol id="i-left" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></symbol>
+    <symbol id="i-right" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></symbol>
+    <symbol id="i-expand" viewBox="0 0 24 24"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-images" viewBox="0 0 24 24"><rect x="3" y="5" width="14" height="12" rx="2"/><path d="M7 20h12a2 2 0 0 0 2-2V9"/></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#work">Skip to work</a>
+
+  <header class="site-header" id="top">
+    <nav class="wrap nav" aria-label="Main">
+      <a href="#home" class="wordmark">Prince Mosqueda</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#work">Work</a></li>
+        <li><a href="#toolkit">Toolkit</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
+      <div class="nav-actions">
+        <button class="icon-btn theme-toggle" type="button" id="theme-toggle" aria-label="Switch to dark theme">
+          <svg class="icon icon-sun" aria-hidden="true"><use href="#i-sun"/></svg>
+          <svg class="icon icon-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+        </button>
+        <a class="btn btn-primary btn-sm nav-cv" href="#" data-cv target="_blank" rel="noopener" aria-label="Download CV (PDF)">
+          <span class="btn-dot" aria-hidden="true"></span>
+          <span class="nav-cv-label">Download CV</span>
+          <svg class="icon icon-download" aria-hidden="true"><use href="#i-download"/></svg>
+        </a>
+        <button class="icon-btn menu-btn" type="button" id="menu-btn" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+          <span class="bars" aria-hidden="true"><span class="bar"></span><span class="bar"></span><span class="bar"></span></span>
+        </button>
+      </div>
     </nav>
   </header>
 
-  <!-- HERO SECTION -->
-  <section class="hero" id="home">
-    <div class="hero-blob"></div>
-    <div class="hero-arcs">
-      <div class="hero-arc hero-arc-1"></div>
-      <div class="hero-arc hero-arc-2"></div>
-      <div class="hero-arc hero-arc-3"></div>
-    </div>
-    <div class="hero-inner">
-      <div class="hero-content float-up">
-        <div class="hero-badge">
-          <span class="hero-badge-dot"></span>
-          Instructional Designer • Multimedia Designer • Graphic Illustrator
+  <main>
+    <!-- HERO: the claim, then the proof -->
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="wrap">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="hero-name">
+              <img class="hero-avatar" data-asset="Profile Cropped PNG.png" alt="" width="40" height="40">
+              Prince Jashmar M. Mosqueda
+            </p>
+            <h1 id="hero-title">I design the learning, then I draw it.</h1>
+            <p class="lede">Instructional and multimedia designer. I plan e-learning courses, build them in Articulate Storyline and Rise, and design the screens, characters and interfaces myself.</p>
+            <div class="hero-ctas">
+              <a class="btn btn-primary" href="#work">
+                <span class="btn-dot" aria-hidden="true"></span>
+                See the work
+                <svg class="icon icon-arrow-down" aria-hidden="true"><use href="#i-arrow-down"/></svg>
+              </a>
+              <a class="btn btn-ghost" href="#" data-cv target="_blank" rel="noopener">
+                Download CV
+                <svg class="icon icon-download" aria-hidden="true"><use href="#i-download"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="proof-stack" aria-label="Screens from three of Prince's e-learning courses">
+            <div class="frame f3 crop-top"><img data-asset="CyanDesign_01a.jpg" alt="Data privacy course screen with an interactive phone" width="1920" height="1120" loading="lazy"></div>
+            <div class="frame f2"><img data-asset="Cotton_01.jpg" alt="Textile course screen: drag cotton bolls into a basket" width="1272" height="742"></div>
+            <div class="frame f1 crop-top"><img data-asset="BlueDesign_00a.jpg" alt="Takaful certification course screen with a pinned mountain path" width="1920" height="1120" fetchpriority="high"></div>
+            <p class="proof-caption">Real screens from three shipped courses.</p>
+          </div>
         </div>
-        <h1 class="hero-title">Designing <span style="color: var(--accent);">Experiences</span> That Educate, Engage & Inspire</h1>
-        <p class="hero-desc">I combine instructional design, visual storytelling, and technology to create engaging digital learning experiences that turn ideas into meaningful learning.</p>
-        <div class="hero-ctas">
-          <button class="hero-cta" onclick="scrollToSection('work')">
-            View selected work
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="12" y1="5" x2="12" y2="19"></line>
-              <polyline points="19 12 12 19 5 12"></polyline>
-            </svg>
-          </button>
-          <a href="https://raw.githubusercontent.com/Jashmare/My-Curriculum-Vitae/main/Prince%20Mosqueda%20CV.pdf" download="Prince Mosqueda CV.pdf" class="hero-cta-secondary">
+
+        <ul class="disciplines" aria-label="Disciplines">
+          <li>Instructional design<span>Objectives and course flow</span></li>
+          <li>E-learning development<span>Storyline and Rise</span></li>
+          <li>Course UI<span>Players, templates, kits</span></li>
+          <li>Static adverts<span>Concept to final comp</span></li>
+          <li>Illustration<span>Characters and mascots</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- WORK -->
+    <section class="section" id="work" aria-labelledby="work-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="work-title">Selected work</h2>
+          <p>Each project opens into a full gallery. Use the arrow keys to step through screens, or go fullscreen to see the detail.</p>
+        </div>
+        <div class="work-list" id="work-list"></div>
+      </div>
+    </section>
+
+    <!-- TOOLKIT -->
+    <section class="section" id="toolkit" aria-labelledby="toolkit-title" style="padding-top:0">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="toolkit-title">Toolkit</h2>
+          <p>The software behind the work, grouped by what I use it for.</p>
+        </div>
+        <div class="toolkit" id="toolkit-list"></div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about" aria-labelledby="about-title" style="padding-top:0">
+      <div class="wrap about-grid">
+        <div class="portrait">
+          <img data-asset="Profile Cropped PNG.png" alt="Portrait of Prince Mosqueda" width="1517" height="1800" loading="lazy">
+        </div>
+        <div class="about-copy">
+          <h2 id="about-title">There is a life behind all that work.</h2>
+          <p class="lede">Curiosity. Family. Art. Books. Creativity. Dreams that are still unfinished.</p>
+          <ul class="values">
+            <li><h3>Curiosity</h3><p>Curiosity keeps me moving. I read, learn, question, create, and explore, always looking for something new to understand or discover.</p></li>
+            <li><h3>Family</h3><p>The people who keep me grounded, give life perspective, and remind me why the things I create matter.</p></li>
+            <li><h3>Still becoming</h3><p>Still learning. Still creating. Still reading. Still exploring. There is more to make, more to experience, and more to become.</p></li>
+          </ul>
+          <p class="about-note">More life, fewer case studies: <a class="text-link" href="https://www.instagram.com/prnc3_/" target="_blank" rel="noopener">find me on Instagram<svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- CONTACT -->
+  <footer class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div>
+          <h2 id="contact-title">Let's work together.</h2>
+          <p class="lede">Hiring for instructional design or e-learning? Email is the fastest way to reach me, and my CV has the full history.</p>
+          <a class="btn btn-primary" href="#" data-cv target="_blank" rel="noopener">
+            <span class="btn-dot" aria-hidden="true"></span>
             Download CV
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-              <polyline points="7 10 12 15 17 10"></polyline>
-              <line x1="12" y1="15" x2="12" y2="3"></line>
-            </svg>
+            <svg class="icon icon-download" aria-hidden="true"><use href="#i-download"/></svg>
           </a>
         </div>
+        <dl class="channels">
+          <div class="channel">
+            <dt>Email</dt>
+            <dd><a href="mailto:princemosqueda39@gmail.com">princemosqueda39@gmail.com</a></dd>
+            <button class="copy-btn" type="button" data-copy="princemosqueda39@gmail.com" data-copied="Email copied" aria-label="Copy email address">
+              <svg class="icon icon-copy" aria-hidden="true"><use href="#i-copy"/></svg>
+              <svg class="icon icon-check" aria-hidden="true"><use href="#i-check"/></svg>
+              Copy
+            </button>
+          </div>
+          <div class="channel">
+            <dt>Phone</dt>
+            <dd><a href="tel:+639559921456">+63 955 992 1456</a></dd>
+            <button class="copy-btn" type="button" data-copy="+63 955 992 1456" data-copied="Phone number copied" aria-label="Copy phone number">
+              <svg class="icon icon-copy" aria-hidden="true"><use href="#i-copy"/></svg>
+              <svg class="icon icon-check" aria-hidden="true"><use href="#i-check"/></svg>
+              Copy
+            </button>
+          </div>
+          <div class="channel">
+            <dt>LinkedIn</dt>
+            <dd><a href="https://www.linkedin.com/in/prince-mosqueda-b89968276/" target="_blank" rel="noopener">prince-mosqueda</a></dd>
+            <span></span>
+          </div>
+        </dl>
       </div>
-      <div class="hero-image-wrap float-up">
-        <div class="hero-image-backdrop"></div>
-        <img class="hero-photo" src="https://raw.githubusercontent.com/Jashmare/Portfolio-Storage/refs/heads/main/Profile%20Cropped%20PNG.png" alt="Prince Jashmar M. Mosqueda" onerror="this.style.display='none'">
-        <div class="hero-stat-badge">
-          <div class="hero-stat-number">100+</div>
-          <div class="hero-stat-label">E-learning modules delivered</div>
-        </div>
-      </div>
-    </div>
-    <div class="hero-ticker">
-      <div class="ticker-track" id="ticker-track"></div>
-    </div>
-  </section>
-
-  <!-- PROJECTS SECTION -->
-  <section class="section" id="work">
-    <div class="section-header">
-      <div class="section-label">Featured Work</div>
-      <h2 class="section-title">Selected Projects</h2>
-    </div>
-    <div class="projects-grid" id="projects-grid">
-      <!-- Projects will be populated here -->
-    </div>
-  </section>
-
-  <!-- SKILLS & TOOLS SECTION -->
-  <section class="skills" id="skills">
-    <div class="section-header">
-      <div class="section-label">What I Work With</div>
-      <h2 class="section-title">Tools &amp; Software</h2>
-    </div>
-    <div class="toolkit-grid" id="toolkit-grid"></div>
-  </section>
-
-  <!-- ABOUT SECTION -->
-  <section class="about" id="about">
-    <div class="section-header">
-      <div class="section-label">About Me</div>
-    </div>
-    <div class="about-intro">
-      <h3>There is a life behind all that work.</h3>
-      <p><strong>Curiosity. Family. Art. Books. Creativity. Dreams that are still unfinished.</strong></p>
-      <p style="color: var(--text-lighter); font-size: 0.95rem;"><em>More life, fewer case studies — find me on Instagram: <a href="https://www.instagram.com/prnc3_/" target="_blank" style="color: var(--accent-text); text-decoration: underline;">Prince Mosqueda</a></em></p>
-    </div>
-    <div class="about-categories">
-      <div class="about-category-box">
-        <div class="about-category-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="11" cy="11" r="8"></circle>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-          </svg>
-        </div>
-        <div class="about-category-title">Curiosity</div>
-        <div class="about-category-text">Curiosity keeps me moving. I read, learn, question, create, and explore—always looking for something new to understand or discover.</div>
-      </div>
-      
-      <div class="about-category-box">
-        <div class="about-category-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-          </svg>
-        </div>
-        <div class="about-category-title">Family</div>
-        <div class="about-category-text">The people who keep me grounded, give life perspective, and remind me why the things I create matter.</div>
-      </div>
-      
-      <div class="about-category-box">
-        <div class="about-category-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="12" y1="19" x2="12" y2="5"></line>
-            <polyline points="5 12 12 5 19 12"></polyline>
-          </svg>
-        </div>
-        <div class="about-category-title">Still Becoming</div>
-        <div class="about-category-text">Still learning. Still creating. Still reading. Still exploring. There is more to make, more to experience, and more to become.</div>
+      <div class="site-footer">
+        <p>&copy; <span id="year">2026</span> Prince Jashmar M. Mosqueda</p>
+        <a href="#home">Back to top</a>
       </div>
     </div>
-  </section>
-
-  <!-- CONTACT SECTION -->
-  <section class="contact" id="contact">
-    <div class="contact-inner">
-      <div class="section-label">Get In Touch</div>
-      <h2 class="section-title">Let's Work Together</h2>
-      <p class="contact-desc">I'm always interested in hearing about new projects and opportunities. Feel free to reach out if you have a question or just want to connect.</p>
-      <div class="contact-links">
-        <button type="button" class="contact-link-box" onclick="copyToClipboard('Princemosqueda39@gmail.com', 'Email copied!')" aria-label="Copy email address Princemosqueda39@gmail.com">
-          <div class="contact-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="4" width="20" height="16" rx="2"></rect>
-              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
-            </svg>
-          </div>
-          <div class="contact-text">
-            <div class="contact-label">Email</div>
-            <div class="contact-value">Princemosqueda39@gmail.com</div>
-          </div>
-        </button>
-        <button type="button" class="contact-link-box" onclick="copyToClipboard('+63 955 9921 456', 'Phone number copied!')" aria-label="Copy phone number +63 955 9921 456">
-          <div class="contact-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-            </svg>
-          </div>
-          <div class="contact-text">
-            <div class="contact-label">Phone</div>
-            <div class="contact-value">+63 955 9921 456</div>
-          </div>
-        </button>
-        <a href="https://www.linkedin.com/in/prince-mosqueda-b89968276/" target="_blank" class="contact-link-box">
-          <div class="contact-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"></path>
-              <circle cx="4" cy="4" r="2"></circle>
-            </svg>
-          </div>
-          <div class="contact-text">
-            <div class="contact-label">LinkedIn</div>
-            <div class="contact-value">Connect With Me</div>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>&copy; 2026 Prince Jashmar M. Mosqueda. All rights reserved.</p>
   </footer>
 
-  <!-- PROJECT MODAL -->
-  <div class="project-modal-overlay" id="project-modal-overlay" onclick="if(event.target === this) closeProjectModal()">
-    <button class="modal-nav-btn modal-nav-prev" onclick="navigateGalleryImage(-1)" title="Previous image">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <polyline points="15 18 9 12 15 6"></polyline>
-      </svg>
-    </button>
-    <button class="modal-nav-btn modal-nav-next" onclick="navigateGalleryImage(1)" title="Next image">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <polyline points="9 18 15 12 9 6"></polyline>
-      </svg>
-    </button>
-    <div class="project-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-      <button class="modal-close-btn" onclick="closeProjectModal()" title="Close">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
+  <!-- GALLERY -->
+  <dialog class="gallery" id="gallery" aria-labelledby="gallery-title">
+    <div class="gallery-bar">
+      <h2 id="gallery-title"></h2>
+      <span class="gallery-counter" id="gallery-counter" aria-live="polite"></span>
+      <button class="icon-btn" type="button" id="gallery-close" aria-label="Close gallery">
+        <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg>
       </button>
-      <div class="modal-gallery-main">
-        <div class="modal-image-skeleton" id="modal-image-skeleton"></div>
-        <img id="modal-main-image" src="" alt="" onclick="openFullscreen()">
-        <button class="modal-expand-btn" onclick="openFullscreen()" title="View fullscreen" aria-label="View image fullscreen">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M15 3h6v6"></path>
-            <path d="M9 21H3v-6"></path>
-            <path d="M21 3l-7 7"></path>
-            <path d="M3 21l7-7"></path>
-          </svg>
+    </div>
+    <div class="gallery-scroll">
+      <div class="stage" id="stage">
+        <div class="stage-skeleton" id="stage-skeleton"></div>
+        <img id="stage-img" alt="">
+        <button class="stage-nav stage-prev" type="button" data-step="-1" aria-label="Previous screen"><svg class="icon" aria-hidden="true"><use href="#i-left"/></svg></button>
+        <button class="stage-nav stage-next" type="button" data-step="1" aria-label="Next screen"><svg class="icon" aria-hidden="true"><use href="#i-right"/></svg></button>
+        <button class="stage-expand" type="button" id="stage-expand">
+          <svg class="icon" aria-hidden="true"><use href="#i-expand"/></svg>
+          Fullscreen
         </button>
       </div>
-      <div class="modal-gallery-thumbs" id="modal-thumbs"></div>
-      <div class="modal-body">
-        <div class="project-meta" id="modal-category"></div>
-        <h3 id="modal-title"></h3>
-        <p id="modal-desc"></p>
-        <div class="project-tags" id="modal-tags"></div>
+      <div class="thumbs" id="thumbs" aria-label="Screens"></div>
+      <div class="gallery-body">
+        <p id="gallery-desc"></p>
+        <dl class="spec" id="gallery-spec"></dl>
       </div>
     </div>
+  </dialog>
 
-    <!-- FULLSCREEN IMAGE VIEWER -->
-    <div class="fullscreen-overlay" id="fullscreen-image-overlay" onclick="if(event.target === this) closeFullscreen()">
-      <button class="fullscreen-close-btn" id="fullscreen-close-btn" onclick="closeFullscreen()" title="Close fullscreen" aria-label="Close fullscreen view">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
-      </button>
-      <button class="fullscreen-nav-btn fullscreen-nav-prev" onclick="navigateGalleryImage(-1)" title="Previous image" aria-label="Previous image">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="15 18 9 12 15 6"></polyline>
-        </svg>
-      </button>
-      <button class="fullscreen-nav-btn fullscreen-nav-next" onclick="navigateGalleryImage(1)" title="Next image" aria-label="Next image">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="9 18 15 12 9 6"></polyline>
-        </svg>
-      </button>
-      <img id="fullscreen-image" src="" alt="">
-    </div>
-  </div>
+  <!-- FULLSCREEN VIEWER -->
+  <dialog class="viewer" id="viewer" aria-label="Fullscreen image">
+    <img id="viewer-img" alt="">
+    <button class="viewer-btn viewer-close" type="button" id="viewer-close" aria-label="Exit fullscreen"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+    <button class="viewer-btn viewer-prev" type="button" data-step="-1" aria-label="Previous screen"><svg class="icon" aria-hidden="true"><use href="#i-left"/></svg></button>
+    <button class="viewer-btn viewer-next" type="button" data-step="1" aria-label="Next screen"><svg class="icon" aria-hidden="true"><use href="#i-right"/></svg></button>
+    <span class="viewer-counter" id="viewer-counter"></span>
+  </dialog>
 
-  <!-- SCRIPTS -->
+  <div class="toast" id="toast" role="status" aria-live="polite"><span class="dot" aria-hidden="true"></span><span id="toast-text"></span></div>
+
   <script>
-    // TICKER ITEMS
-    const TICKER_ITEMS = [
-      "Instructional Design",
-      "E-Learning Development",
-      "Graphic Illustration",
-      "Motion Design",
-      "UI/UX Design",
-      "Static Advert Design"
-    ];
+    // ===== CONFIG =====
+    // Project images live in the Portfolio-Storage repo. To add work, upload
+    // the images there and add one entry to PROJECTS below.
+    const ASSET_BASE = 'https://raw.githubusercontent.com/Jashmare/Portfolio-Storage/main/';
+    const CV_URL = 'https://raw.githubusercontent.com/Jashmare/My-Curriculum-Vitae/main/Prince%20Mosqueda%20CV.pdf';
 
-    function renderTicker() {
-      const track = document.getElementById('ticker-track');
-      if (!track) return;
-      const setHtml = TICKER_ITEMS.map(item => `
-        <span class="ticker-item">${item}</span>
-        <span class="ticker-star">✦</span>
-      `).join('');
-      track.innerHTML = `<div class="ticker-set">${setHtml}</div><div class="ticker-set">${setHtml}</div>`;
-    }
+    const asset = (name) => ASSET_BASE + encodeURIComponent(name);
 
-    // PROJECTS DATA
+    // ===== PROJECTS =====
+    // layout: 'screens' (16:9 course screens), 'posters' (portrait adverts), 'art' (illustration)
+    // hidden: true keeps a project in the data without showing it.
     const PROJECTS = [
       {
-        id: 1,
-        title: "My E-learning Module",
-        category: "E-Learning Development",
-        desc: "These are my main designs that I worked on during and between my Professional E-learning Development Career",
-        tags: ["Photoshop", "Articulate Storyline", "Motion Design", "Illustrator"],
-        image: "https://raw.githubusercontent.com/Jashmare/Portfolio-Storage/main/Cotton_01.jpg",
+        slug: 'textile-chain',
+        title: 'Unravelling the Textile Chain',
+        claim: 'Learners pick cotton straight off the plant to see how yarn gets made.',
+        desc: 'A 34-page e-learning course on textile production. Dragging cotton bolls into the basket unlocks each stage of yarn production, from the bale opener to the cleaner, inside a custom course player.',
+        spec: { Format: 'E-learning course, 34 pages', Interaction: 'Drag and drop reveal', Tools: 'Storyline, Photoshop, Illustrator' },
+        layout: 'screens',
+        images: ['Cotton_01.jpg', 'Cotton_03.jpg', 'Cotton_02.jpg', 'Cotton_04.jpg']
+      },
+      {
+        slug: 'takaful-certification',
+        title: 'Certification in Takaful & Re-Takaful',
+        claim: 'Module navigation turned into a climb up a mountain trail.',
+        desc: 'Module 2 of a Takaful certification course. It opens on clear learning objectives, then learners click pinned marks along the path to move through contributions, underwriting, claims and investments.',
+        spec: { Format: 'Certification course module', Interaction: 'Pinned-map navigation', Tools: 'Storyline, Illustrator, Photoshop, motion' },
+        layout: 'screens',
         images: [
-          "https://raw.githubusercontent.com/Jashmare/Portfolio-Storage/main/Cotton_01.jpg",
-          "https://raw.githubusercontent.com/Jashmare/Portfolio-Storage/main/Cotton_02.jpg",
-          "https://raw.githubusercontent.com/Jashmare/Portfolio-Storage/main/Cotton_03.jpg",
-          "https://raw.githubusercontent.com/Jashmare/Portfolio-Storage/main/Cotton_04.jpg",
-          "https://raw.githubusercontent.com/Jashmare/Portfolio-Storage/main/BlueDesign_00a.jpg",
-          "https://raw.githubusercontent.com/Jashmare/Portfolio-Storage/main/BlueDesign_00b.JPG",
-          "https://raw.githubusercontent.com/Jashmare/Portfolio-Storage/main/BlueDesign_00c.JPG",
-          "https://raw.githubusercontent.com/Jashmare/Portfolio-Storage/main/BlueDesign_01a.JPG",
-          "https://raw.githubusercontent.com/Jashmare/Portfolio-Storage/main/BlueDesign_01d.JPG",
-          "https://raw.githubusercontent.com/Jashmare/Portfolio-Storage/main/BlueDesign_01e.JPG",
-          "https://raw.githubusercontent.com/Jashmare/Portfolio-Storage/main/BlueDesign_03a.JPG",
-          "https://raw.githubusercontent.com/Jashmare/Portfolio-Storage/main/BlueDesign_03b.JPG",
-          "https://raw.githubusercontent.com/Jashmare/Portfolio-Storage/main/BlueDesign_04.JPG",
-          "https://raw.githubusercontent.com/Jashmare/Portfolio-Storage/main/BlueDesign_05a.JPG",
-          "https://raw.githubusercontent.com/Jashmare/Portfolio-Storage/main/BlueDesign_05d.JPG",
-          "https://raw.githubusercontent.com/Jashmare/Portfolio-Storage/main/BlueDesign_05e.JPG",
-          "https://raw.githubusercontent.com/Jashmare/Portfolio-Storage/main/BlueDesign_06.JPG",
-          "https://raw.githubusercontent.com/Jashmare/Portfolio-Storage/main/BlueDesign_07.JPG",
-          "https://raw.githubusercontent.com/Jashmare/Portfolio-Storage/main/BlueDesign_08a.JPG",
-          "https://raw.githubusercontent.com/Jashmare/Portfolio-Storage/main/BlueDesign_08b.JPG",
-          "https://raw.githubusercontent.com/Jashmare/Portfolio-Storage/main/BlueDesign_09.JPG",
-          "https://raw.githubusercontent.com/Jashmare/Portfolio-Storage/main/BlueDesign_LearningObjectives.JPG",
-          "https://raw.githubusercontent.com/Jashmare/Portfolio-Storage/main/CyanDesign_01a.jpg",
-          "https://raw.githubusercontent.com/Jashmare/Portfolio-Storage/main/CyanDesign_01b.jpg",
-          "https://raw.githubusercontent.com/Jashmare/Portfolio-Storage/main/CyanDesign_01c.jpg"
+          'BlueDesign_00a.jpg', 'BlueDesign_LearningObjectives.JPG', 'BlueDesign_00b.JPG', 'BlueDesign_00c.JPG',
+          'BlueDesign_01a.JPG', 'BlueDesign_01d.JPG', 'BlueDesign_01e.JPG', 'BlueDesign_03a.JPG', 'BlueDesign_03b.JPG',
+          'BlueDesign_04.JPG', 'BlueDesign_05a.JPG', 'BlueDesign_05d.JPG', 'BlueDesign_05e.JPG', 'BlueDesign_06.JPG',
+          'BlueDesign_07.JPG', 'BlueDesign_08.JPG', 'BlueDesign_08a.JPG', 'BlueDesign_08b.JPG', 'BlueDesign_09.JPG'
         ]
       },
       {
-        id: 2,
-        title: "Static Advert Design",
-        category: "Static Design",
-        desc: "This is a compilation of my Static Design from previous projects",
-        tags: ["Ads", "Conceptual"],
-        image: "https://raw.githubusercontent.com/Jashmare/Portfolio-Storage/main/StaticDesign_01_A.jpg",
-        images: [
-          "https://raw.githubusercontent.com/Jashmare/Portfolio-Storage/main/StaticDesign_01_A.jpg",
-          "https://raw.githubusercontent.com/Jashmare/Portfolio-Storage/main/StaticDesign_02.jpg",
-          "https://raw.githubusercontent.com/Jashmare/Portfolio-Storage/main/StaticDesign_03.jpg",
-          "https://raw.githubusercontent.com/Jashmare/Portfolio-Storage/main/StaticDesign_04.jpg"
-        ]
+        slug: 'data-privacy',
+        title: 'Data Privacy & Information Security',
+        claim: 'Compliance content that learners reveal with a swipe instead of a scroll.',
+        desc: 'Screens from a 19-page course on personal data. An on-screen phone carries the interaction: learners slide the arrow to reveal definitions and examples rather than reading a wall of policy.',
+        spec: { Format: 'E-learning course, 19 pages', Interaction: 'Slide to reveal', Tools: 'Storyline, Illustrator, Photoshop' },
+        layout: 'screens',
+        images: ['CyanDesign_01a.jpg', 'CyanDesign_01b.jpg', 'CyanDesign_01c.jpg']
       },
       {
-        id: 3,
-        title: "Personalized UI Designs",
-        category: "E-learning UI Designs",
-        desc: "This is a compilation of my personal UI designs for E-learning modules.",
-        tags: ["UI/UX"],
-        image: "https://raw.githubusercontent.com/Jashmare/Portfolio-Storage/main/UI_Tempalte_A.jpg",
-        images: [
-          "https://raw.githubusercontent.com/Jashmare/Portfolio-Storage/main/UI_Tempalte_A.jpg",
-          "https://raw.githubusercontent.com/Jashmare/Portfolio-Storage/main/UI_Tempalte_B.jpg",
-          "https://raw.githubusercontent.com/Jashmare/Portfolio-Storage/main/UI_Design_01.jpg",
-          "https://raw.githubusercontent.com/Jashmare/Portfolio-Storage/main/UI_Design_02.jpg"
-        ]
+        slug: 'ui-kits',
+        title: 'E-learning UI kits',
+        claim: 'Course templates specified down to the button states.',
+        desc: 'Personal UI designs for e-learning modules. Each kit sets the header and body type scale, the brand palette, Normal / Hover / Disabled buttons, pop-ups and the player bar, ready to hand to a developer.',
+        spec: { Format: 'UI templates and style guides', Includes: 'Type scale, palette, states', Tools: 'Photoshop, Illustrator' },
+        layout: 'screens',
+        images: ['UI_Tempalte_A.jpg', 'UI_Tempalte_B.jpg', 'UI_Design_01.jpg', 'UI_Design_02.jpg']
       },
       {
-        id: 4,
-        title: "Graphic Design Illustrations",
-        category: "Graphic Illustration",
-        desc: "This is a compilation of my Graphics that I designed from scratch.",
-        tags: ["Illustration", "Drawn"],
-        image: "https://raw.githubusercontent.com/Jashmare/Portfolio-Storage/refs/heads/main/Full%20view.jpg",
-        images: [
-          "https://raw.githubusercontent.com/Jashmare/Portfolio-Storage/refs/heads/main/Full%20view.jpg",
-          "https://raw.githubusercontent.com/Jashmare/Portfolio-Storage/main/Character%20Poses%2001-05.png"
-        ]
+        slug: 'static-adverts',
+        title: 'Static advert design',
+        claim: 'Single-frame adverts that say one thing, fast.',
+        desc: 'Product and promotional adverts from previous projects, taken from concept through compositing to final type.',
+        spec: { Format: 'Static adverts', Focus: 'Concept and compositing', Tools: 'Photoshop' },
+        layout: 'posters',
+        images: ['StaticDesign_03.jpg', 'StaticDesign_01_A.jpg', 'StaticDesign_04.jpg', 'StaticDesign_02.jpg']
       },
       {
-        id: 5,
-        title: "Logos and Branding",
-        category: "Branding Design",
-        desc: "A new project showcase coming your way. Stay tuned for more exciting work.",
-        tags: ["Brand", "Logos"],
-        image: "https://raw.githubusercontent.com/Jashmare/Portfolio-Storage/refs/heads/main/Tsuki%20bunny.png",
-        images: ["https://raw.githubusercontent.com/Jashmare/Portfolio-Storage/refs/heads/main/Tsuki%20bunny.png"],
-        placeholder: true
+        slug: 'characters',
+        title: 'Characters and mascots',
+        claim: 'Characters drawn from scratch to guide learners through a course.',
+        desc: 'Vector characters designed from scratch: an owl mascot, and a pilot narrator in five poses (teaching, explaining, thinking, demonstrating and listening) so one character can carry a whole course.',
+        spec: { Format: 'Character illustration', Includes: 'Mascot, 5-pose narrator set', Tools: 'Illustrator' },
+        layout: 'art',
+        images: ['Full view.jpg', 'Character Poses 01-05.png']
       },
       {
-        id: 6,
-        title: "Coming Soon",
-        category: "Upcoming Project",
-        desc: "Another exciting project in the works. More details coming soon.",
-        tags: ["Preview", "In Progress"],
-        image: "https://raw.githubusercontent.com/Jashmare/Portfolio-Storage/main/Sample_02.jpg",
-        images: ["https://raw.githubusercontent.com/Jashmare/Portfolio-Storage/main/Sample_02.jpg"],
-        placeholder: true
+        slug: 'logos-branding',
+        title: 'Logos and branding',
+        claim: 'In progress.',
+        desc: 'Branding work in progress.',
+        spec: { Format: 'Branding' },
+        layout: 'art',
+        images: ['Tsuki bunny.png'],
+        hidden: true
+      },
+      {
+        slug: 'coming-soon',
+        title: 'Coming soon',
+        claim: 'In progress.',
+        desc: 'Another project in the works.',
+        spec: { Format: 'Upcoming' },
+        layout: 'screens',
+        images: ['Sample_02.jpg'],
+        hidden: true
       }
     ];
 
-    // RENDER PROJECTS
-    function renderProjects() {
-      const grid = document.getElementById('projects-grid');
-      grid.innerHTML = PROJECTS.map(project => `
-        <div class="project-card${project.placeholder ? ' project-card--placeholder' : ''}" onclick="openProjectModal(${project.id})" tabindex="0" role="button" aria-label="View project: ${project.title}${project.placeholder ? ' (in progress)' : ''}" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProjectModal(${project.id});}">
-          <div class="project-thumb">
-            ${project.placeholder ? '<span class="project-placeholder-ribbon">In Progress</span>' : ''}
-            <img src="${project.image}" alt="${project.title}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.closest('.project-thumb').classList.add('project-thumb--broken')">
-          </div>
-          <div class="project-body">
-            <div class="project-meta">${project.category}</div>
-            <h3 class="project-title">${project.title}</h3>
-            <p class="project-desc">${project.desc}</p>
-            <div class="project-tags">
-              ${project.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
-            </div>
-          </div>
-        </div>
-      `).join('');
-    }
-
-    // TOOLKIT DATA
-    const TOOLS = [
-      { name: "Photoshop", tags: ["Design", "Image Editing"], icon: "icons/photoshop.svg" },
-      { name: "Illustrator", tags: ["Design", "Vector Art"], icon: "icons/illustrator.svg" },
-      { name: "Canva", tags: ["Design", "Quick Graphics"], icon: "icons/canva.png" },
-      { name: "Articulate 360", tags: ["E-Learning", "Authoring Suite"], icon: "icons/articulate-360.png" },
-      { name: "Storyline 360", tags: ["E-Learning", "Course Authoring"], icon: "icons/storyline-360.png" },
-      { name: "Rise 360", tags: ["E-Learning", "Responsive Courses"], icon: "icons/rise-360.png" },
-      { name: "Audacity", tags: ["Audio", "Editing"], icon: "icons/audacity.svg" },
-      { name: "Claude", tags: ["AI", "Development"], icon: "icons/claude.svg" },
-      { name: "Visual Studio Code", tags: ["Development", "Code Editor"], icon: "icons/vscode.svg" },
-      { name: "GitHub", tags: ["Development", "Version Control"], icon: "icons/github.svg" },
-      { name: "Vercel", tags: ["Development", "Deployment"], icon: "icons/vercel-light.svg" },
-      { name: "ClickUp", tags: ["Productivity", "Project Management"], icon: "icons/clickup.svg" },
-      { name: "Notion", tags: ["Productivity", "Docs & Planning"], icon: "icons/notion.svg" },
-      { name: "Slack", tags: ["Communication", "Collaboration"], icon: "icons/slack.svg" }
+    // ===== TOOLKIT =====
+    const TOOL_GROUPS = [
+      { name: 'Design', note: 'Screens, characters, adverts and quick graphics.', tools: [
+        { name: 'Photoshop', use: 'Image editing and compositing', icon: 'icons/photoshop.svg' },
+        { name: 'Illustrator', use: 'Vector art and characters', icon: 'icons/illustrator.svg' },
+        { name: 'Canva', use: 'Quick graphics', icon: 'icons/canva.png' }
+      ] },
+      { name: 'E-learning authoring', note: 'Where the courses get built and published.', tools: [
+        { name: 'Articulate 360', use: 'Authoring suite', icon: 'icons/articulate-360.png' },
+        { name: 'Storyline 360', use: 'Interactive course authoring', icon: 'icons/storyline-360.png' },
+        { name: 'Rise 360', use: 'Responsive courses', icon: 'icons/rise-360.png' }
+      ] },
+      { name: 'Audio', note: 'Voice-over and sound for modules.', tools: [
+        { name: 'Audacity', use: 'Audio editing', icon: 'icons/audacity.svg' }
+      ] },
+      { name: 'Build and AI', note: 'Code, hosting and AI-assisted work, including this site.', tools: [
+        { name: 'Claude', use: 'AI-assisted development', icon: 'icons/claude.svg' },
+        { name: 'Visual Studio Code', use: 'Code editor', icon: 'icons/vscode.svg' },
+        { name: 'GitHub', use: 'Version control', icon: 'icons/github.svg', invertDark: true },
+        { name: 'Vercel', use: 'Deployment', icon: 'icons/vercel-light.svg', invertDark: true }
+      ] },
+      { name: 'Workflow', note: 'Planning, documentation and working with a team.', tools: [
+        { name: 'ClickUp', use: 'Project management', icon: 'icons/clickup.svg' },
+        { name: 'Notion', use: 'Docs and planning', icon: 'icons/notion.svg' },
+        { name: 'Slack', use: 'Team communication', icon: 'icons/slack.svg' }
+      ] }
     ];
 
-    // RENDER TOOLKIT
+    // ===== HELPERS =====
+    const $ = (sel, root = document) => root.querySelector(sel);
+    const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
+    const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const visibleProjects = PROJECTS.filter((p) => !p.hidden);
+
+    function markBroken(img) {
+      img.addEventListener('error', () => img.parentElement.classList.add('img-broken'), { once: true });
+    }
+
+    // ===== STATIC ASSETS + LINKS =====
+    $$('img[data-asset]').forEach((img) => {
+      markBroken(img);
+      img.src = asset(img.dataset.asset);
+    });
+    $$('[data-cv]').forEach((a) => { a.href = CV_URL; });
+    $('#year').textContent = new Date().getFullYear();
+
+    // ===== RENDER WORK =====
+    function renderWork() {
+      const list = $('#work-list');
+      list.innerHTML = visibleProjects.map((p, i) => {
+        const sheets = p.images.slice(0, 3).map((img, n) => `
+          <span class="sheet sheet-${n + 1}"><img src="${asset(img)}" alt="" loading="lazy" decoding="async"></span>`).join('');
+        const spec = Object.entries(p.spec).map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join('');
+        const count = p.images.length;
+        return `
+          <article class="pair" id="project-${esc(p.slug)}" aria-labelledby="t-${esc(p.slug)}">
+            <div class="pair-claim">
+              <h3 id="t-${esc(p.slug)}">${esc(p.title)}</h3>
+              <p class="claim">${esc(p.claim)}</p>
+              <p class="desc">${esc(p.desc)}</p>
+              <dl class="spec">${spec}</dl>
+              <button class="btn btn-ghost" type="button" data-open="${i}">
+                Open gallery
+                <svg class="icon icon-arrow-right" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+              </button>
+            </div>
+            <button class="proof proof--${esc(p.layout)} reveal" type="button" data-open="${i}" aria-label="Open ${esc(p.title)} gallery, ${count} ${count === 1 ? 'image' : 'images'}">
+              ${sheets}
+              <span class="proof-count"><svg class="icon" aria-hidden="true"><use href="#i-images"/></svg>${count} ${count === 1 ? 'image' : 'images'}</span>
+            </button>
+          </article>`;
+      }).join('');
+      $$('.proof img', list).forEach(markBroken);
+    }
+
+    // ===== RENDER TOOLKIT =====
     function renderTools() {
-      const grid = document.getElementById('toolkit-grid');
-      grid.innerHTML = TOOLS.map(tool => `
-        <div class="tool-card" tabindex="0" role="button" aria-pressed="false" aria-label="${tool.name} — ${tool.tags.join(', ')}" onclick="toggleToolCard(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleToolCard(this);}">
-          <div class="tool-card-inner">
-            <div class="tool-face tool-face-front">
-              ${tool.mono
-                ? `<span class="tool-icon-mono" style="--icon-url:url('${tool.icon}');${tool.color ? ` --icon-color:${tool.color};` : ''}" aria-hidden="true"></span>`
-                : `<img class="tool-icon" src="${tool.icon}" alt="" aria-hidden="true" loading="lazy" onerror="this.closest('.tool-card').classList.add('tool-card--broken')">`}
-            </div>
-            <div class="tool-face tool-face-back" aria-hidden="true">
-              <span class="tool-name">${tool.name}</span>
-              <span class="tool-tags">${tool.tags.map(tag => `<span class="tool-tag">${tag}</span>`).join('')}</span>
-            </div>
+      $('#toolkit-list').innerHTML = TOOL_GROUPS.map((g) => `
+        <div class="tool-group">
+          <div>
+            <h3>${esc(g.name)}</h3>
+            <p>${esc(g.note)}</p>
           </div>
-        </div>
-      `).join('');
-    }
-
-    function toggleToolCard(card) {
-      const wasFlipped = card.classList.contains('flipped');
-      document.querySelectorAll('.tool-card.flipped').forEach(c => {
-        c.classList.remove('flipped');
-        c.setAttribute('aria-pressed', 'false');
+          <table class="tool-table">
+            <thead><tr><th scope="col">Tool</th><th scope="col">Used for</th></tr></thead>
+            <tbody>
+            ${g.tools.map((t) => `
+              <tr>
+                <td><span class="tool-cell"><span class="tool-icon" data-initial="${esc(t.name.charAt(0))}"><img src="${esc(t.icon)}" alt="" width="22" height="22" loading="lazy"${t.invertDark ? ' class="invert-dark"' : ''}></span>${esc(t.name)}</span></td>
+                <td>${esc(t.use)}</td>
+              </tr>`).join('')}
+            </tbody>
+          </table>
+        </div>`).join('');
+      $$('.tool-icon img').forEach((img) => {
+        img.addEventListener('error', () => img.parentElement.classList.add('is-broken'), { once: true });
       });
-      if (!wasFlipped) {
-        card.classList.add('flipped');
-        card.setAttribute('aria-pressed', 'true');
-      }
     }
 
-    document.addEventListener('click', (e) => {
-      if (!e.target.closest('.tool-card')) {
-        document.querySelectorAll('.tool-card.flipped').forEach(c => {
-          c.classList.remove('flipped');
-          c.setAttribute('aria-pressed', 'false');
+    // ===== THEME =====
+    const themeBtn = $('#theme-toggle');
+    const themeMeta = $('meta[name="theme-color"]');
+    function syncTheme() {
+      const dark = document.documentElement.getAttribute('data-theme') === 'dark';
+      themeBtn.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme');
+      themeMeta.setAttribute('content', dark ? '#0F0F0E' : '#F7F7F5');
+    }
+    themeBtn.addEventListener('click', () => {
+      const dark = document.documentElement.getAttribute('data-theme') === 'dark';
+      if (dark) document.documentElement.removeAttribute('data-theme');
+      else document.documentElement.setAttribute('data-theme', 'dark');
+      try { localStorage.setItem('theme', dark ? 'light' : 'dark'); } catch (e) {}
+      syncTheme();
+    });
+
+    // ===== MOBILE MENU =====
+    const menuBtn = $('#menu-btn');
+    const navLinks = $('#nav-links');
+    function setMenu(open) {
+      navLinks.classList.toggle('is-open', open);
+      menuBtn.setAttribute('aria-expanded', String(open));
+      menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    }
+    menuBtn.addEventListener('click', () => setMenu(menuBtn.getAttribute('aria-expanded') !== 'true'));
+    navLinks.addEventListener('click', (e) => { if (e.target.closest('a')) setMenu(false); });
+    document.addEventListener('click', (e) => { if (!e.target.closest('.nav')) setMenu(false); });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && menuBtn.getAttribute('aria-expanded') === 'true') { setMenu(false); menuBtn.focus(); }
+    });
+
+    // ===== HEADER + ACTIVE NAV =====
+    const header = $('.site-header');
+    window.addEventListener('scroll', () => header.classList.toggle('is-scrolled', window.scrollY > 8), { passive: true });
+
+    function initActiveNav() {
+      if (!('IntersectionObserver' in window)) return;
+      const links = new Map($$('.nav-links a').map((a) => [a.getAttribute('href').slice(1), a]));
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          links.forEach((a) => a.removeAttribute('aria-current'));
+          const link = links.get(entry.target.id);
+          if (link) link.setAttribute('aria-current', 'true');
         });
-      }
-    });
+      }, { rootMargin: '-45% 0px -50% 0px' });
+      ['home', 'work', 'toolkit', 'about', 'contact'].forEach((id) => { const el = document.getElementById(id); if (el) io.observe(el); });
+    }
 
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        document.querySelectorAll('.tool-card.flipped').forEach(c => {
-          c.classList.remove('flipped');
-          c.setAttribute('aria-pressed', 'false');
+    // ===== REVEAL =====
+    function initReveal() {
+      const els = $$('.reveal');
+      if (!('IntersectionObserver' in window) || reducedMotion.matches) { els.forEach((el) => el.classList.add('is-in')); return; }
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) { entry.target.classList.add('is-in'); io.unobserve(entry.target); }
         });
-      }
+      }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+      els.forEach((el) => io.observe(el));
+    }
+
+    // ===== GALLERY =====
+    const gallery = $('#gallery');
+    const viewer = $('#viewer');
+    const stageImg = $('#stage-img');
+    const skeleton = $('#stage-skeleton');
+    const viewerImg = $('#viewer-img');
+    const state = { project: null, index: 0, loadToken: 0, opener: null };
+
+    function openGallery(i, opener) {
+      const p = visibleProjects[i];
+      if (!p) return;
+      state.project = p;
+      state.opener = opener || document.activeElement;
+      $('#gallery-title').textContent = p.title;
+      $('#gallery-desc').textContent = p.desc;
+      $('#gallery-spec').innerHTML = Object.entries(p.spec).map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join('');
+
+      const multiple = p.images.length > 1;
+      $$('.stage-nav, .viewer-prev, .viewer-next').forEach((b) => { b.hidden = !multiple; });
+      const thumbs = $('#thumbs');
+      thumbs.hidden = !multiple;
+      thumbs.innerHTML = multiple ? p.images.map((img, n) => `
+        <button class="thumb" type="button" data-index="${n}" aria-label="Screen ${n + 1} of ${p.images.length}">
+          <img src="${asset(img)}" alt="" loading="lazy" decoding="async">
+        </button>`).join('') : '';
+
+      showImage(0);
+      if (!gallery.open) gallery.showModal();
+      document.body.classList.add('is-locked');
+      $('.gallery-scroll').scrollTop = 0;
+      $('#gallery-close').focus();
+      history.replaceState(null, '', '#project-' + p.slug);
+    }
+
+    function closeGallery() {
+      if (viewer.open) viewer.close();
+      if (gallery.open) gallery.close();
+    }
+
+    gallery.addEventListener('close', () => {
+      document.body.classList.remove('is-locked');
+      history.replaceState(null, '', '#work');
+      if (state.opener && document.contains(state.opener)) state.opener.focus();
+      state.project = null;
     });
 
-    // SMOOTH SCROLL NAVIGATION
-    function scrollToSection(id) {
-      const element = document.getElementById(id);
-      if (element) {
-        const header = document.querySelector('header');
-        const offset = header.offsetHeight;
-        const elementPosition = element.offsetTop - offset;
-        window.scrollTo({
-          top: elementPosition,
-          behavior: 'smooth'
-        });
-      }
-      updateActiveNav();
-      closeMobileMenu();
-    }
+    function showImage(index) {
+      const p = state.project;
+      if (!p) return;
+      const total = p.images.length;
+      state.index = (index + total) % total;
+      const src = asset(p.images[state.index]);
+      const label = `${p.title}, screen ${state.index + 1} of ${total}`;
+      const token = ++state.loadToken;
 
-    function toggleMobileMenu() {
-      document.querySelector('.nav-links').classList.toggle('open');
-      document.querySelector('.hamburger-btn').classList.toggle('open');
-    }
-
-    function closeMobileMenu() {
-      document.querySelector('.nav-links').classList.remove('open');
-      document.querySelector('.hamburger-btn').classList.remove('open');
-    }
-
-    document.addEventListener('click', (e) => {
-      const nav = document.querySelector('nav');
-      if (!nav.contains(e.target)) closeMobileMenu();
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeMobileMenu();
-    });
-
-    // UPDATE ACTIVE NAV LINK
-    function updateActiveNav() {
-      const navLinks = document.querySelectorAll('.nav-link');
-      const sections = document.querySelectorAll('section');
-      
-      let current = '';
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        if (scrollY >= sectionTop - 200) {
-          current = section.getAttribute('id');
-        }
-      });
-
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href').slice(1) === current) {
-          link.classList.add('active');
-        }
-      });
-    }
-
-    // PROJECT MODAL / GALLERY
-    let currentModalImages = [];
-    let currentModalIndex = 0;
-    let currentProjectId = null;
-
-    let lastFocusedElement = null;
-
-    function openProjectModal(id) {
-      const project = PROJECTS.find(p => p.id === id);
-      if (!project) return;
-
-      lastFocusedElement = document.activeElement;
-
-      currentProjectId = id;
-      currentModalImages = project.images && project.images.length ? project.images : [project.image];
-      currentModalIndex = 0;
-
-      document.getElementById('modal-category').textContent = project.category;
-      document.getElementById('modal-title').textContent = project.title;
-      document.getElementById('modal-desc').textContent = project.desc;
-      document.getElementById('modal-tags').innerHTML = project.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
-
-      renderModalThumbs();
-      setModalImage(0);
-
-      const hasMultipleImages = currentModalImages.length > 1;
-      document.querySelectorAll('.modal-nav-btn').forEach(btn => {
-        btn.style.display = hasMultipleImages ? 'flex' : 'none';
-      });
-
-      document.getElementById('project-modal-overlay').classList.add('active');
-      document.body.style.overflow = 'hidden';
-      document.querySelector('.modal-close-btn').focus();
-
-      if (hasMultipleImages) {
-        requestAnimationFrame(positionModalNavButtons);
-      }
-    }
-
-    function renderModalThumbs() {
-      const thumbsContainer = document.getElementById('modal-thumbs');
-      if (currentModalImages.length <= 1) {
-        thumbsContainer.innerHTML = '';
-        return;
-      }
-      thumbsContainer.innerHTML = currentModalImages.map((img, index) => `
-        <div class="modal-thumb${index === 0 ? ' active' : ''}" onclick="setModalImage(${index})">
-          <img src="${img}" alt="${document.getElementById('modal-title').textContent} - image ${index + 1}" loading="lazy">
-        </div>
-      `).join('');
-    }
-
-    function setModalImage(index) {
-      currentModalIndex = index;
-      const mainImg = document.getElementById('modal-main-image');
-      const skeleton = document.getElementById('modal-image-skeleton');
-      skeleton.classList.remove('hidden');
-      mainImg.style.opacity = '0';
-      setTimeout(() => {
-        mainImg.onload = () => skeleton.classList.add('hidden');
-        mainImg.onerror = () => skeleton.classList.add('hidden');
-        mainImg.src = currentModalImages[index];
-        mainImg.style.opacity = '1';
-      }, 150);
-      document.querySelectorAll('.modal-thumb').forEach((thumb, i) => {
-        thumb.classList.toggle('active', i === index);
-      });
-
-      const fsOverlay = document.getElementById('fullscreen-image-overlay');
-      if (fsOverlay.classList.contains('active')) {
-        document.getElementById('fullscreen-image').src = currentModalImages[index];
-      }
-    }
-
-    // FULLSCREEN IMAGE VIEWER
-    let lastFocusedBeforeFullscreen = null;
-
-    function openFullscreen() {
-      if (!currentModalImages.length) return;
-      const overlay = document.getElementById('fullscreen-image-overlay');
-      const img = document.getElementById('fullscreen-image');
-      img.src = currentModalImages[currentModalIndex];
-      img.alt = document.getElementById('modal-title').textContent;
-
-      const hasMultipleImages = currentModalImages.length > 1;
-      document.querySelectorAll('.fullscreen-nav-btn').forEach(btn => {
-        btn.style.display = hasMultipleImages ? 'flex' : 'none';
-      });
-
-      lastFocusedBeforeFullscreen = document.activeElement;
-      overlay.classList.add('active');
-      document.getElementById('fullscreen-close-btn').focus();
-    }
-
-    function closeFullscreen() {
-      document.getElementById('fullscreen-image-overlay').classList.remove('active');
-      if (lastFocusedBeforeFullscreen) {
-        lastFocusedBeforeFullscreen.focus();
-        lastFocusedBeforeFullscreen = null;
-      }
-    }
-
-    function closeProjectModal() {
-      document.getElementById('project-modal-overlay').classList.remove('active');
-      document.body.style.overflow = '';
-      if (lastFocusedElement) {
-        lastFocusedElement.focus();
-        lastFocusedElement = null;
-      }
-    }
-
-    function navigateGalleryImage(direction) {
-      if (!currentModalImages.length) return;
-      const nextIndex = (currentModalIndex + direction + currentModalImages.length) % currentModalImages.length;
-      setModalImage(nextIndex);
-    }
-
-    function positionModalNavButtons() {
-      const mainImg = document.querySelector('.modal-gallery-main');
-      const modal = document.querySelector('.project-modal');
-      const prevBtn = document.querySelector('.modal-nav-prev');
-      const nextBtn = document.querySelector('.modal-nav-next');
-      if (!mainImg || !modal || !prevBtn || !nextBtn) return;
-
-      const modalRect = modal.getBoundingClientRect();
-      const imgRect = mainImg.getBoundingClientRect();
-      const verticalCenter = imgRect.top + imgRect.height / 2;
-
-      prevBtn.style.top = verticalCenter + 'px';
-      nextBtn.style.top = verticalCenter + 'px';
-      prevBtn.style.left = modalRect.left + 'px';
-      nextBtn.style.left = modalRect.right + 'px';
-    }
-
-    window.addEventListener('resize', () => {
-      const overlay = document.getElementById('project-modal-overlay');
-      if (overlay.classList.contains('active')) positionModalNavButtons();
-    });
-
-    document.addEventListener('keydown', (e) => {
-      const overlay = document.getElementById('project-modal-overlay');
-      if (!overlay.classList.contains('active')) return;
-      if (e.key === 'ArrowLeft') navigateGalleryImage(-1);
-      if (e.key === 'ArrowRight') navigateGalleryImage(1);
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key !== 'Escape') return;
-      const fsOverlay = document.getElementById('fullscreen-image-overlay');
-      if (fsOverlay.classList.contains('active')) {
-        closeFullscreen();
-      } else {
-        closeProjectModal();
-      }
-    });
-
-    document.addEventListener('keydown', (e) => {
-      const overlay = document.getElementById('project-modal-overlay');
-      if (!overlay.classList.contains('active') || e.key !== 'Tab') return;
-
-      const fsOverlay = document.getElementById('fullscreen-image-overlay');
-      const scope = fsOverlay.classList.contains('active') ? fsOverlay : overlay;
-      const focusable = scope.querySelectorAll('button, a[href], [tabindex]:not([tabindex="-1"])');
-      const visibleFocusable = Array.from(focusable).filter(el => el.offsetParent !== null);
-      if (!visibleFocusable.length) return;
-
-      const first = visibleFocusable[0];
-      const last = visibleFocusable[visibleFocusable.length - 1];
-
-      if (e.shiftKey && document.activeElement === first) {
-        e.preventDefault();
-        last.focus();
-      } else if (!e.shiftKey && document.activeElement === last) {
-        e.preventDefault();
-        first.focus();
-      }
-    });
-
-    // THEME TOGGLE
-    function toggleTheme() {
-      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-      if (isDark) {
-        document.documentElement.removeAttribute('data-theme');
-        localStorage.setItem('theme', 'light');
-      } else {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
-      }
-    }
-
-    function initTheme() {
-      const saved = localStorage.getItem('theme');
-      if (saved === 'dark') {
-        document.documentElement.setAttribute('data-theme', 'dark');
-      }
-    }
-
-    // COPY TO CLIPBOARD FUNCTION
-    function showToast(message, isError) {
-      const toast = document.createElement('div');
-      toast.textContent = message;
-      toast.setAttribute('role', 'status');
-      toast.style.cssText = `
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        background: ${isError ? '#c0392b' : 'var(--accent-text)'};
-        color: white;
-        padding: 1rem 1.5rem;
-        border-radius: 8px;
-        font-weight: 600;
-        z-index: 10000;
-        animation: slideIn 0.3s ease;
-      `;
-      document.body.appendChild(toast);
-
-      setTimeout(() => {
-        toast.style.animation = 'slideOut 0.3s ease';
-        setTimeout(() => toast.remove(), 300);
-      }, 2000);
-    }
-
-    function copyToClipboard(text, message) {
-      navigator.clipboard.writeText(text).then(() => {
-        showToast(message, false);
-      }).catch(() => {
-        showToast('Failed to copy. Please try again.', true);
-      });
-    }
-
-    // EVENT LISTENERS
-    window.addEventListener('scroll', updateActiveNav);
-
-    // Initialize float-up animations
-    function initFloatUpAnimations() {
-      // Track animation order for sequential animations
-      let animationOrder = 0;
-      const baseDelay = 0.3; // Delay between sections
-      
-      // Add float-up class to hero content
-      const heroElements = document.querySelectorAll('.hero-content, .hero-image-wrap');
-      heroElements.forEach((el, index) => {
-        el.style.animationDelay = (animationOrder * baseDelay) + 's';
-        el.classList.add('float-up');
-        animationOrder++;
-      });
-
-      // Observe sections for sequential animation
-      const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+      skeleton.classList.remove('is-hidden');
+      stageImg.classList.add('is-loading');
+      stageImg.alt = label;
+      const done = () => {
+        if (token !== state.loadToken) return; // a newer image was requested
+        skeleton.classList.add('is-hidden');
+        stageImg.classList.remove('is-loading');
       };
+      stageImg.onload = done;
+      stageImg.onerror = done;
+      stageImg.src = src;
+      if (stageImg.complete && stageImg.naturalWidth) done();
 
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting && !entry.target.classList.contains('float-up')) {
-            // Get all children that should animate
-            const children = entry.target.querySelectorAll('.project-card, .about-category-box, .tool-card');
-            
-            if (children.length > 0) {
-              // Animate children sequentially
-              children.forEach((child, index) => {
-                child.style.animationDelay = (index * 0.15) + 's';
-                child.classList.add('float-up');
-              });
-            } else {
-              // Animate the section itself
-              entry.target.classList.add('float-up');
-            }
-            
-            observer.unobserve(entry.target);
-          }
-        });
-      }, observerOptions);
-
-      // Observe all sections
-      document.querySelectorAll('.section, .skills, .about, .contact').forEach(section => {
-        observer.observe(section);
+      $('#gallery-counter').textContent = total > 1 ? `${state.index + 1} / ${total}` : '';
+      $$('.thumb').forEach((t, n) => {
+        if (n === state.index) {
+          t.setAttribute('aria-current', 'true');
+          t.scrollIntoView({ block: 'nearest', inline: 'center', behavior: reducedMotion.matches ? 'auto' : 'smooth' });
+        } else t.removeAttribute('aria-current');
       });
+
+      if (viewer.open) {
+        viewerImg.src = src;
+        viewerImg.alt = label;
+        $('#viewer-counter').textContent = total > 1 ? `${state.index + 1} / ${total}` : '';
+      }
+
+      // Warm the cache for the next screen
+      if (total > 1) { const pre = new Image(); pre.src = asset(p.images[(state.index + 1) % total]); }
     }
 
-    // INIT
-    initTheme();
-    renderProjects();
+    function step(dir) { showImage(state.index + dir); }
+
+    function openViewer() {
+      if (!state.project) return;
+      viewer.showModal();
+      showImage(state.index);
+      $('#viewer-close').focus();
+    }
+
+    // Open from project pairs
+    $('#work-list').addEventListener('click', (e) => {
+      const btn = e.target.closest('[data-open]');
+      if (btn) openGallery(Number(btn.dataset.open), btn);
+    });
+
+    $('#gallery-close').addEventListener('click', closeGallery);
+    gallery.addEventListener('click', (e) => { if (e.target === gallery) closeGallery(); });
+    $('#thumbs').addEventListener('click', (e) => {
+      const t = e.target.closest('.thumb');
+      if (t) showImage(Number(t.dataset.index));
+    });
+    $$('.stage-nav, .viewer-prev, .viewer-next').forEach((b) => b.addEventListener('click', () => step(Number(b.dataset.step))));
+    $('#stage-expand').addEventListener('click', openViewer);
+    stageImg.addEventListener('click', openViewer);
+    $('#viewer-close').addEventListener('click', () => viewer.close());
+    viewer.addEventListener('click', (e) => { if (e.target === viewer) viewer.close(); });
+    viewer.addEventListener('close', () => { if (gallery.open) $('#stage-expand').focus(); });
+
+    document.addEventListener('keydown', (e) => {
+      if (!gallery.open) return;
+      if (e.key === 'ArrowLeft') { e.preventDefault(); step(-1); }
+      if (e.key === 'ArrowRight') { e.preventDefault(); step(1); }
+    });
+
+    // Swipe between screens on touch devices
+    function addSwipe(el) {
+      let x0 = null, y0 = null;
+      el.addEventListener('pointerdown', (e) => { if (e.pointerType !== 'mouse') { x0 = e.clientX; y0 = e.clientY; } });
+      el.addEventListener('pointerup', (e) => {
+        if (x0 === null) return;
+        const dx = e.clientX - x0, dy = e.clientY - y0;
+        x0 = y0 = null;
+        if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy) * 1.4) step(dx < 0 ? 1 : -1);
+      });
+      el.addEventListener('pointercancel', () => { x0 = y0 = null; });
+    }
+    addSwipe($('#stage'));
+    addSwipe(viewer);
+
+    // Deep link: #project-<slug> opens that gallery
+    function openFromHash() {
+      const m = location.hash.match(/^#project-(.+)$/);
+      if (!m) return;
+      const i = visibleProjects.findIndex((p) => p.slug === m[1]);
+      if (i < 0) return;
+      const card = document.getElementById('project-' + m[1]);
+      if (card) card.scrollIntoView({ block: 'center' });
+      openGallery(i, card ? card.querySelector('.proof') : null);
+    }
+    window.addEventListener('hashchange', openFromHash);
+
+    // ===== COPY TO CLIPBOARD =====
+    const toast = $('#toast');
+    let toastTimer;
+    function showToast(message, isError) {
+      $('#toast-text').textContent = message;
+      toast.classList.toggle('is-error', !!isError);
+      toast.classList.add('is-visible');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toast.classList.remove('is-visible'), 2400);
+    }
+
+    function legacyCopy(text) {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.cssText = 'position:fixed;top:-100px;opacity:0';
+      document.body.appendChild(ta);
+      ta.select();
+      let ok = false;
+      try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+      ta.remove();
+      return ok;
+    }
+
+    async function copyText(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        try { await navigator.clipboard.writeText(text); return true; } catch (e) { /* fall through */ }
+      }
+      return legacyCopy(text);
+    }
+
+    $$('[data-copy]').forEach((btn) => {
+      btn.addEventListener('click', async () => {
+        const ok = await copyText(btn.dataset.copy);
+        if (ok) {
+          btn.classList.add('is-copied');
+          showToast(btn.dataset.copied);
+          setTimeout(() => btn.classList.remove('is-copied'), 2000);
+        } else {
+          showToast(`Couldn't copy. Select it and copy manually: ${btn.dataset.copy}`, true);
+        }
+      });
+    });
+
+    // ===== INIT =====
+    renderWork();
     renderTools();
-    renderTicker();
-    updateActiveNav();
-    initFloatUpAnimations();
+    syncTheme();
+    initActiveNav();
+    initReveal();
+    openFromHash();
   </script>
 </body>
 </html>
