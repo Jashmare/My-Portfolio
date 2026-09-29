@@ -36,14 +36,17 @@ Prince presents first as a graphic and multimedia designer (adverts, characters,
 
 - Name: Prince Jashmar M. Mosqueda (short form "Prince Mosqueda").
 - Roles as he states them: Instructional Designer, Multimedia Designer, Graphic Illustrator, E-Learning Developer.
-- The About section's personal voice ("There is a life behind all that work." Curiosity / Family / Still Becoming) is his own writing and stays.
+- The About section's personal voice ("There Is a Life Behind All That Work." Curiosity / Family / Still Becoming) is his own writing and stays; headings and subheaders across the site are set in Title Case at the owner's request.
 
 ## Evidence on Hand
 
-- E-learning module screens: Cotton yarn / "Unravelling the Textile Chain" (Cotton_01-04), Takaful & Re-Takaful certification (BlueDesign_*), CyanDesign_01a-c.
+- E-learning module screens: Cotton yarn / "Unravelling the Textile Chain" (Cotton_01-04), Data Privacy & Information Security (CyanDesign_01a-c).
+- Teal Corporate Course Template (Blue_Design_Main, Blue_Design_01-09): a placeholder-copy (lorem ipsum) course template; it replaced the old Takaful screens (BlueDesign_*), which were removed at the owner's request.
+- Sales training course screens: Sales_Design_01, 02.
+- Course theme studies: Brand_Design_01, 02 (magenta retail theme), Solo_design_01 (module title screen).
 - Static advert designs: StaticDesign_01_A, 02, 03, 04.
 - E-learning UI kits / templates: UI_Tempalte_A/B, UI_Design_01/02.
-- Illustration: owl mascot (Full view.jpg), Character Poses 01-05.png.
+- Illustration: owl mascot (Full view.jpg), Character Poses 01-05.png, Character_Graphic.png (flat-style interview scene composed from existing assets; the owner heavily customised the characters' poses and colours and the scenery. Describe it as composed/customised, never "drawn from scratch").
 - Profile cutout photo: Profile Cropped PNG.png.
 - No testimonials, client logos, metrics or module counts. The "100+ modules delivered" stat was removed at the owner's request; do not invent numbers.
 
