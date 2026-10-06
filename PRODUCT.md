@@ -8,11 +8,11 @@ web
 
 ## Users
 
-Hiring managers and recruiters filling full-time Instructional Designer, E-learning Developer and Multimedia Designer roles (confirmed primary audience). They arrive from a CV, LinkedIn or a job application link, usually skim within a minute, open one or two projects, and either download the CV or copy the contact details.
+Hiring managers and recruiters filling full-time Instructional Designer, E-learning Developer and Multimedia Designer roles (confirmed primary audience). They arrive from a resume, LinkedIn or a job application link, usually skim within a minute, open one or two projects, and either download the resume or copy the contact details.
 
 ## Product Purpose
 
-The personal portfolio of Prince Jashmar M. Mosqueda. It exists to get Prince shortlisted: show real e-learning, UI, static-ad and illustration work at full fidelity, make the CV one click away, and make contacting him effortless. Success means a recruiter opens the work, sees the craft, and downloads the CV or reaches out.
+The personal portfolio of Prince Jashmar M. Mosqueda. It exists to get Prince shortlisted: show real e-learning, UI, static-ad and illustration work at full fidelity, make the resume one click away, and make contacting him effortless. Success means a recruiter opens the work, sees the craft, and downloads the resume or reaches out.
 
 ## Positioning
 
@@ -22,12 +22,12 @@ Prince presents first as a graphic and multimedia designer (adverts, characters,
 
 - Single static page (`index.html`, inline CSS and JS, no build step), deployed from the `My-Portfolio` GitHub repo (Vercel is in the listed toolkit).
 - All project images, the profile photo and the Open Graph image are served from the separate `Jashmare/Portfolio-Storage` repo via `raw.githubusercontent.com`. Prince adds work by uploading to that repo and adding an entry to the page's project data.
-- CV PDF lives at `Jashmare/My-Curriculum-Vitae` (`Prince Mosqueda CV.pdf`).
+- Resume PDF lives at `Jashmare/My-Curriculum-Vitae` (`Prince_Mosqueda_Resume.pdf`); buttons read "Download Resume".
 - Toolkit icons live in `My-Portfolio/icons/`.
 
 ## Capabilities and Constraints
 
-- Must keep: project gallery modal with thumbnails and keyboard navigation, fullscreen image viewer, interaction animations on buttons, light and dark theme, CV download, copy-to-clipboard for email and phone, LinkedIn and Instagram links.
+- Must keep: project gallery modal with thumbnails and keyboard navigation, fullscreen image viewer, interaction animations on buttons, light and dark theme, resume download, copy-to-clipboard for email and phone, LinkedIn and Instagram links.
 - Unfinished projects ("Logos and Branding" / Tsuki bunny, "Coming Soon") stay in the data but are hidden until ready.
 - Toolkit keeps every current tool, grouped by purpose (design, e-learning authoring, audio, build and AI, workflow and collaboration).
 - No image converter on the build machine; assets ship in their stored formats.
@@ -53,7 +53,7 @@ Prince presents first as a graphic and multimedia designer (adverts, characters,
 ## Product Principles
 
 1. The work leads. Screens are shown large and legibly; the site's chrome never competes with them.
-2. A recruiter should reach the work, the CV and the contact details within seconds, on any device.
+2. A recruiter should reach the work, the resume and the contact details within seconds, on any device.
 3. Only true claims. Proof is the work itself, not adjectives or numbers.
 4. Adding a new project should stay a one-entry edit.
 

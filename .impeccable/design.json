@@ -243,7 +243,7 @@
       },
       "label-small": {
         "displayName": "Label Small",
-        "purpose": "Small nav CV button, gallery and viewer counters."
+        "purpose": "Small nav resume button, gallery and viewer counters."
       },
       "inverse-small": {
         "displayName": "Inverse Small",
@@ -358,7 +358,7 @@
       "kind": "button",
       "refersTo": "button-ghost",
       "description": "Hairline secondary action; no dot.",
-      "html": "<a class=\"ds-btn-ghost\" href=\"#\">Download CV<svg class=\"ds-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 4v11M7 10l5 5 5-5M5 20h14\"/></svg></a>",
+      "html": "<a class=\"ds-btn-ghost\" href=\"#\">Download Resume<svg class=\"ds-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 4v11M7 10l5 5 5-5M5 20h14\"/></svg></a>",
       "css": ".ds-btn-ghost { display: inline-flex; align-items: center; gap: 0.7rem; height: 52px; padding: 0 1.4rem; border-radius: 12px; border: 1px solid var(--s3, #CFCFCA); background: transparent; color: var(--ink, #111111); font-family: 'Satoshi', ui-sans-serif, system-ui, sans-serif; font-weight: 500; font-size: 1rem; text-decoration: none; transition: transform 0.35s cubic-bezier(0.16,1,0.3,1), border-color 0.25s ease; } .ds-btn-ghost:hover { border-color: var(--ink, #111111); transform: translateY(-2px); } .ds-btn-ghost:active { transform: scale(0.97); } .ds-btn-ghost:focus-visible { outline: 2px solid var(--ink, #111111); outline-offset: 3px; box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent, #B5D334) 55%, transparent); border-radius: 6px; } .ds-icon { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; transition: transform 0.4s cubic-bezier(0.16,1,0.3,1); } .ds-btn-ghost:hover .ds-icon { transform: translateY(3px); }"
     },
     {

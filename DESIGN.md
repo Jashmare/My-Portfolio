@@ -267,7 +267,7 @@ The closing Contact panel is ink in light mode and `dark-paper` in dark mode, wi
 - **Claim** (400, 1.1875rem, 1.5): the featured project claim line, in ink, 38ch. In More Work the claim drops to body size in secondary text.
 - **Body** (400, 1.0625rem, 1.6): running copy, capped at 44 to 60ch.
 - **Label** (500, 0.9688rem to 1rem): buttons, nav, spec values, tool names, disciplines.
-- **Label small** (500, 0.9375rem): the small CV button in the nav, gallery and viewer counters.
+- **Label small** (500, 0.9375rem): the small resume button in the nav, gallery and viewer counters.
 - **Channel value** (500, clamp(1.05rem, 1.8vw, 1.35rem), -0.01em): email, phone and LinkedIn on the contact panel.
 - **Inverse small** (500 or 400, 0.9063rem): copy buttons and footer on the contact panel.
 - **Caption** (400 or 500, 0.875rem): proof captions, table headers, count chips. Numerals in counters use tabular figures.
@@ -284,7 +284,7 @@ A centred 1240px wrap with a fluid gutter. The structural move is a 5fr/7fr spli
 
 Vertical rhythm is large: sections at clamp(5rem, 10vw, 8.5rem), work pairs separated by clamp(5rem, 10vw, 8rem), section heads followed by clamp(3rem, 6vw, 5rem). Sections after Work drop their top padding so the rhythm is carried by the previous section's bottom.
 
-Responsive: at 980px every split collapses to one column and every proof precedes its claim; disciplines go from 5 columns to 3, then 2 at 760px, then a single label/value list at 480px. At 760px the header drops to 60px, nav links become a full-width sheet revealed by a clip-path wipe, the CV button collapses to its icon and dot, hero CTAs stretch to fill the row, the More Work grid drops to one column, and the gallery goes edge to edge.
+Responsive: at 980px every split collapses to one column and every proof precedes its claim; disciplines go from 5 columns to 3, then 2 at 760px, then a single label/value list at 480px. At 760px the header drops to 60px, nav links become a full-width sheet revealed by a clip-path wipe, the resume button collapses to its icon and dot, hero CTAs stretch to fill the row, the More Work grid drops to one column, and the gallery goes edge to edge.
 
 The sticky header is translucent page colour (86%) with a saturating blur and gains a hairline bottom border once scrolled.
 
@@ -327,7 +327,7 @@ There are no content cards. Two containers exist:
 - **Dialog:** paper, 20px radius, header bar with hairline bottom, 16:9 stage on quiet surface, thumbnail strip, description plus spec list.
 
 ### Navigation
-Wordmark (700, 1.125rem) left; links (Home, Work, Toolkit, About, Contact) in label weight, secondary text, 8px-radius hover wash; the current section turns ink and gets a 5px lime dot centred beneath it (right-aligned in the mobile sheet); More Work counts as Work. Right side: theme toggle icon button and the small primary CV button. Mobile uses a three-bar button that morphs to a cross. The wordmark, the Home link, the footer's "Back to top" link and the floating back-to-top button all return to the top of the page.
+Wordmark (700, 1.125rem) left; links (Home, Work, Toolkit, About, Contact) in label weight, secondary text, 8px-radius hover wash; the current section turns ink and gets a 5px lime dot centred beneath it (right-aligned in the mobile sheet); More Work counts as Work. Right side: theme toggle icon button and the small primary resume button. Mobile uses a three-bar button that morphs to a cross. The wordmark, the Home link, the footer's "Back to top" link and the floating back-to-top button all return to the top of the page.
 
 ### Hairline Row Lists
 The world's idiom for any grouped information: spec lists (label column 7.5rem, value in 500), toolkit tables (header in caption over a strong hairline, rows on hairlines, second column in secondary text, row hover a horizontally faded quiet-surface wash with the tool mark scaling to 1.12), disciplines (columns separated by vertical hairlines), values and contact channels.
